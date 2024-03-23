@@ -1,95 +1,61 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import * as React from "react";
+
+import "./style.scss";
+
+import Image from 'next/image'
+import icon1 from '../media/images/icon1.svg'
+import button from '../media/images/button.png'
+import bg from '../media/images/background2Main.png'
+import ServicesComponent from "@/app/_components/services/page";
 
 export default function Home() {
-  return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>src/app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+    return (
+        <main className="main-page">
+            <section className="main-page__video">
+                {/*<video width="100%" controls autoPlay loop preload="auto" playsInline>*/}
+                {/*    <source src="../media/video/showreal.mp4" type="video/mp4" />*/}
+                {/*    Your browser does not support the video tag.*/}
+                {/*</video>*/}
+            </section>
+            <section className="main-page__container">
+                <div className="main-page__tagline">
+                    <div className="main-page__tagline_container">
+                        <p className="main-page__tagline_container__text main-page__tagline_container__align1">
+                            ВЫ ДОВЕРЯЕТЕ
+                        </p><br />
+                        <p className="main-page__tagline_container__text main-page__tagline_container__align2">
+                            НАМ СОБЫТИЯ, <Image src={icon1} alt="солнышко" className="main-page__tagline_container__text_image" />  МЫ
+                        </p><br />
+                        <p className="main-page__tagline_container__text main-page__tagline_container__align3">
+                            ОПРАВДЫВАЕМ ДОВЕРИЕ
+                        </p>
+                    </div>
+                </div>
+                <ServicesComponent />
+            </section>
+            <section className="main-page__sticky-scroll">
+                <div className="main-page__sticky-scroll_background">
+                    <Image src={bg} alt="bg" />
+                </div>
+                <div className="main-page__sticky-scroll_about">
+                    <div className="main-page__sticky-scroll_about__button">
+                        <Image src={button} alt="Кнопка" />
+                    </div>
+                    <div className="main-page__sticky-scroll_about__text">
+                        <p>
+                            Добро пожаловать в мир неповторимых событий с Avantage Project!
+                            Наши мероприятия не ограничиваются просто реализацией, они обеспечивают
+                            беспрецедентный комфорт и невероятные впечатления.
+                        </p>
+                        <button>
+                            ХОЧУ ЗНАТЬ БОЛЬШЕ
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section className="main-page__cases">
 
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+            </section>
+        </main>
+    );
 }

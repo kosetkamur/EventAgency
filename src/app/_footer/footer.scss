@@ -1,0 +1,143 @@
+.footer {
+  width: 100%;
+  display: block;
+  margin-top: 150px;
+
+  &__line {
+    border-bottom: 1px solid #000000;
+    margin: 30px 0;
+  }
+
+  &__mail {
+    padding: 0 30px;
+
+    &_p {
+      font-size: 1.25rem;
+      font-weight: 600;
+    }
+
+    &_text {
+      font-size: 6.2rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+  }
+
+  &__navigation {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-template-rows: repeat(2, auto);
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px;
+
+    &_column {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+
+
+      &__text {
+        font-weight: 600;
+        font-size: 1.25rem;
+        padding-bottom: 15px;
+        opacity: .5;
+        color: #000000;
+      }
+
+      &__a {
+        font-weight: 600;
+        font-size: 1.25rem;
+        padding-bottom: 15px;
+      }
+
+      &__wiki {
+        color: #00BBB6;
+        font-size: 4rem;
+        border-bottom: 2px solid #00BBB6;
+        width: max-content;
+      }
+
+      &__button {
+        font-weight: 400;
+        color: #000000;
+        font-size: 1.25rem;
+        border: none;
+        background: transparent;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      &__down {
+        padding-top: 90px;
+        opacity: .5;
+        color: #000000;
+        font-size: 1.25rem;
+      }
+    }
+
+  }
+}
+
+@media screen and (max-width: 1800px) {
+  .footer__mail_text {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .footer__mail_text {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .footer__mail_text {
+    font-size: 3.4rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    &__mail_text {
+      font-size: 3rem;
+    }
+
+    &__navigation {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      grid-template-rows: repeat(2, auto);
+    }
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .footer__mail_text {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  .footer {
+    width: 100%;
+    display: block;
+
+    &__mail {
+      padding: 0 15px;
+
+    }
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .footer {
+
+    &__mail {
+
+      &_text {
+        font-size: 1rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,1 @@
+export const backendHost = "http://raigoreg.beget.tech";

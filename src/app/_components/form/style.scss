@@ -1,0 +1,131 @@
+.form-component {
+  width: 100%;
+  margin-top: 130px;
+  &__title {
+    display: flex;
+    flex-direction: column;
+    &_p {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      font-size: 8rem;
+      font-weight: 800;
+      line-height: 1;
+      span {
+        display: block;
+        color: #00BBB6;
+        padding-left: 20px;
+      }
+    }
+  }
+  &__form {
+    width: 100%;
+    background-color: #EAEAEA;
+    padding: 3% 2.5%;
+    &_header {
+      margin-bottom: 5%;
+      p {
+        font-size: 1.25rem;
+        font-weight: 600;
+        line-height: 1;
+      }
+    }
+    &_main{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+      &__text {
+        margin-bottom: 40px;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: 1px;
+      }
+      &__input {
+        width: 20%;
+        margin-bottom: 40px;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        border-bottom: 1px solid #000000;
+        background-color: transparent;
+      }
+    }
+    &_footer {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      &__checkbox {
+        display: flex;
+        flex-direction: row;
+        &_label {
+          display: inline-block;
+          position: relative;
+          padding-left: 30px;
+          cursor: pointer;
+          user-select: none;
+          input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+          }
+          input:checked ~ .checkbox__checkmark:after {
+            opacity: 1;
+          }
+          .checkbox__checkmark {
+            position: absolute;
+            top: 2px;
+            left: 0;
+            height: 39px;
+            width: 39px;
+            border: 2px solid #00BBB6;
+            background-color: transparent;
+            transition: background-color 0.25s ease;
+          }
+          .checkbox__checkmark:after {
+            content: "";
+            position: absolute;
+            left: 7.5px;
+            top: 8px;
+            width: 18px;
+            height: 10px;
+            border: solid #00BBB6;
+            border-width: 0 0 2px 2px;
+            transform: rotate(-45deg);
+            opacity: 0;
+            transition: opacity 0.25s ease;
+          }
+          .checkbox__body {
+            color: #000000;
+            font-size: 1.25rem;
+            padding-left: 40px;
+            padding-top: 8px;
+          }
+        }
+      }
+      &__button {
+        width: 18%;
+        height: 16%;
+        border: none;
+        font-size: 2rem;
+        font-weight: 500;
+        padding: 30px 0;
+        text-align: center;
+        border-radius: 100px;
+        text-transform: uppercase;
+        background-color: #FFFFFF;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .form-component__title_p {
+    font-size: 7rem;
+  }
+}
