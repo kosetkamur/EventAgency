@@ -7,7 +7,6 @@ async function getData() {
         `http://raigoreg.beget.tech/api/blog.article_list?lang=ru`,
         {
             method: 'GET',
-            cache: 'force-cache',
         }
     )
 
@@ -26,7 +25,7 @@ export default async function BlogPage() {
             <div className="blog-page__media">
                 {
                     articles.data.map(article =>
-                        <div className="blog-page__media_item">
+                        <div key={article.id} className="blog-page__media_item">
                             <a href={article.external_link}>
                                 <Image src={`http://raigoreg.beget.tech${article.photo}`} alt={article.title} width={500} height={500} className="blog-page__media_item__images" />
                                 <p className="blog-page__media_item__text">

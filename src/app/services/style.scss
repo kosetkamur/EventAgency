@@ -92,9 +92,23 @@
     min-height: 700px;
   }
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 1600px) {
   .services-page__tagline_container__text {
     font-size: 8vw;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .services-page__tagline {
+    max-height: 580px;
+    min-height: 580px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .services-page__tagline_container__text {
+    font-size: 7vw;
+    line-height: 0.85;
   }
 }
 

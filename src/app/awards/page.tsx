@@ -1,6 +1,5 @@
 import "./style.scss";
 import Image from "next/image";
-import awardI from "@/media/images/diplom22-ezgif.com-video-to-gif-converter.gif";
 import arrow from "@/media/images/arrowAwards.svg";
 import halfCircle from "@/media/images/half-circle-awards.svg"
 import RatingsComponent from "@/app/_components/ratings/page";
@@ -10,7 +9,6 @@ async function getData() {
         `http://raigoreg.beget.tech/api/core.awards_list?lang=ru`,
         {
             method: 'GET',
-            cache: 'force-cache',
         }
     )
 
@@ -28,11 +26,11 @@ export default async function AwardsPage() {
             <div className="containerAll">
                 <div className="awards-page__title">
                     <div className="awards-page__title_text">
-                        <h1>
+                        <h1 className="awards-page__title_text__black">
                             НАГРАДЫ
                         </h1>
                         <h1 className="awards-page__title_text__green">
-                            AVANTAGE PROJECT
+                            AVANTAGE<br  className="awards-page__title_text__green_br" /> PROJECT
                         </h1>
                     </div>
                     <div className="awards-page__title_description">
@@ -50,7 +48,7 @@ export default async function AwardsPage() {
                 <div className="awards-page__awards_container">
                     {
                         awards.data.map(award => (
-                            <div className="awards-page__awards_container__item">
+                            <div key={award.id} className="awards-page__awards_container__item">
                                 <div className="awards-page__awards_container__item_text">
                                     <p className="awards-page__awards_container__item_text__year">{award.year}</p>
                                     <h2 className="awards-page__awards_container__item_text__title">{award.title}</h2>
@@ -59,7 +57,7 @@ export default async function AwardsPage() {
                                     <p className="awards-page__awards_container__item_text__event">{award.event}</p>
                                 </div>
                                 <div className="awards-page__awards_container__item_images">
-                                    <Image src={awardI} alt={award} width="500" height="500"  className="awards-page__awards_container__item_images_img"/>
+                                    <Image src={`http://raigoreg.beget.tech${award.attachment}`} alt={award} width="500" height="500"  className="awards-page__awards_container__item_images_img"/>
                                 </div>
                             </div>
                         ))

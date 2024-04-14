@@ -1,18 +1,17 @@
-.gotg-page {
-  background-image: url("../../../media/images/bgTelegram.png");
+.error-page {
+  background-image: url("../../../media/images/errorBg.svg");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: left;
   border-radius: 10px;
-  max-height: 518px;
-  min-height: 518px;
+  max-height: 1043px;
+  min-height: 1043px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 120px 0 150px 0;
 
   &__container {
-    max-width: 676px;
+    max-width: 959px;
     width: 100%;
     margin: 0 auto;
     text-align: center;
@@ -20,12 +19,12 @@
 
     &_text {
       box-sizing: border-box;
-      color: #ffffff;
-      font-size: 2rem;
-      font-weight: 400;
+      color: #000000;
+      font-size: 4rem;
+      font-weight: 700;
       line-height: 1;
       text-align: center;
-      margin-bottom: 50px;
+      margin-bottom: 40px;
       padding: 0 1rem;
     }
 

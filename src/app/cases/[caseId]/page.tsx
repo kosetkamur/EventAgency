@@ -10,7 +10,23 @@ import './style.scss';
 import {CSSProperties} from "react";
 import Form from "@/app/_components/form/page";
 
-export default function Artical({ params }: { params: { id: string }}) {
+async function getData(params) {
+    const res = await fetch(
+        `http://raigoreg.beget.tech/api/blog.case?lang=ru&id=${params.caseId}`,
+        {
+            method: 'GET',
+        }
+    )
+
+    if (!res.ok) {
+        throw new Error('Failed to fetch data')
+    }
+
+    return res.json()
+}
+
+export default async function Artical({ params }: { params: { id: string }}) {
+    const caseInfo = await getData(params);
     const arrowStyles: CSSProperties = {
         position: 'absolute',
         zIndex: 2,
@@ -41,17 +57,12 @@ export default function Artical({ params }: { params: { id: string }}) {
             <div className="article-page__header">
                 <Image src={caseID} alt="Фотография кейса" className="article-page__header_image" />
                 <h2 className="article-page__header_title">
-                    Фобия Qiwi Strё
+                    {caseInfo.data.title}
                 </h2>
             </div>
             <div className="article-page__description">
                 <p>
-                    Традиционно в конце года для компании Qiwi мы провели внутрикорпоративное офлайн событие для 300 человек, приуроченное к календарному празднику Хэллоуин.<br /><br />
-
-                    В 2020-м году задача трансформировалась к проведению гибридного события в связи с ограничениями относительно проведения массовых мероприятий, и перед нами стояла задача организовать офлайн событие для 30 участников, транслируемое в онлайн формате для 200 человек.<br /><br />
-
-                    Мы осуществили это в кинопавильоне Amedia Group. За 1,5 часа 6 команд по 5 человек, которых выбрали накануне случайным<br /><br />
-                    образом среди всех желающих, проходили жуткие и мерзкие испытания в формате ток-шоу в комнате страха. Всё завершилось финальным состязанием, где команды объединились, прошли настоящую арену смерти и выяснили, что страх лишь в их голове.
+                    {caseInfo.data.body}
                 </p>
             </div>
             <Carousel
@@ -59,14 +70,14 @@ export default function Artical({ params }: { params: { id: string }}) {
                 renderArrowPrev={(onClickHandler, hasPrev) =>
                     hasPrev && (
                         <button type="button" className="article-page__description_button" onClick={onClickHandler} style={{ ...arrowStyles, left: 15 }}>
-                            <Image src={arrowLeft} className="article-page__description_button__image" />
+                            <Image src={arrowLeft} alt="стрелка влево" className="article-page__description_button__image" />
                         </button>
                     )
                 }
                 renderArrowNext={(onClickHandler, hasNext) =>
                     hasNext && (
                         <button type="button" onClick={onClickHandler} style={{ ...arrowStyles, right: 15 }}>
-                            <Image src={arrowRight} className="article-page__description_button__image" />
+                            <Image src={arrowRight} alt="стрелка вправо" className="article-page__description_button__image" />
                         </button>
                     )
                 }
@@ -91,21 +102,13 @@ export default function Artical({ params }: { params: { id: string }}) {
                     );
                 }}
             >
-                <div>
-                    <Image src={caseID} alt="Фотография кейса" className="article-page__description_image" />
-                </div>
-                <div>
-                    <Image src={caseID} alt="Фотография кейса" className="article-page__description_image" />
-                </div>
-                <div>
-                    <Image src={caseID} alt="Фотография кейса" className="article-page__description_image" />
-                </div>
-                <div>
-                    <Image src={caseID} alt="Фотография кейса" className="article-page__description_image" />
-                </div>
-                <div>
-                    <Image src={caseID} alt="Фотография кейса" className="article-page__description_image" />
-                </div>
+                {
+                    caseInfo.data.photos.map(photo=>
+                        <div>
+                            <Image src={photo.file} alt="Фотография кейса" width="100" height="100" className="article-page__description_image" />
+                        </div>
+                    )
+                }
             </Carousel>
             <Form />
         </div>

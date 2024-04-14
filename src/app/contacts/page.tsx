@@ -15,7 +15,7 @@ export default function ContactPage() {
                 <Contact />
                 <GoTgComponent />
             </div>
-            <MarqeeComponent />
+            <MarqeeComponent color={"#463CFF"} />
             <div className="containerAll">
                 <Form />
             </div>

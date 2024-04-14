@@ -8,7 +8,6 @@ import Image from "next/image";
 import Nav from "@/app/_header/_nav/nav";
 
 export default function Header() {
-
     return (
         <header className="header" id="header">
             <div className="header-desk">

@@ -3,6 +3,9 @@
 
   &__title {
     padding: 100px 0 25px 0;
+    transform: translateY(100%);
+    animation: 0.5s goText forwards ease-in-out;
+    opacity: 0;
   }
 
   &__filter {
@@ -18,6 +21,13 @@
       font-weight: 600;
       border: 1px solid #000000;
       text-transform: uppercase;
+      color: #000000;
+      transition: .3s;
+    }
+
+    &_button:hover {
+      border: 1px solid #00BBB6;
+      color: #00BBB6;
     }
   }
 
@@ -86,8 +96,18 @@
 
     &_item:hover {
       transform: scale(1.01);
-      transition: 0.3s;
+      transition: .3s;
     }
+  }
+}
+
+@keyframes goText {
+  0% {
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(0%);
+    opacity: 1;
   }
 }
 

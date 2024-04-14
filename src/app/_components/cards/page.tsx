@@ -1,7 +1,6 @@
 import "./style.scss";
 import * as React from "react";
 import Image from 'next/image'
-import servicesTop from '@/media/images/servicesTop.png'
 import Link from "next/link";
 
 async function getData() {
@@ -9,7 +8,6 @@ async function getData() {
         `http://raigoreg.beget.tech/api/goods.list?lang=ru`,
         {
             method: 'GET',
-            cache: 'force-cache',
         }
     )
 
@@ -27,20 +25,34 @@ export default async function CardsComponent() {
         <div className="cards-components">
             {
                 cards.data.map(card => (
-                    <Link href={card.external_link} className={`cards-components_item cards-components_item${card.order}`}>
-                        <div className="cards-components_item__num">
-                            {"0"+card.order}
+                    <Link key={card.id} href={card.external_link} className={`cards-components_item cards-components_item${card.order}`}>
+                        <div className="cards-components_item__container">
+                            <div className="cards-components_item__container_num">
+                                {"0"+card.order}
+                            </div>
+                            <div className="cards-components_item__container_title">
+                                {card.title}
+                            </div>
+                            <div className="cards-components_item__container_subtitle">
+                                {card.description}
+                            </div>
                         </div>
-                        <div className="cards-components_item__title">
-                            {card.title}
+                        <div className="cards-components_item__container">
+                            <div className="cards-components_item__container_image">
+                                { card.background_image &&
+                                    <Image
+                                        src={`http://raigoreg.beget.tech${card.background_image}`}
+                                        width="100"
+                                        height="100"
+                                        className="cards-components_item__container_image__img"
+                                        alt="иконка" />}
+                            </div>
                         </div>
-                        <div className="cards-components_item__subtitle">
-                            {card.description}
-                        </div>
-                        {/*<Image src={} alt={} />*/}
-                        <div className="cards-components_item__runStroke">
-                            <div className="cards-components_item__runStroke_text">
-                                {card.events} {card.events}
+                        <div className="cards-components_item__container">
+                            <div className="cards-components_item__container_runStroke">
+                                <div className="cards-components_item__container_runStroke__text">
+                                    {card.events} {card.events}
+                                </div>
                             </div>
                         </div>
                     </Link>

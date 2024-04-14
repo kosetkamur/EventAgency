@@ -3,19 +3,26 @@ import icon3 from "@/media/images/icon3.svg";
 import Image from "next/image";
 
 import "./style.scss";
-import {useState} from "react";
+
+async function requestUsername(formData) {
+    console.log('vjeoij', formData)
+    const username = formData.get('username');
+    const task = formData.get('task');
+    const email = formData.get('email');
+    const phone = formData.get('phone');
+}
+
 
 export default function Form() {
-    const [value, setValue] = useState('');
 
     return (
-        <div className="form-component">
+        <form className="form-component" action={requestUsername}>
             <div className="form-component__title">
                 <p className="form-component__title_p">
-                    <Image src={icon3} alt="стрелка вниз" /> ЧТОБЫ  <span> СВЯЗАТЬСЯ</span>,
+                    <Image src={icon3} alt="солнышко" className="form-component__title_sun" />ЧТОБЫ <span>СВЯЗАТЬСЯ</span>,
                 </p>
                 <p className="form-component__title_p">
-                    НАПИШИ НАМ ПИСЬМО <Image src={arrowForm} alt="стрелка вниз" />
+                    НАПИШИ НАМ ПИСЬМО <Image src={arrowForm} alt="стрелка вниз" className="form-component__title_arrow" />
                 </p>
             </div>
             <div className="form-component__form">
@@ -28,54 +35,36 @@ export default function Form() {
                     </p>
                 </div>
                 <div className="form-component__form_main">
-                    <p className="form-component__form_main__text">
-                        ПРИВЕТ, Я
-                    </p>
+                    <span>ПРИВЕТ, Я</span>
                     <input
                         type="text"
-                        value={value}
-                        onChange={(e) => setValue(e.target.value)}
+                        name="username"
                         className="form-component__form_main__input"
+                        placeholder="ваше имя"
                     />
-                    <p className="form-component__form_main__text">
-                        .
-                    </p>
-                    <p className="form-component__form_main__text">
-                        НАМ НУЖНО СДЕЛАТЬ
-                    </p>
+                    <span>.</span> <span>НАМ НУЖНО СДЕЛАТЬ</span>
                     <input
                         type="text"
-                        value={value}
-                        onChange={(e) => setValue(e.target.value)}
+                        name="task"
                         className="form-component__form_main__input"
+                        placeholder="опишите задачу"
                     />
-                    <p className="form-component__form_main__text">
-                        ,
-                    </p>
-                    <p className="form-component__form_main__text">
-                        И ЧТОБЫ ВСЕ БЫЛО В ЛУЧШЕМ ВИДЕ.
-                    </p>
-                    <p className="form-component__form_main__text">
-                        СВЯЖИТЕСЬ СО МНОЙ: ВОТ МОЯ ПОЧТА
-                    </p>
+                    <span>,</span> <span>И ЧТОБЫ ВСЕ БЫЛО</span> <span>В ЛУЧШЕМ ВИДЕ.</span>
+                    <span>СВЯЖИТЕСЬ СО МНОЙ:</span> <span>ВОТ МОЯ ПОЧТА</span>
+
                     <input
                         type="text"
-                        value={value}
-                        onChange={(e) => setValue(e.target.value)}
+                        name="email"
                         className="form-component__form_main__input"
+                        placeholder="email"
                     />
-                    <p className="form-component__form_main__text">
-                        И ТЕЛЕФОН
-                    </p>
-                    <input
+                    <span> И ТЕЛЕФОН</span>
+                    <span><input
                         type="text"
-                        value={value}
-                        onChange={(e) => setValue(e.target.value)}
+                        name="phone"
                         className="form-component__form_main__input"
-                    />
-                    <p className="form-component__form_main__text">
-                        .
-                    </p>
+                        placeholder="+7 999 999 99 99"
+                    />.</span>
                 </div>
                 <div className="form-component__form_footer">
                     <div className="form-component__form_footer__checkbox">
@@ -87,11 +76,11 @@ export default function Form() {
                             </p>
                         </label>
                     </div>
-                    <button className="form-component__form_footer__button">
+                    <button type="submit" className="form-component__form_footer__button">
                         отправить
                     </button>
                 </div>
             </div>
-        </div>
+        </form>
     )
 }

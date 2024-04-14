@@ -1,4 +1,3 @@
-"use client";
 import "./style.scss";
 import * as React from "react";
 

@@ -5,7 +5,6 @@ async function getData() {
         `http://raigoreg.beget.tech/api/wiki.get`,
         {
             method: 'GET',
-            cache: 'force-cache',
         }
     )
 
@@ -25,7 +24,9 @@ export default async function WikiPage() {
                 <div className="wiki-page__title">
                     <div className="wiki-page__title_text">
                         <h1 className="wiki-page__title_text__green">EVENT</h1>
-                        <h1>ЭНЦИКЛО<wbr className="wiki-page__title_text__wbr" />&shy;ПЕДИЯ</h1>
+                        <h1  className="wiki-page__title_text__black">
+                            ЭНЦИКЛО<wbr className="wiki-page__title_text__wbr" />&shy;ПЕДИЯ
+                        </h1>
                     </div>
                     <div className="wiki-page__title_description">
                         <p>
@@ -35,16 +36,17 @@ export default async function WikiPage() {
                     </div>
                 </div>
                 <div className="wiki-page__alphabet">
+                    <div className="wiki-page__alphabet_container">
                     {
-                        letters.data.map(letter => (
-                            <div className="wiki-page__alphabet_item">
-                                <p className="wiki-page__alphabet_item__bigLetter">
+                        letters.data.langs.en.map(letter => (
+                            <div key={letter.value} className="wiki-page__alphabet_container__item">
+                                <p className="wiki-page__alphabet_container__item_bigLetter">
                                     {letter.value}
                                 </p>
-                                <div className="wiki-page__alphabet_item__links">
+                                <div className="wiki-page__alphabet_container__item_links">
                                     {
                                         letter.records.map(link => (
-                                            <a href={link.external_link} className="wiki-page__alphabet_item__links_item">
+                                            <a key={link.title} href={link.external_link} className="wiki-page__alphabet_container__item_links__item">
                                                 {link.title}
                                             </a>
                                         ))
@@ -53,6 +55,27 @@ export default async function WikiPage() {
                             </div>
                         ))
                     }
+                    </div>
+                    <div className="wiki-page__alphabet_container">
+                    {
+                        letters.data.langs.ru.map(letter => (
+                            <div key={letter.value} className="wiki-page__alphabet_container__item">
+                                <p className="wiki-page__alphabet_container__item_bigLetter">
+                                    {letter.value}
+                                </p>
+                                <div className="wiki-page__alphabet_container__item_links">
+                                    {
+                                        letter.records.map(link => (
+                                            <a key={link.title} href={link.external_link} className="wiki-page__alphabet_container__item_links__item">
+                                                {link.title}
+                                            </a>
+                                        ))
+                                    }
+                                </div>
+                            </div>
+                        ))
+                    }
+                    </div>
                 </div>
             </div>
         </div>

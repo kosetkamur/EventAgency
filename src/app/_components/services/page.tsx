@@ -8,7 +8,6 @@ async function getData() {
         `http://raigoreg.beget.tech/api/core.files?lang=ru`,
         {
             method: 'GET',
-            cache: 'force-cache',
         }
     )
 

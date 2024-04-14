@@ -2,11 +2,18 @@ import * as React from "react";
 
 import "./style.scss";
 
-import Image from 'next/image'
-import icon1 from '../media/images/icon1.svg'
-import button from '../media/images/button.png'
-import bg from '../media/images/background2Main.png'
+import Image from 'next/image';
+import icon1 from '../media/images/icon1.svg';
 import ServicesComponent from "@/app/_components/services/page";
+import {Metadata} from "next";
+import Paralax from "@/app/_components/parallax/page";
+import CaseMainComponent from "@/app/_components/cases/page";
+import AwardComponent from "@/app/_components/award/page";
+
+export const metadata: Metadata = {
+    title: "Главная",
+    description: "Ивент агентство",
+};
 
 export default function Home() {
     return (
@@ -33,29 +40,11 @@ export default function Home() {
                 </div>
                 <ServicesComponent />
             </section>
-            <section className="main-page__sticky-scroll">
-                <div className="main-page__sticky-scroll_background">
-                    <Image src={bg} alt="bg" />
-                </div>
-                <div className="main-page__sticky-scroll_about">
-                    <div className="main-page__sticky-scroll_about__button">
-                        <Image src={button} alt="Кнопка" />
-                    </div>
-                    <div className="main-page__sticky-scroll_about__text">
-                        <p>
-                            Добро пожаловать в мир неповторимых событий с Avantage Project!
-                            Наши мероприятия не ограничиваются просто реализацией, они обеспечивают
-                            беспрецедентный комфорт и невероятные впечатления.
-                        </p>
-                        <button>
-                            ХОЧУ ЗНАТЬ БОЛЬШЕ
-                        </button>
-                    </div>
-                </div>
-            </section>
-            <section className="main-page__cases">
-
-            </section>
+            <Paralax />
+            <div className="containerAll">
+                <CaseMainComponent />
+            </div>
+            <AwardComponent />
         </main>
     );
 }

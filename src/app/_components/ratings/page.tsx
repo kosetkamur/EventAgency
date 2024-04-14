@@ -8,7 +8,6 @@ async function getData() {
         `http://raigoreg.beget.tech/api/cooperation.ratings.list?lang=ru`,
         {
             method: 'GET',
-            cache: 'force-cache',
         }
     )
 
@@ -25,12 +24,12 @@ export default async function RatingsComponent() {
      return (
          <div className="rating-component">
              <div className="rating-component__title">
-                 <Image src={img} alt="Мы в рейтингах" />
+                 <Image src={img} alt="Мы в рейтингах"  className="rating-component__title_image" />
              </div>
              <div className="rating-component__logos">
                  {
                      ratings.data.map(rating => (
-                         <div className="rating-component__logos_item">
+                         <div key={rating.logo} className="rating-component__logos_item">
                             <Image src={`http://raigoreg.beget.tech${rating.logo}`} alt="рейтинг" width="300" height="300" className="rating-component__logos_item__image" />
                          </div>
                      ))

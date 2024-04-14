@@ -5,7 +5,6 @@ async function getData() {
         `http://raigoreg.beget.tech/api/core.contacts?lang=ru`,
         {
             method: 'GET',
-            cache: 'force-cache',
         }
     )
 
