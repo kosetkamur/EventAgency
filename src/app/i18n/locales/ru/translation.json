@@ -1,20 +1,20 @@
 {
-  "to-second-page": "ВЫ ДОВЕРЯЕТЕ",
   "navServices": "Услуги",
   "navCases": "Кейсы",
   "navAwards": "Награды",
   "navBlog": "Блог",
   "navAboutUs": "О нас",
   "navContacts": "Контакты",
-  "forClients": "ДЛЯ КЛИЕНТОВ",
+  "forClients": "для клиентов",
   "services": "услуги",
+  "home": "главная",
   "howWeWork": "условия работы",
   "whyUs": "почему именно мы",
   "brief": "бриф",
   "portfolio": "портфолио",
 
   "YOUTRUST": "ВЫ ДОВЕРЯЕТЕ",
-  "USWITHEVENTS,": "НАМ СОБЫТИЯ,",
+  "USWITHEVENTS": "НАМ СОБЫТИЯ,",
   "WE": "МЫ",
   "HONOURYOURTRUST": "ОПРАВДЫВАЕМ ДОВЕРИЕ",
 
@@ -51,16 +51,38 @@
   "AFTERTHEFIRSTEVENT": "ПОСЛЕ ПЕРВОГО МЕРОПРИЯТИЯ",
 
   "PLANNING": "ПЛАНИРУЕТЕ",
-  "ANEVENT ": "МЕРОПРИЯТИЕ? ",
+  "ANEVENT": "МЕРОПРИЯТИЕ? ",
   "PLANNINGANEVENTText": "мы ответим на все вопросы, разберём бриф по вашему событию и оценим проект",
   "leavearequest ": "оставить заявку",
 
   "CONTACTUS": "СВЯЗАТЬСЯ С НАМИ",
   "dataCollectionPolicy": "политика сбора данных",
-  "forClients": "for clients",
-  "forMediaAndPartners ": "for media and partners",
-  "workingWithUs": "working with us",
-  "cases ": "кейсы "
+  "forMedia": "для СМИ",
+  "forPartners": "для партнеров",
+  "workingWithUs": "для работы у нас",
+  "downloadPresentation": "скачать презентацию",
+  "fillInTheBrief": "скачать бриф",
+  "fillBrief": "заполнить бриф",
+  "up": "вверх",
+
+  "wePlanAnd": "мы реализуем",
+  "execute": "масштабные и",
+  "unforgettableLargeScale": "запоминающиеся ",
+  "events": "мероприятия",
+  "whyUsBtn": "почему мы",
+
+  "TOGET": "ЧТОБЫ",
+  "INTOUCH": "СВЯЗАТЬСЯ",
+  "SENDUSANEMAIL": "НАПИШИ НАМ ПИСЬМО",
+
+  "TOAVANTAGEPROJECT" : "КОМУ: AVANTAGE PROJECT",
+  "SUBJECTEVENT" : "ТЕМА: МЕРОПРИЯТИЕ",
+
+  "HIIAM": "ПРИВЕТ, Я .СВЯЖИТЕСЬ СО МНОЙ, : ВОТ МОЯ ПОЧТА: (email)\nИ ТЕЛЕФОН:\n+7 999 999 99 99\n",
+  "yourName": "(ваше имя)",
+  "WENEEDTODO": "НАМ НУЖНО СДЕЛАТЬ",
+  "describeTheTask": "(опишите задачу)",
+  "ANDEVERYTHINGSHOULDBEDONEPERFECTLY.": "И ЧТОБЫ ВСЕ БЫЛО В ЛУЧШЕМ ВИДЕ"
 }
 
 

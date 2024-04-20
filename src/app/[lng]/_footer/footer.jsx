@@ -7,9 +7,10 @@ import ok from "@/media/images/footerIcon2.svg";
 import tg from "@/media/images/footerIcon3.svg";
 import Image from "next/image";
 import {useTranslation} from "@/app/i18n/client";
+import {backendHost} from "@/lib/consts/consts";
 
 export default function Footer({emails, files, lng}) {
-    const { t } = useTranslation(lng, 'translation')
+    const { t } = useTranslation(lng, 'translation');
 
     const scrollToTop = (e) => {
         e.preventDefault();
@@ -39,67 +40,67 @@ export default function Footer({emails, files, lng}) {
                     <div className="footer__navigation_column__mobile">
                         <div className="footer__navigation_column__mobile_items">
                             <a href={`/${lng}/services`} className="footer__navigation_column__a">
-                                услуги
+                                {t('services').toLowerCase()}
                             </a>
                             <a href={`/${lng}/cases`} className="footer__navigation_column__a">
-                                кейсы
+                                {t('cases').toLowerCase()}
                             </a>
                             <a href={`/${lng}/blog`} className="footer__navigation_column__a">
-                                блог
+                                {t('navBlog').toLowerCase()}
                             </a>
                         </div>
                         <div className="footer__navigation_column__mobile_items">
                             <a href={`/${lng}/about-us`} className="footer__navigation_column__a">
-                                о нас
+                                {t('navAboutUs').toLowerCase()}
                             </a>
                             <a href={`/${lng}/awards`} className="footer__navigation_column__a">
-                                награды
+                                {t('navAwards').toLowerCase()}
                             </a>
                             <a href={`/${lng}/contacts`} className="footer__navigation_column__a">
-                                контакты
+                                {t('navContacts').toLowerCase()}
                             </a>
                         </div>
                     </div>
                 </div>
                 <div className="footer__navigation_column">
                     <p className="footer__navigation_column__text">
-                        для клиентов
+                        {t('forClients')}
                     </p>
                     {
                         emails.data.email_for_clients.map(item =>
-                            <a href={`mailto:${item}`} className="footer__navigation_column__a">
+                            <a key={item} href={`mailto:${item}`} className="footer__navigation_column__a">
                                 {item}
                             </a>
                         )
                     }
                     <p className="footer__navigation_column__text">
-                        для СМИ
+                        {t('forMedia')}
                     </p>
                     <a href={`mailto:${emails.data.email_for_mass_media}`} className="footer__navigation_column__a">
                         {emails.data.email_for_mass_media}
                     </a>
                     <p className="footer__navigation_column__text">
-                        для партнеров
+                        {t('forMedia')}
                     </p>
                     <a href={`mailto:${emails.data.email_for_partners}`} className="footer__navigation_column__a">
                         {emails.data.email_for_partners}
                     </a>
                     <p className="footer__navigation_column__text">
-                        для работы у нас
+                        {t('workingWithUs')}
                     </p>
                     <a href={`mailto:${emails.data.email_for_applicant}`} className="footer__navigation_column__a">
                         {emails.data.email_for_applicant}
                     </a>
                 </div>
                 <div className="footer__navigation_column">
-                    <a href={`mailto:${emails.data.telegram}`} className="footer__navigation_column__a">
+                    <a href={`${emails.data.telegram}`} className="footer__navigation_column__a">
                         telegram@avantage.project
                     </a>
-                    <a href={`mailto:${files.data.presentation}`} className="footer__navigation_column__a">
-                        скачать презентацию
+                    <a href={`${backendHost}${files.data.presentation}`} className="footer__navigation_column__a">
+                        {t('downloadPresentation')}
                     </a>
-                    <a href={`mailto:${files.data.brief}`} className="footer__navigation_column__a">
-                        скачать бриф
+                    <a href={`${backendHost}${files.data.brief}`} className="footer__navigation_column__a">
+                        {t('fillInTheBrief')}
                     </a>
                     <div className="footer__navigation_column__socialNetwork">
                         <a href={`mailto:${emails.data.vk}`} target="_blank">
@@ -115,7 +116,7 @@ export default function Footer({emails, files, lng}) {
                 </div>
                 <div className="footer__navigation_column">
                     <button onClick={scrollToTop} className="footer__navigation_column__button">
-                        вверх <Image src={arrow} alt="ввверх" />
+                        {t('up')} <Image src={arrow} alt="ввверх" />
                     </button>
                 </div>
                 <div className="footer__navigation_column footer__navigation_first">
@@ -125,7 +126,7 @@ export default function Footer({emails, files, lng}) {
                 </div>
                 <div className="footer__navigation_column">
                     <a href={`mailto:${emails.data.agreement}`} className="footer__navigation_column__down">
-                        политика сбора данных
+                        {t('dataCollectionPolicy')}
                     </a>
                 </div>
             </div>

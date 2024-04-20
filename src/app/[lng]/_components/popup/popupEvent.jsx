@@ -1,4 +1,4 @@
-import "../popupTg/style.scss";
+import ".//style.scss";
 import * as React from "react";
 import Image from "next/image";
 import close from "@/media/images/close.svg";

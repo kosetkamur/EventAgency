@@ -3,6 +3,7 @@ import icon3 from "@/media/images/icon3.svg";
 import Image from "next/image";
 
 import "./style.scss";
+import {useTranslation} from "@/app/i18n";
 
 async function requestUsername(formData) {
     console.log('vjeoij', formData)
@@ -13,25 +14,26 @@ async function requestUsername(formData) {
 }
 
 
-export default function Form({lng}) {
+export default async function Form({lng}) {
+    const { t } = await useTranslation(lng,'translation');
 
     return (
         <form className="form-component">
             <div className="form-component__title">
                 <p className="form-component__title_p">
-                    <Image src={icon3} alt="солнышко" className="form-component__title_sun" />ЧТОБЫ <span>СВЯЗАТЬСЯ</span>,
+                    <Image src={icon3} alt="солнышко" className="form-component__title_sun" />{t('TOGET')} <span>{t('INTOUCH')}</span>,
                 </p>
                 <p className="form-component__title_p">
-                    НАПИШИ НАМ ПИСЬМО <Image src={arrowForm} alt="стрелка вниз" className="form-component__title_arrow" />
+                    {t('SENDUSANEMAIL')} <Image src={arrowForm} alt="стрелка вниз" className="form-component__title_arrow" />
                 </p>
             </div>
             <div className="form-component__form">
                 <div className="form-component__form_header">
                     <p>
-                        КОМУ:  AVANTAGE PROJECT
+                        {t('TOAVANTAGEPROJECT')}
                     </p>
                     <p>
-                        ТЕМА: МЕРОПРИЯТИЕ
+                        {t('SUBJECTEVENT')}
                     </p>
                 </div>
                 <div className="form-component__form_main">

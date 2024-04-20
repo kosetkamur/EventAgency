@@ -3,11 +3,11 @@ import "./header.scss";
 import * as React from 'react';
 import Link from "next/link";
 import logo from "../../../media/images/logo.svg";
-import burger from "../../../media/images/burger.svg";
 import Image from "next/image";
 import Nav from "@/app/[lng]/_header/_nav/nav.jsx";
+import ButtonHeader from "@/app/[lng]/_header/button";
 
-export default function Header({lng}) {
+export default function HeaderComponent({lng, files}) {
     return (
         <header className="header" id="header">
             <div className="header-desk">
@@ -33,9 +33,7 @@ export default function Header({lng}) {
                     </Link>
                 </div>
                 <div className="header-mob__burger">
-                    <button className="header-mob__burger_item">
-                        <Image src={burger} alt="меню" />
-                    </button>
+                    <ButtonHeader lng={lng} files={files} />
                 </div>
             </div>
         </header>

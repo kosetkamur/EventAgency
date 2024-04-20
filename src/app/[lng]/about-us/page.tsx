@@ -52,7 +52,7 @@ export default function CasePage({ params: { lng } }) {
                         <div className="parallax-components__numbers_num">
                             <div className="parallax-components__numbers_num">
                                 <p className="parallax-components__numbers_num__title">
-                                    >
+                                    &gt;
                                 </p>
                                 <div className="parallax-components__numbers_num__container">
                                     <p className="parallax-components__numbers_num__title">
@@ -76,7 +76,7 @@ export default function CasePage({ params: { lng } }) {
                     <div className="parallax-components__numbers">
                         <div className="parallax-components__numbers_num">
                             <p className="parallax-components__numbers_num__title">
-                                >
+                                &gt;
                             </p>
                             <div className="parallax-components__numbers_num__container">
                                 <p className="parallax-components__numbers_num__title">
@@ -99,7 +99,7 @@ export default function CasePage({ params: { lng } }) {
                     <div className="parallax-components__numbers">
                         <div className="parallax-components__numbers_num">
                             <p className="parallax-components__numbers_num__title">
-                                <span className="parallax-components__numbers_num__title_none">></span>
+                                <span className="parallax-components__numbers_num__title_none">&gt;</span>
                             </p>
                             <div className="parallax-components__numbers_num__container">
                                 <p className="parallax-components__numbers_num__title">

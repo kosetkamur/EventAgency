@@ -118,7 +118,7 @@ export default function Artical({caseInfo, anotherCases, lng}) {
                 <div className="article-page__anotherCases">
                     {
                         anotherCases.map(item =>
-                        <CardCaseComponent lng={lng} item={item} />
+                        <CardCaseComponent key={item.id} lng={lng} item={item} />
                         )
                     }
                 </div>

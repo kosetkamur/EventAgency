@@ -1,6 +1,5 @@
 "use client";
 import "./style.scss";
-import {useState} from "react";
 import Link from "next/link";
 import Image from "next/image";
 import icon2 from "@/media/images/icon2.svg";

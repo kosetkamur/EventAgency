@@ -3,8 +3,28 @@ import Image from "next/image";
 import logo from "@/media/images/logo.svg";
 import burger from "@/media/images/burger.svg";
 import * as React from "react";
+import {backendHost} from "@/lib/consts/consts";
+import {useTranslation} from "@/app/i18n";
+import ButtonHeader from "@/app/[lng]/_header/button";
 
-export default function HeaderScroll() {
+async function getFiles(lng) {
+    const res = await fetch(
+        `${backendHost}/api/core.files?lang=${lng}`,
+        {
+            method: 'GET',
+        }
+    )
+
+    if (!res.ok) {
+        console.log(res.status)
+    }
+
+    return res.json()
+}
+
+export default async function HeaderScroll({lng}) {
+    const files = await getFiles(lng);
+    const { t } = await useTranslation(lng,'translation');
     return (
         <div className="header-desk-scroll">
             <div className="header-desk-scroll__logo">
@@ -13,12 +33,10 @@ export default function HeaderScroll() {
                 </Link>
             </div>
             <div className="header-desk-scroll__burger">
-                <Link href="/" className="header-desk-scroll__burger_text">
-                    скачать презентацию
+                <Link href={`${backendHost}/${files.data.presentation}`} className="header-desk-scroll__burger_text">
+                    {t('downloadPresentation')}
                 </Link>
-                <button className="header-desk-scroll__burger_item">
-                    <Image src={burger} alt="меню" />
-                </button>
+                <ButtonHeader files={files} lng={lng} />
             </div>
         </div>
     );

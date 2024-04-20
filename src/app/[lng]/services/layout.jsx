@@ -1,6 +1,4 @@
-import type {PropsWithChildren} from "react";
-
-export default function CaseLayout({children}: PropsWithChildren<unknown>) {
+export default function CaseLayout({children}) {
     return (
         <div>{children}</div>
     );

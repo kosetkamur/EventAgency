@@ -1,13 +1,13 @@
 {
-  "to-second-page": "ВЫ ДОВЕРЯЕТЕ",
   "navServices": "Services",
   "navCases": "Cases",
   "navAwards": "Awards",
   "navBlog": "Blog",
   "navAboutUs": "About us",
   "navContacts": "Contacts",
-  "forClients": "FOR CLIENTS",
+  "forClients": "for clients",
   "services": "services",
+  "home": "home",
   "howWeWork": "how we work",
   "whyUs": "why us",
   "brief": "brief",
@@ -55,7 +55,27 @@
   "leavearequest": "leave a request",
 
   "CONTACTUS": "CONTACT US",
-  "dataCollectionPolicy": "data collection policy"
+  "dataCollectionPolicy": "data collection policy",
+  "forMedia": "for media",
+  "forPartners": "for partners",
+  "workingWithUs": "working with us",
+  "downloadPresentation": "download presentation",
+  "fillInTheBrief": "fill in the brief",
+  "fillBrief": "FILL IN THE BRIEF",
+  "up": "up",
+
+  "wePlanAnd": "we plan and execute",
+  "execute": "unforgettable,",
+  "unforgettableLargeScale": "large-scale",
+  "events": "events",
+  "whyUsBtn": "why us",
+
+  "TOGET": "TO GET",
+  "INTOUCH": "IN TOUCH",
+  "SENDUSANEMAIL": "SEND US AN EMAIL",
+
+  "TOAVANTAGEPROJECT" : "TO: AVANTAGE PROJECT",
+  "SUBJECTEVENT" : "SUBJECT: EVENT"
 }
 
 

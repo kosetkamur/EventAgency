@@ -20,16 +20,16 @@ export default async function ServicesPage({ params: { lng } }) {
                 <div className="services-page__tagline">
                     <div className="services-page__tagline_container">
                         <p className="services-page__tagline_container__text services-page__tagline_container__align1">
-                            мы реализуем
+                            {t('wePlanAnd')}
                         </p><br />
                         <p className="services-page__tagline_container__text services-page__tagline_container__align2">
-                            <Image src={icon4} alt="солнышко" className="services-page__tagline_container__text_image" />  масштабные и
+                            <Image src={icon4} alt="солнышко" className="services-page__tagline_container__text_image" />  {t('execute')}
                         </p><br />
                         <p className="services-page__tagline_container__text services-page__tagline_container__align3">
-                            запоминающиеся
+                            {t('unforgettableLargeScale')}
                         </p><br />
                         <p className="services-page__tagline_container__text services-page__tagline_container__align4">
-                            мероприятия
+                            {t('events')}
                         </p>
                     </div>
                 </div>

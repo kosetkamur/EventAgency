@@ -11,7 +11,7 @@ async function getData(lng) {
     )
 
     if (!res.ok) {
-        throw new Error('Failed to fetch data')
+        console.log(res.status)
     }
 
     return res.json()

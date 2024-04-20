@@ -11,12 +11,13 @@ import CaseMainComponent from "@/app/[lng]/_components/cases/page";
 import AwardComponent from "@/app/[lng]/_components/award/page";
 import PartnersComponent from "@/app/[lng]/_components/partners/page";
 import button from "@/media/images/button.png";
-import titleCase from "@/media/images/titleCase.svg";
+import bg from "@/media/images/background2Main.png";
 import mainArrow from "@/media/images/mainArrow2.svg";
 import { useTranslation } from '@/app/i18n';
 import {fallbackLng, languages} from "@/app/i18n/settings";
 import {backendHost} from "@/lib/consts/consts";
 import ErrorServer from "@/app/[lng]/_components/error/error";
+import popupDocument from "@/app/[lng]/_components/popup/popupDocument";
 
 export const metadata = {
     title: "Организация мероприятий в Москве | Мероприятия для бизнеса b2b",
@@ -46,6 +47,7 @@ export default async function Home({ params: { lng } }) {
 
     return (
         <main className="main-page">
+            <popupDocument lng={lng} />
             <section className="main-page__video">
                 <video width="100%" controls autoPlay loop preload="auto" playsInline>
                     <source src={data.data.intro_video} type="video/mp4" />
@@ -68,9 +70,12 @@ export default async function Home({ params: { lng } }) {
                 </div>
                 <ServicesComponent lng={lng} />
             </section>
-            <div className="parallax-components">
-                <div className="containerAll">
-                    <div className="parallax-components__blur">
+            <div className="main-page__parallax">
+                <div className="main-page__parallax_image">
+                    <Image src={bg} alt="полоски" className="main-page__parallax_image__img" />
+                </div>
+                <div className="containerAll main-page__parallax_container">
+                    <div className="main-page__parallax_text">
                         <div className="parallax-components__blur_container">
                             <div className="parallax-components__blur_container__button">
                                 <Image src={button} alt="Кнопка"  className="parallax-components__blur_container__button_img" />
@@ -108,8 +113,8 @@ export default async function Home({ params: { lng } }) {
                         </div>
                     </div>
                 </div>
-                <div className="parallax-components__line"></div>
-                <div className="containerAll">
+                <div className="parallax-components__line main-page__parallax_container"></div>
+                <div className="containerAll main-page__parallax_container">
                     <div className="parallax-components__numbers">
                         <div className="parallax-components__numbers_num">
                             <p className="parallax-components__numbers_num__title">
@@ -131,8 +136,8 @@ export default async function Home({ params: { lng } }) {
                         </div>
                     </div>
                 </div>
-                <div className="parallax-components__line"></div>
-                <div className="containerAll">
+                <div className="parallax-components__line main-page__parallax_container"></div>
+                <div className="containerAll main-page__parallax_container">
                     <div className="parallax-components__numbers">
                         <div className="parallax-components__numbers_num">
                             <p className="parallax-components__numbers_num__title">
@@ -153,24 +158,24 @@ export default async function Home({ params: { lng } }) {
                             </p>
                         </div>
                     </div>
-                </div>
-                <div className="parallax-components__buttons">
-                    <div className="parallax-components__buttons_item">
-                        <a href={`/${lng}`} className="parallax-components__buttons_item__btn1">
-                            {t("portfolio")}
-                        </a>
+                    <div className="parallax-components__buttons">
+                        <div className="parallax-components__buttons_item">
+                            <a href={`${backendHost}${data.data.presentation}`} className="parallax-components__buttons_item__btn1">
+                                {t("portfolio")}
+                            </a>
+                        </div>
+                        <div className="parallax-components__buttons_item">
+                            <a href={`/${lng}/blog`} className="parallax-components__buttons_item__btn2">
+                                {t("media")}
+                            </a>
+                        </div>
                     </div>
-                    <div className="parallax-components__buttons_item">
-                        <a href={`/${lng}/blog`} className="parallax-components__buttons_item__btn2">
-                            {t("media")}
-                        </a>
-                    </div>
-                </div>
-                <div className="parallax-components__title">
-                    <div className="parallax-components__title_photoTitle">
-                        <p className="parallax-components__title_photoTitle__text">
-                            [ {t('cases')} ]
-                        </p>
+                    <div className="parallax-components__title">
+                        <div className="parallax-components__title_photoTitle">
+                            <p className="parallax-components__title_photoTitle__text">
+                                [ {t('cases')} ]
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>

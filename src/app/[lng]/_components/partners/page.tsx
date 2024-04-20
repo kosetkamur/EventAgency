@@ -25,7 +25,7 @@ export default async function PartnersComponent({lng}) {
          <div className="partners-component">
              {
                  partners.data.map(partner =>
-                     <div className="partners-component__item">
+                     <div key={partner.logo} className="partners-component__item">
                      <Image src={`${backendHost}${partner.logo}`}
                             width="100"
                             height="100"
@@ -36,7 +36,7 @@ export default async function PartnersComponent({lng}) {
              }
              {
                  partners.data.map(partner =>
-                     <div className="partners-component__item">
+                     <div key={partner.logo} className="partners-component__item">
                          <Image src={`${backendHost}${partner.logo}`}
                                 width="100"
                                 height="100"

@@ -22,7 +22,7 @@ export default function Cases({cases,lng}) {
             <div className="case-page__cases">
                 {
                     cases.data.map(item => (
-                        <CardCaseComponent lng={lng} item={item} />
+                        <CardCaseComponent key={item.id} lng={lng} item={item} />
                     ))
                 }
             </div>
