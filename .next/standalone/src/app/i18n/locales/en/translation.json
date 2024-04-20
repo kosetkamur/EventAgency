@@ -7,6 +7,7 @@
   "navContacts": "Contacts",
   "forClients": "for clients",
   "services": "services",
+  "home": "home",
   "howWeWork": "how we work",
   "whyUs": "why us",
   "brief": "brief",
@@ -60,7 +61,21 @@
   "workingWithUs": "working with us",
   "downloadPresentation": "download presentation",
   "fillInTheBrief": "fill in the brief",
-  "up": "up"
+  "fillBrief": "FILL IN THE BRIEF",
+  "up": "up",
+
+  "wePlanAnd": "we plan and execute",
+  "execute": "unforgettable,",
+  "unforgettableLargeScale": "large-scale",
+  "events": "events",
+  "whyUsBtn": "why us",
+
+  "TOGET": "TO GET",
+  "INTOUCH": "IN TOUCH",
+  "SENDUSANEMAIL": "SEND US AN EMAIL",
+
+  "TOAVANTAGEPROJECT" : "TO: AVANTAGE PROJECT",
+  "SUBJECTEVENT" : "SUBJECT: EVENT"
 }
 
 
