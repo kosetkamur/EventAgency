@@ -1,0 +1,323 @@
+.awards-page {
+  width: 100%;
+
+  &__title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 80px 0 100px 0;
+
+    &_text {
+      width: 100%;
+      h1 {
+        font-size: 8rem;
+        transform: translateY(100%);
+        opacity: 0;
+        transition: .3s;
+      }
+
+      &__black{
+        animation: 0.5s goText forwards ease-in-out;
+      }
+
+      &__green {
+        color: #00BBB6;
+        margin-left: 5%;
+        width: max-content;
+        max-width: max-content;
+        animation: 0.5s goText 0.2s forwards ease-in-out;
+
+        &_br {
+          display: none;
+        }
+      }
+    }
+
+    &_description {
+      max-width: 300px;
+      position: relative;
+    }
+
+    &_description::after{
+      content: '•';
+      color: #463CFF;
+      position: absolute;
+      left: -60px;
+      top: -42px;
+      font-size: 8rem;
+      line-height: .4;
+    }
+  }
+
+  &__semicircle {
+    width: 100%;
+    height: min-content;
+    margin-bottom: -5px;
+  }
+
+  &__semicircle1 {
+    width: 100%;
+    height: min-content;
+    margin-top: -1px;
+    transform: rotate(180deg);
+  }
+
+  &__arrow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 50px 0;
+    animation: 1s arrowHop infinite ease-in-out;
+    transition: .3s;
+    transform: translateY(0%);
+  }
+
+  &__awards {
+    background-color: #1e1e1e;
+
+    &_container {
+      width: 88%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 180px;
+
+      &__item {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        &_text {
+          width: 50%;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+
+          &__year {
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1;
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, .7);
+          }
+
+          &__title {
+            font-size: 4rem;
+            font-weight: 700;
+            line-height: 1;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+          }
+
+          &__place {
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1;
+            color: #FFFFFF;
+            margin-bottom: 10px;
+          }
+
+          &__nomination {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1;
+            color: #FFFFFF;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+          }
+
+          &__event {
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1;
+            color: #FFFFFF;
+          }
+        }
+
+        &_images {
+          width: 50%;
+        }
+      }
+
+      &__item:nth-child(2n) {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+      }
+    }
+  }
+}
+
+@keyframes arrowHop {
+  0%{
+    transform: translateY(0%);
+  }
+  50%{
+    transform: translateY(10%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}
+
+@keyframes goText {
+  0% {
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .awards-page__title_description {
+    max-width: 200px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .awards-page__title_text {
+    h1 {
+      font-size: 8vw;
+    }
+  }
+}
+
+@media screen and (max-width: 1350px) {
+  .awards-page__title {
+    display: flex;
+    flex-direction: column;
+
+    &_description {
+      margin-left: 35px;
+      max-width: 442px;
+      position: relative;
+      margin-top: 42px;
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .awards-page__awards_container__item_text {
+      max-width: 400px;
+      &__year {
+        font-size: 1rem;
+      }
+
+      &__title {
+        font-size: 3rem;
+      }
+
+      &__place {
+        font-size: 2rem;
+      }
+
+      &__nomination {
+        font-size: 1rem;
+      }
+
+      &__event {
+        font-size: 1rem;
+      }
+    }
+}
+
+@media screen and (max-width: 800px) {
+  .awards-page {
+
+    &__title {
+      margin: 36px 0 70px 0;
+
+      &_text {
+        h1 {
+          font-size: 3.375rem;
+        }
+
+        &__green {
+          margin-left: 0;
+
+          &_br {
+            display: block;
+          }
+        }
+      }
+
+      &_description {
+        margin-left: 22px;
+      }
+      &_description::after {
+        font-size: 4rem;
+        left: -33px;
+        top: -24px;
+      }
+    }
+
+    &__awards {
+
+      &_container {
+        width: 100%;
+        height: auto;
+        padding: 0 15px;
+        box-sizing: border-box;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+
+        &__item {
+          display: flex;
+          flex-direction: column;
+
+          &_text {
+            width: 100%;
+
+            &__year {
+              font-size: 1rem;
+              margin-bottom: 10px;
+            }
+
+            &__title {
+              font-size: 2rem;
+              margin-bottom: 20px;
+              text-transform: uppercase;
+            }
+
+            &__place {
+              font-size: 0.875rem;
+              margin-bottom: 5px;
+            }
+
+            &__nomination {
+              font-size: 1rem;
+              margin-bottom: 20px;
+            }
+
+            &__event {
+              font-size: 1rem;
+              margin-bottom: 70px;
+            }
+          }
+
+          &_images {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 70px;
+
+            img {
+              width: 100%;
+              height: auto;
+            }
+          }
+        }
+
+        &__item:nth-child(2n) {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}

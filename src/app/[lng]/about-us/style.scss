@@ -1,0 +1,495 @@
+.about-us-page {
+  width: 100%;
+
+  #marqeeMobile {
+    display: none;
+  }
+
+  #marqeeDesktop {
+    display: block;
+  }
+
+  &__tagline {
+    background-image: url("../../../media/images/aboutBg.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: left;
+    border-radius: 10px;
+    max-height: 765px;
+    min-height: 765px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    &_container {
+      max-width: 1579px;
+      width: 100%;
+      margin: 0 auto;
+
+      &__text {
+        text-transform: uppercase;
+        color: #ffffff;
+        font-size: 8rem;
+        font-weight: 900;
+        line-height: 1;
+        padding: 0 2rem;
+        text-align: center;
+        transform: translateY(500%);
+
+
+        &_image {
+          width: 165px;
+          height: auto;
+          max-width: 165px;
+        }
+      }
+
+      &__align1 {
+        animation: 0.5s goText forwards ease-in-out;
+      }
+
+      &__align2 {
+        animation: 0.5s goText 0.2s forwards ease-in-out;
+      }
+
+      &__align3 {
+        animation: 0.5s goText 0.4s forwards ease-in-out;
+        margin-bottom: 6%;
+      }
+
+      &__description {
+        transform: translateY(500%);
+        text-align: center;
+        animation: 0.5s goText 0.6s forwards ease-in-out;
+        color: #ffffff;
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1;
+        padding: 0 2rem;
+      }
+    }
+  }
+
+  &__title {
+    font-size: 8rem;
+    font-weight: 800;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    justify-content: center;
+    line-height: 1;
+    margin-bottom: 100px;
+  }
+}
+
+.parallax-components {
+  background-image: url("../../../media/images/background2Main.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 0 0 100px 0;
+
+  &__blur {
+    width: 100%;
+    background-color: rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+
+    &_container {
+      width: 88%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 70px 0;
+
+      &__text {
+        position: relative;
+        box-sizing: border-box;
+        margin-bottom: 50px;
+        max-width: 471px;
+        margin-right: 100px;
+
+        &_p {
+          color: #000000;
+          font-size: 1.25rem;
+          font-weight: 500;
+          line-height: 1;
+          margin-bottom: 50px;
+        }
+      }
+
+      &__button {
+        max-width: 405px;
+
+        &_img {
+          min-width: 405px;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  &__line {
+    border-bottom: 1px solid #000000;
+  }
+
+  &__numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 120px 0;
+
+    &_num {
+      display: flex;
+      flex-direction: row;
+
+      &__title {
+        font-size: 8rem;
+        font-weight: 800;
+        line-height: 1;
+
+        &_none {
+          opacity: 0;
+          font-size: 8rem;
+        }
+
+        &_year {
+          font-size: 2rem;
+        }
+      }
+
+      &__text {
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1;
+      }
+    }
+
+    &_description {
+      max-width: 406px;
+      &__text {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+
+    &_item {
+      &__btn1 {
+        border: none;
+        background-color: #00BBB6;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        font-size: 2rem;
+        font-weight: 500;
+        border-radius: 50px;
+        padding: 30px 80px;
+      }
+
+      &__btn1:hover {
+        background-color: #01B1AD;
+        transition: .3s;
+      }
+
+      &__btn2 {
+        border: 2px solid #000000;
+        background-color: transparent;
+        text-transform: uppercase;
+        color: #000000;
+        font-size: 2rem;
+        font-weight: 500;
+        border-radius: 50px;
+        padding: 30px 80px;
+      }
+
+      &__btn2:hover {
+        background-color: #00BBB6;
+        border: 2px solid #00BBB6;
+        color: #FFFFFF;
+        transition: .3s;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .about-us-page__tagline {
+    max-height: 700px;
+    min-height: 700px;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .about-us-page__tagline_container__text {
+    font-size: 6vw;
+  }
+  .about-us-page__tagline_container__description {
+    font-size: 2vw;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .about-us-page__tagline_container__text {
+    font-size: 7vw;
+  }
+}
+
+@media screen and (max-width: 1500px) {
+  .about-us-page__tagline {
+    max-height: 500px;
+    min-height: 500px;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .about-us-page__title {
+    font-size: 10vw;
+  }
+  .parallax-components {
+    &__blur_container__text {
+      margin-right: 0;
+    }
+
+    &__blur_container__button {
+      max-width: 300px;
+      &_img {
+        min-width: 300px;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__numbers {
+      margin: 100px 0;
+
+      &_num {
+        &__title {
+          font-size: 5.5rem;
+
+          &_none {
+            font-size: 5.5rem;
+          }
+
+          &_year {
+            font-size: 2rem;
+          }
+        }
+
+        &__text {
+          font-size: 1.5rem;
+        }
+      }
+
+      &_description {
+        max-width: 300px;
+      }
+    }
+
+    &__buttons_item {
+      &__btn1 {
+        border: none;
+        background-color: #00BBB6;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        font-size: 2rem;
+        font-weight: 500;
+        border-radius: 50px;
+        padding: 20px 60px;
+      }
+
+      &__btn2 {
+        border: 2px solid #000000;
+        background-color: transparent;
+        text-transform: uppercase;
+        color: #000000;
+        font-size: 2rem;
+        font-weight: 500;
+        border-radius: 50px;
+        padding: 20px 60px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .parallax-components__blur_container__text::before {
+    width: 150px;
+    height: 150px;
+  }
+  .parallax-components__blur_container__text {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .parallax-components {
+    &__blur {
+      &_container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 70px 15px;
+
+        &__text::before {
+          content: "";
+          background-image: none;
+          height: 0;
+          width: 0;
+        }
+
+        &__text {
+          width: 100%;
+          margin-bottom: 50px;
+          margin-top: 100px;
+          max-width: max-content;
+          margin-right: 0;
+
+          &_p {
+            color: #000000;
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 50px;
+          }
+        }
+
+        &__button {
+          max-width: 214px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+
+          &_img {
+            max-width: 214px;
+            min-width: 214px;
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    &__numbers {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: flex-start;
+      gap: 50px;
+      margin: 50px 0;
+
+      &_num {
+        &__title {
+          font-size: 6rem;
+
+          &_none {
+            font-size: 6rem;
+          }
+
+          &_year {
+            font-size: 1.25rem;
+          }
+        }
+
+        &__text {
+          font-size: 1.25rem;
+        }
+      }
+
+      &_description {
+        max-width: max-content;
+        width: 100%;
+        &__text {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    &__buttons {
+      gap: 10px;
+
+      &_item {
+        &__btn1 {
+          font-size: 1rem;
+          padding: 16px 45px;
+        }
+        &__btn2 {
+          font-size: 1rem;
+          padding: 16px 45px;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 650px) {
+  .about-us-page {
+
+    #marqeeMobile {
+      margin-top: 160px;
+      display: block;
+    }
+
+    #marqeeDesktop {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .about-us-page {
+
+    &__tagline {
+      max-height: 226px;
+      min-height: 226px;
+    }
+
+    &__title {
+      font-size: 4rem;
+      justify-content: flex-start;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .about-us-page__title {
+      font-size: 15vw;
+  }
+  .parallax-components__numbers_num__title {
+    font-size: 4.5rem;
+
+    &_none {
+      font-size: 4.5rem;
+    }
+  }
+  .parallax-components__buttons_item__btn1, .parallax-components__buttons_item__btn2 {
+    padding: 14px 35px;
+  }
+}
+
+@keyframes goText {
+  0% {
+    transform: translateY(500%);
+  }
+  100%{
+    transform: translateY(0%);
+  }
+}

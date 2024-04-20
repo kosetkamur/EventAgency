@@ -1,0 +1,415 @@
+.parallax-components {
+  background-image: url("../../../../media/images/background2Main.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left center;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  padding: 150px 0 100px 0;
+
+  &__blur {
+    width: 100%;
+    background-color: rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+
+    &_container {
+      width: 88%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 70px 0;
+
+      &__text::before {
+        content: "";
+        background-image: url("../../../../media/images/cav.svg");
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+        max-width: 160px;
+        height: 139px;
+        width: 160px;
+        position: absolute;
+        top: -100px;
+        left: -100px;
+      }
+
+      &__text {
+        position: relative;
+        box-sizing: border-box;
+        margin-bottom: 50px;
+        max-width: 471px;
+        margin-right: 100px;
+
+        &_p {
+          color: #000000;
+          font-size: 1.25rem;
+          font-weight: 500;
+          line-height: 1;
+          margin-bottom: 50px;
+        }
+
+        &_btn {
+          background: transparent;
+          text-transform: uppercase;
+          border-top: 0;
+          border-left: 0;
+          border-right: 0;
+          border-image-slice: 1;
+          border-bottom: 2px solid;
+          border-image-source: linear-gradient(to left, #E20080, #00BBB6);
+          color: #000000;
+          font-size: 1.25rem;
+          font-weight: 500;
+          line-height: 1;
+        }
+      }
+
+      &__button {
+        max-width: 387px;
+
+        &_img {
+          min-width: 387px;
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  &__line {
+    border-bottom: 1px solid #000000;
+  }
+
+  &__numbers {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 120px 0;
+
+    &_num {
+      display: flex;
+      flex-direction: row;
+
+      &__title {
+        font-size: 8rem;
+        font-weight: 800;
+        line-height: 1;
+
+        &_none {
+          opacity: 0;
+          font-size: 8rem;
+        }
+
+        &_year {
+          font-size: 2rem;
+        }
+      }
+
+      &__text {
+        font-size: 2rem;
+        font-weight: 400;
+        line-height: 1;
+      }
+    }
+
+    &_description {
+      max-width: 406px;
+      &__text {
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 10px;
+
+    &_item {
+      &__btn1 {
+        border: none;
+        background-color: #00BBB6;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        font-size: 2rem;
+        font-weight: 500;
+        border-radius: 50px;
+        padding: 30px 80px;
+      }
+
+      &__btn1:hover {
+        background-color: #01B1AD;
+        transition: .3s;
+      }
+
+      &__btn2 {
+        border: 2px solid #000000;
+        background-color: transparent;
+        text-transform: uppercase;
+        color: #000000;
+        font-size: 2rem;
+        font-weight: 500;
+        border-radius: 50px;
+        padding: 30px 80px;
+      }
+
+      &__btn2:hover {
+        background-color: #00BBB6;
+        border: 2px solid #00BBB6;
+        color: #FFFFFF;
+        transition: .3s;
+      }
+    }
+  }
+
+  &__title {
+    margin: 120px 0 30px 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    &_photoTitle {
+      background-image: url("../../../../media/images/titleCase.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 345px auto;
+      width: 345px;
+      height: 116px;
+      max-width: 345px;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      margin-top: 100px;
+      &__text {
+        text-align: center;
+        font-size: 1.25rem;
+        font-weight: 500;
+        line-height: 1;
+        margin-bottom: -14px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .parallax-components {
+    &__blur_container__text {
+      margin-right: 0;
+    }
+
+    &__blur_container__button {
+      max-width: 300px;
+      &_img {
+        min-width: 300px;
+        width: 100%;
+        height: auto;
+      }
+    }
+
+    &__numbers {
+      margin: 100px 0;
+
+      &_num {
+        &__title {
+          font-size: 5.5rem;
+
+          &_none {
+            font-size: 5.5rem;
+          }
+
+          &_year {
+            font-size: 2rem;
+          }
+        }
+
+        &__text {
+          font-size: 1.5rem;
+        }
+      }
+
+      &_description {
+        max-width: 300px;
+      }
+    }
+
+    &__buttons_item {
+      &__btn1 {
+        border: none;
+        background-color: #00BBB6;
+        text-transform: uppercase;
+        color: #FFFFFF;
+        font-size: 2rem;
+        font-weight: 500;
+        border-radius: 50px;
+        padding: 20px 60px;
+      }
+
+      &__btn2 {
+        border: 2px solid #000000;
+        background-color: transparent;
+        text-transform: uppercase;
+        color: #000000;
+        font-size: 2rem;
+        font-weight: 500;
+        border-radius: 50px;
+        padding: 20px 60px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .parallax-components__blur_container__text::before {
+    width: 150px;
+    height: 150px;
+  }
+  .parallax-components__blur_container__text {
+    max-width: 250px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .parallax-components {
+    padding: 100px 0 20px 0;
+
+    &__blur {
+      &_container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 70px 15px;
+
+        &__text::before {
+          content: "";
+          background-image: none;
+          height: 0;
+          width: 0;
+        }
+
+        &__text {
+          width: 100%;
+          margin-bottom: 50px;
+          margin-top: 100px;
+          max-width: max-content;
+          margin-right: 0;
+
+          &_p {
+            color: #000000;
+            font-size: 1.25rem;
+            font-weight: 500;
+            line-height: 1;
+            margin-bottom: 50px;
+          }
+        }
+
+        &__button {
+          max-width: 214px;
+          display: flex;
+          flex-direction: row;
+          justify-content: center;
+
+          &_img {
+            max-width: 214px;
+            min-width: 214px;
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+
+    &__numbers {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+      align-items: flex-start;
+      gap: 50px;
+      margin: 50px 0;
+
+      &_num {
+        &__title {
+          font-size: 6rem;
+
+          &_none {
+            font-size: 6rem;
+          }
+
+          &_year {
+            font-size: 1.25rem;
+          }
+        }
+
+        &__text {
+          font-size: 1.25rem;
+        }
+      }
+
+      &_description {
+        max-width: max-content;
+        width: 100%;
+        &__text {
+          font-size: 0.8rem;
+        }
+      }
+    }
+
+    &__buttons {
+      gap: 10px;
+
+      &_item {
+        &__btn1 {
+          font-size: 1rem;
+          padding: 16px 45px;
+        }
+        &__btn2 {
+          font-size: 1rem;
+          padding: 16px 45px;
+        }
+      }
+    }
+
+    &__title {
+      margin: 120px 0 0 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+
+      &_photoTitle {
+        background-size: 199px auto;
+        width: 199px;
+        height: 70px;
+        max-width: 199px;
+        margin-top: 0;
+        &__text {
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 400px) {
+  .parallax-components__numbers_num__title {
+    font-size: 4.5rem;
+
+    &_none {
+      font-size: 4.5rem;
+    }
+  }
+  .parallax-components__buttons_item__btn1, .parallax-components__buttons_item__btn2 {
+    padding: 14px 35px;
+  }
+}

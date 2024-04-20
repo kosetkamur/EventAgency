@@ -1,0 +1,82 @@
+import "./style.scss";
+import * as React from "react";
+import Image from "next/image";
+import vk from "@/media/images/footerIcon1.svg";
+import ok from "@/media/images/footerIcon2.svg";
+import tg from "@/media/images/footerIcon3.svg";
+import {backendHost} from "@/lib/consts/consts";
+
+async function getFiles(lng) {
+    const res = await fetch(
+        `${backendHost}/api/core.files?lang=${lng}`,
+        {
+            method: 'GET',
+        }
+    )
+
+    if (!res.ok) {
+        console.log(res.status)
+    }
+
+    return res.json()
+}
+
+export default async function BurgerComponent({lng}) {
+    const emails = await getFiles(lng);
+
+     return (
+         <div className="burger-component">
+             <div className="burger-component__container">
+                <div className="burger-component__container_menu">
+                    <div className="burger-component__container_menu__href">
+                         <a href={`/${lng}`} className="burger-component__container_menu__href_a">
+                             ГЛАВНАЯ
+                         </a>
+                         <a href={`/${lng}/blog`} className="burger-component__container_menu__href_a">
+                             БЛОГ
+                         </a>
+                         <a href={`/${lng}/cases`} className="burger-component__container_menu__href_a">
+                             КЕЙСЫ
+                         </a>
+                         <a href={`/${lng}/about-us`} className="burger-component__container_menu__href_a">
+                             О НАС
+                         </a>
+                         <a href={`/${lng}/awards`} className="burger-component__container_menu__href_a">
+                             НАГРАДЫ
+                         </a>
+                         <a href={`/${lng}/contacts`} className="burger-component__container_menu__href_a">
+                             КОНТАКТЫ
+                         </a>
+                    </div>
+                    <div className="burger-component__container_menu__buttons">
+                        <div className="burger-component__container_menu__buttons_socialMedia">
+                            <a href={`mailto:${emails.data.vk}`} target="_blank">
+                                <Image src={vk} alt="Вконтакте" className="burger-component__container_menu__buttons_socialMedia__a" />
+                            </a>
+                            <a href={`mailto:${emails.data.ok}`} target="_blank">
+                                <Image src={ok} alt="Одноклассники" className="burger-component__container_menu__buttons_socialMedia__a" />
+                            </a>
+                            <a href={`mailto:${emails.data.telegram}`} target="_blank">
+                                <Image src={tg} alt="Телеграмм" className="burger-component__container_menu__buttons_socialMedia__a" />
+                            </a>
+                        </div>
+                        <div className="burger-component__container_menu__buttons_btn">
+                            <a
+                                href={emails.data.brief}
+                                className="burger-component__container_menu__buttons_btn__brief"
+                            >
+                                ЗАПОЛНИТЬ БРИФ
+                            </a>
+                            <a
+                                href={emails.data.presentation}
+                                className="burger-component__container_menu__buttons_btn__presentation"
+                            >
+                                СКАЧАТЬ ПРЕЗЕНТАЦИЮ
+                            </a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+         </div>
+    )
+}

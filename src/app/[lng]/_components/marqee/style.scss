@@ -1,0 +1,86 @@
+.marqee-page {
+  background-color: #80FF00;
+  width: 100%;
+  height: max-content;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    height: 5.7rem;
+    &_text {
+      font-size: 6rem;
+      font-weight: 800;
+      line-height: 1;
+      position: absolute;
+      min-width: 100%;
+      animation: scroll 20s linear 0s infinite;
+      margin-top: -19px;
+      p{
+        margin: 0;
+        padding: 0;
+      }
+    }
+    &_text2 {
+      font-size: 6rem;
+      font-weight: 800;
+      line-height: 1;
+      position: absolute;
+      min-width: 100%;
+      animation: scroll2 20s linear 0s infinite;
+      margin-top: -19px;
+      p{
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(-50%, 0)
+  }
+}
+
+@keyframes scroll2 {
+  0% {
+    transform: translate(-50%, 0);
+  }
+  100% {
+    transform: translate(0, 0)
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .marqee-page__container {
+    height: 3.2rem;
+    &_text {
+      font-size: 3rem;
+      margin-top: -7px;
+    }
+    &_text2 {
+      font-size: 3rem;
+      margin-top: -7px;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .marqee-page__container {
+    height: 1.20rem;
+    &_text {
+      font-size: 1.25rem;
+      margin-top: -5px;
+    }
+    &_text2 {
+      font-size: 1.25rem;
+      margin-top: -5px;
+    }
+  }
+}
