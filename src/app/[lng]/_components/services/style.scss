@@ -20,6 +20,7 @@
     margin-bottom: 50px;
     &_text {
       text-align: center;
+      text-transform: lowercase;
       font-size: 1.25rem;
       font-weight: 500;
       line-height: 1;
@@ -47,6 +48,7 @@
       justify-content: center;
       align-items: center;
       text-align: center;
+      text-transform: uppercase;
       p {
         font-size:calc(12px + 8 * (100vw - 320px) / 880);
         color: #000000;
@@ -66,11 +68,27 @@
       padding: 0 10px;
       box-sizing: border-box;
       text-align: center;
-      a {
+
+      &_btn {
         padding-top: 10px;
-        display: none;
-        text-align: center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        color: #000000;
+        background: transparent;
+        border: none;
+        font-size: 1.25rem;
+        font-weight: 400;
       }
+    }
+
+    &__ul>a {
+      padding-top: 10px;
+      display: none;
+      text-align: center;
+      color: #000000;
+      font-size: 1.25rem;
+      font-weight: 400;
     }
   }
 
@@ -104,7 +122,7 @@
 
   &_item:hover .services-component_item__ul {
     opacity: 1;
-    display: block;
+    //display: block;
     a {
       display: block;
     }

@@ -28,7 +28,7 @@ export default async function HeaderScroll({lng}) {
     return (
         <div className="header-desk-scroll">
             <div className="header-desk-scroll__logo">
-                <Link href="/">
+                <Link href={`/${lng}`}>
                     <Image src={logo} alt="логотип Авантаж" className="header-desk-scroll__logo_img" />
                 </Link>
             </div>

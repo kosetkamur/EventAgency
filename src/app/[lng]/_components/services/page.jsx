@@ -3,6 +3,7 @@ import * as React from "react";
 import {backendHost} from "@/lib/consts/consts";
 import {fallbackLng, languages} from "@/app/i18n/settings";
 import {useTranslation} from "@/app/i18n";
+import SentDocs from "@/app/[lng]/_components/services/sentDocs";
 
 async function getData(lng) {
     const res = await fetch(
@@ -19,13 +20,13 @@ async function getData(lng) {
     return res.json()
 }
 
-export default async function ServicesComponent({lng}) {
+export default async function ServicesComponent({lng, id}) {
     const refs = await getData(lng);
     if ([...languages].indexOf(lng) < 0) lng = fallbackLng
     const { t } = await useTranslation(lng, 'translation')
 
     return (
-        <>
+        <div id={id}>
             <div className="services-title">
                 <div className="services-title__photoTitle">
                     <p className="services-title__photoTitle_text">
@@ -65,7 +66,7 @@ export default async function ServicesComponent({lng}) {
                             {t('startCooperation')}
                         </a>
                         <a href={`mailto:${refs.data.form_for_freelancers}`}>
-                            {t('posendYourCVrtfolio')}
+                            {t('sendYourCV')}
                         </a>
                         <a href={`/${lng}/about-us`}>
                             {t('whyYouShouldWork')}
@@ -83,12 +84,10 @@ export default async function ServicesComponent({lng}) {
                         <a href={refs.data.requisites}>
                             {t('requisites')}
                         </a>
-                        <a href="@/app/[lng]/_components/services/page#">
-                            {t('constituentDocuments')}
-                        </a>
+                        <SentDocs lng={lng} />
                     </div>
                 </div>
             </div>
-        </>
+        </div>
     )
 }

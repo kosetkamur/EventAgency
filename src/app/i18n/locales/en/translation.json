@@ -75,7 +75,65 @@
   "SENDUSANEMAIL": "SEND US AN EMAIL",
 
   "TOAVANTAGEPROJECT" : "TO: AVANTAGE PROJECT",
-  "SUBJECTEVENT" : "SUBJECT: EVENT"
+  "SUBJECTEVENT" : "SUBJECT: EVENT",
+
+  "HIIAM": "HI, I AM",
+  "yourName": "(your name)",
+  "WENEEDTODO": "WE NEED TO DO",
+  "describeTheTask": "(describe the task)",
+  "ANDEVERYTHINGSHOULD": "AND EVERYTHING SHOULD",
+  "BEDONEPERFECTLY": "BE DONE PERFECTLY",
+  "CONTACTME": "CONTACT ME",
+  "HEREISMYEMAIL": "HERE IS MY EMAIL",
+  "ANDPHONENUMBER": "AND PHONE NUMBER",
+  "persData": "I consent to the processing of my personal data",
+  "send": "SEND",
+
+  "all": "all",
+  "internalCommunications": "internal communications",
+  "externalСommunications": "external communications",
+
+  "top50": "We are among the TOP 50 communication agencies in Russia",
+  "weInMedia": "WE ARE IN THE MEDIA",
+
+  "ADDRESS": "address",
+  "PHONENUMBER": "phone",
+  "EMAIL": "email",
+
+  "goTg": "gotg",
+  "weAreInRatings": "we are in ratings",
+
+  "bug": "Oops... Page not found",
+  "bugMessage": "Unfortunately, the page you requested has been moved or deleted, or perhaps it never existed in the first place",
+  "bugHref": "return to the homepage",
+  "bugMess": "Sorry, there was an error",
+  "subscribe": "subscribe",
+  "ENCYCLOPAEDIA": "ENCYCLOPAEDIA",
+  "ENCYCLOPAEDIAText": "Our Events Encyclopaedia is constantly being updated",
+
+  "hello": "HELLO!",
+  "WEAREANEVENTAGENCY": "WE ARE AN EVENT AGENCY",
+  "WEAREANEVENTAGENCYText": "The founders of the project are two strong professionals with many years of expertise in the field of event services, who have created a team that has become a top player in the market",
+  "text": "You may not know us yet, but you definitely know our projects. Under the leadership of Lilia Fedorova and Maria Rudakova during 10 years on the market we have realised unforgettable large-scale events for different businesses. Most of our clients tend to come back to us with new exciting projects: Avito, QIWI, Alfa-Bank, VK, Car of the Year, Lukoil, Sberbank, Promsvyazbank, Re:store, START.ru, VEKA, Wargaming.net, Garena, ADV Consulting, Metadynea, ANALPA, etc. work with us.",
+  "about": "about us",
+  "team": "team",
+  "partner": "partner",
+  "executives": "executives",
+  "videoGreeting": "Video greeting from the founders of Avantage Project",
+  "viewAll": "view all",
+  "PEOPLEANDEVENTSAVANTAGEPROJECT": "PEOPLE AND EVENTS AVANTAGE PROJECT",
+
+  "sendarequestto": "Send a request to",
+  "sendarequesttoText": "and we will promptly send you a list of the required documents",
+  "REACHOUT": "REACH OUT",
+
+  "USONTELEGRAM": "US ON TELEGRAM",
+  "joinTelegram": "join our chat in Telegram",
+  "join": "join",
+
+  "PLANNINGANEVENT": "PLANNING AN EVENT?",
+  "PLANNINGANEVENTPopup": "We'll break down your event brief and estimate the project"
+
 }
 
 

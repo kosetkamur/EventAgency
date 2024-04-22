@@ -1,1 +1,1 @@
-{"node":{},"edge":{},"encryptionKey":"MSTKi75SX4Xh5iLY1gSGREdyjYtwQdxBuBP8zWsma9g="}
+{"node":{"78d4d7023dc8ddc0211e999c490a69e4f5a9666e":{"workers":{"app/[lng]/cases/[caseId]/page":8080,"app/[lng]/about-us/page":8080,"app/[lng]/contacts/page":8080,"app/[lng]/services/page":8080},"layer":{"app/[lng]/cases/[caseId]/page":"action-browser","app/[lng]/about-us/page":"action-browser","app/[lng]/contacts/page":"action-browser","app/[lng]/services/page":"action-browser"}}},"edge":{},"encryptionKey":"wEfCS7V7NSvxotDIM7IF/wPAVNNLJwVN8R8EyMkrhnc="}

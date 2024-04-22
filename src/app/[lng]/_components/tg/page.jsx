@@ -1,25 +1,40 @@
 import "./style.scss";
 import * as React from "react";
+import {backendHost} from "@/lib/consts/consts";
+import {useTranslation} from "@/app/i18n";
 
-export default async function GoTgComponent() {
-    const openPopup = () => {
-        console.log('open')
+async function getFiles(lng) {
+    const res = await fetch(
+        `${backendHost}/api/core.files?lang=${lng}`,
+        {
+            method: 'GET',
+        }
+    )
+
+    if (!res.ok) {
+        console.log(res.status)
     }
 
-     return (
+    return res.json()
+}
+
+
+export default async function GoTgComponent({lng}) {
+    const files = await getFiles(lng);
+    const { t } = await useTranslation(lng,'translation');
+
+    return (
          <div className="gotg-page">
              <div className="gotg-page__container">
                  <p className="gotg-page__container_text">
-                     Cледить за нашими успехами можно
-                     в Telegram. Подписывайтесь: мы делимся полезным контентом и честно показываем, как уcтроено event-агентство
+                     {t('goTg')}
                  </p>
-                 <button
-                    type="button"
+                 <a
+                    href={files.data.telegram}
                     className="gotg-page__container_button"
-                    // onClick={openPopup}
                  >
-                     подписаться
-                 </button>
+                     {t('subscribe')}
+                 </a>
              </div>
          </div>
     )

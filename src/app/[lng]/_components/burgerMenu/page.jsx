@@ -9,8 +9,6 @@ import {backendHost} from "@/lib/consts/consts";
 import {useTranslation} from "@/app/i18n/client";
 import Link from "next/link";
 
-
-
 export default function BurgerComponent({lng, files, closeBurger}) {
     const { t } = useTranslation(lng,'translation');
 
@@ -35,7 +33,7 @@ export default function BurgerComponent({lng, files, closeBurger}) {
                              {t('navBlog')}
                          </a>
                          <a href={`/${lng}/cases`} className="burger-component__container_menu__href_a">
-                             {t('cases')}
+                             {t('navCases')}
                          </a>
                          <a href={`/${lng}/about-us`} className="burger-component__container_menu__href_a">
                              {t('navAboutUs')}
@@ -49,13 +47,13 @@ export default function BurgerComponent({lng, files, closeBurger}) {
                     </div>
                     <div className="burger-component__container_menu__buttons">
                         <div className="burger-component__container_menu__buttons_socialMedia">
-                            <a href={`mailto:${files.data.vk}`} target="_blank">
+                            <a href={files.data.vk} target="_blank">
                                 <Image src={vk} alt="Вконтакте" className="burger-component__container_menu__buttons_socialMedia__a" />
                             </a>
-                            <a href={`mailto:${files.data.ok}`} target="_blank">
+                            <a href={files.data.ok} target="_blank">
                                 <Image src={ok} alt="Одноклассники" className="burger-component__container_menu__buttons_socialMedia__a" />
                             </a>
-                            <a href={`mailto:${files.data.telegram}`} target="_blank">
+                            <a href={files.data.telegram} target="_blank">
                                 <Image src={tg} alt="Телеграмм" className="burger-component__container_menu__buttons_socialMedia__a" />
                             </a>
                         </div>

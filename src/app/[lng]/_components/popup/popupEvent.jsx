@@ -1,29 +1,51 @@
-import ".//style.scss";
+"use client";
+import "./style.scss";
 import * as React from "react";
 import Image from "next/image";
 import close from "@/media/images/close.svg";
+import {useTranslation} from "@/app/i18n/client";
+import {useEffect, useRef} from "react";
 
-export default async function PopupEvent({lng}) {
+export default function PopupEvent({lng, targetBlockId}) {
+    const { t } = useTranslation(lng, 'translation');
+    const popupRef = useRef()
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    popupRef.current.style.display = 'flex'
+                }
+            })
+        })
+
+        const targetBlock = document.getElementById(targetBlockId)
+        observer.observe(targetBlock)
+
+        return () => {
+            observer.disconnect()
+        }
+    }, [])
 
      return (
-         <div className="popup">
+         <div className="popup" id="popup" ref={popupRef} style={{ display: 'none' }}>
              <div className="popup__bg popup__event">
                  <div className="popup__bg_container">
-                     <button className="popup__bg_container__close">
-                         <Image src={close} alt="кнопка закрыть" />
-                     </button>
+                     <div className="popup__bg_container__close">
+                         <button className="popup__bg_container__close_btn" onClick={() => popupRef.current.style.display = 'none'}></button>
+                     </div>
                      <div className="popup__bg_container__text">
                          <p className="popup__bg_container__text_title">
-                             ПЛАНИРУЕТЕ МЕРОПРИЯТИЕ?
+                             {t("PLANNINGANEVENT")}
                          </p>
                          <p className="popup__bg_container__text_subtitle">
-                             Мы разберём бриф по вашему событию и оценим проект
+                             {t("PLANNINGANEVENTPopup")}
                          </p>
                          <a
                             href="/"
                             className="popup__bg_container__text_button"
                          >
-                             НАПИСАТЬ
+                             {t("REACHOUT")}
                          </a>
                      </div>
                  </div>

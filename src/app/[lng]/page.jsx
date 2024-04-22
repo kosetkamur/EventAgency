@@ -1,23 +1,25 @@
 import * as React from "react";
+import { useTranslation } from '@/app/i18n';
+import {fallbackLng, languages} from "@/app/i18n/settings";
+import {backendHost} from "@/lib/consts/consts";
+import Image from 'next/image';
 
 import "./style.scss";
 import "./_components/parallax/style.scss";
 import "./_components/video/style.scss";
 
-import Image from 'next/image';
-import icon1 from '../../media/images/icon1.svg';
 import ServicesComponent from "@/app/[lng]/_components/services/page";
 import CaseMainComponent from "@/app/[lng]/_components/cases/page";
 import AwardComponent from "@/app/[lng]/_components/award/page";
 import PartnersComponent from "@/app/[lng]/_components/partners/page";
+import ErrorServer from "@/app/[lng]/_components/error/error";
+import PopupTg from "@/app/[lng]/_components/popup/popupTg";
+import PopupEvent from "@/app/[lng]/_components/popup/popupEvent";
+
+import icon1 from '@/media/images/icon1.svg';
 import button from "@/media/images/button.png";
 import bg from "@/media/images/background2Main.png";
 import mainArrow from "@/media/images/mainArrow2.svg";
-import { useTranslation } from '@/app/i18n';
-import {fallbackLng, languages} from "@/app/i18n/settings";
-import {backendHost} from "@/lib/consts/consts";
-import ErrorServer from "@/app/[lng]/_components/error/error";
-import popupDocument from "@/app/[lng]/_components/popup/popupDocument";
 
 export const metadata = {
     title: "Организация мероприятий в Москве | Мероприятия для бизнеса b2b",
@@ -47,7 +49,6 @@ export default async function Home({ params: { lng } }) {
 
     return (
         <main className="main-page">
-            <popupDocument lng={lng} />
             <section className="main-page__video">
                 <video width="100%" controls autoPlay loop preload="auto" playsInline>
                     <source src={data.data.intro_video} type="video/mp4" />
@@ -68,8 +69,9 @@ export default async function Home({ params: { lng } }) {
                         </p>
                     </div>
                 </div>
-                <ServicesComponent lng={lng} />
+                <ServicesComponent lng={lng} id="ServicesComponent" />
             </section>
+            <PopupEvent lng={lng} targetBlockId="ServicesComponent"/>
             <div className="main-page__parallax">
                 <div className="main-page__parallax_image">
                     <Image src={bg} alt="полоски" className="main-page__parallax_image__img" />
@@ -180,8 +182,9 @@ export default async function Home({ params: { lng } }) {
                 </div>
             </div>
             <div className="containerAll">
-                <CaseMainComponent lng={lng} />
+                <CaseMainComponent id="CaseMainComponent" lng={lng} />
             </div>
+            <PopupTg lng={lng} targetBlockId="CaseMainComponent"/>
             <AwardComponent lng={lng} />
             <div className="containerAll">
                 <div className="video-component">

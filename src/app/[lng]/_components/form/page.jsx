@@ -1,24 +1,20 @@
+"use client";
+import InputMask from 'react-input-mask';
 import arrowForm from "@/media/images/arrowForm.svg";
 import icon3 from "@/media/images/icon3.svg";
 import Image from "next/image";
 
 import "./style.scss";
-import {useTranslation} from "@/app/i18n";
+import {useTranslation} from "@/app/i18n/client";
+import formAction from "@/app/[lng]/_components/form/formAction";
+import {useState} from "react";
 
-async function requestUsername(formData) {
-    console.log('vjeoij', formData)
-    const username = formData.get('username');
-    const task = formData.get('task');
-    const email = formData.get('email');
-    const phone = formData.get('phone');
-}
-
-
-export default async function Form({lng}) {
-    const { t } = await useTranslation(lng,'translation');
+export default function Form({lng}) {
+    const [value, setValue] = useState("");
+    const { t } = useTranslation(lng);
 
     return (
-        <form className="form-component">
+        <form className="form-component" action={formAction}>
             <div className="form-component__title">
                 <p className="form-component__title_p">
                     <Image src={icon3} alt="солнышко" className="form-component__title_sun" />{t('TOGET')} <span>{t('INTOUCH')}</span>,
@@ -37,49 +33,54 @@ export default async function Form({lng}) {
                     </p>
                 </div>
                 <div className="form-component__form_main">
-                    <span>ПРИВЕТ, Я</span>
+                    <span>{t('HIIAM')}</span>
                     <input
+                        required
                         type="text"
-                        name="username"
+                        name="full_name"
                         className="form-component__form_main__input"
-                        placeholder="ваше имя"
+                        placeholder={t('yourName')}
                     />
-                    <span>.</span> <span>НАМ НУЖНО СДЕЛАТЬ</span>
+                    <span>.</span> <span>{t('WENEEDTODO')}</span>
                     <input
+                        required
                         type="text"
-                        name="task"
+                        name="project_goals"
                         className="form-component__form_main__input"
-                        placeholder="опишите задачу"
+                        placeholder={t('describeTheTask')}
                     />
-                    <span>,</span> <span>И ЧТОБЫ ВСЕ БЫЛО</span> <span>В ЛУЧШЕМ ВИДЕ.</span>
-                    <span>СВЯЖИТЕСЬ СО МНОЙ:</span> <span>ВОТ МОЯ ПОЧТА</span>
+                    <span>,</span> <span>{t('ANDEVERYTHINGSHOULD')}</span> <span>{t('BEDONEPERFECTLY')}.</span>
+                    <span>{t('CONTACTME')}:</span> <span>{t('HEREISMYEMAIL')}</span>
 
                     <input
+                        required
                         type="text"
                         name="email"
                         className="form-component__form_main__input"
                         placeholder="email"
                     />
-                    <span> И ТЕЛЕФОН</span>
-                    <span><input
-                        type="text"
-                        name="phone"
-                        className="form-component__form_main__input"
-                        placeholder="+7 999 999 99 99"
-                    />.</span>
+                    <span>{t('ANDPHONENUMBER')}</span>
+                    <span>
+                        <InputMask mask="+7 (___) ___-__-__" value={value} onChange={(e) => setValue(e.target.value)}>
+                            {() => <input
+                                type="tel"
+                                placeholder="+7 (999) 999-99-99"
+                                className="form-component__form_main__input"
+                            />}
+                        </InputMask>.</span>
                 </div>
                 <div className="form-component__form_footer">
                     <div className="form-component__form_footer__checkbox">
                         <label className="form-component__form_footer__checkbox_label">
-                            <input type="checkbox"/>
+                            <input type="checkbox" name="agreement" required />
                             <div className="checkbox__checkmark"></div>
                             <p className="checkbox__body">
-                                Я даю согласие на обработку своих персональных данных
+                                {t('persData')}
                             </p>
                         </label>
                     </div>
                     <button type="submit" className="form-component__form_footer__button">
-                        отправить
+                        {t('send')}
                     </button>
                 </div>
             </div>

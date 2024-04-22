@@ -103,13 +103,13 @@ export default function Footer({emails, files, lng}) {
                         {t('fillInTheBrief')}
                     </a>
                     <div className="footer__navigation_column__socialNetwork">
-                        <a href={`mailto:${emails.data.vk}`} target="_blank">
+                        <a href={emails.data.vk} target="_blank">
                             <Image src={vk} alt="Вконтакте" className="footer__navigation_column__socialNetwork_a" />
                         </a>
-                        <a href={`mailto:${emails.data.ok}`} target="_blank">
+                        <a href={emails.data.ok} target="_blank">
                             <Image src={ok} alt="Одноклассники" className="footer__navigation_column__socialNetwork_a" />
                         </a>
-                        <a href={`mailto:${emails.data.telegram}`} target="_blank">
+                        <a href={emails.data.telegram} target="_blank">
                             <Image src={tg} alt="Телеграмм" className="footer__navigation_column__socialNetwork_a" />
                         </a>
                     </div>

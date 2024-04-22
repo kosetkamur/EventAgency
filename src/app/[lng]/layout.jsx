@@ -26,7 +26,6 @@ export default function RootLayout({
     <html lang={lng} dir={dir(lng)}>
       <body className={manrope.className}>
         <div className="container">
-          {/*<BurgerComponent />*/}
           <NextTopLoader color="#00BBB6" showSpinner={false} shadow="0" />
           <HeaderScroll lng={lng} />
           <Header lng={lng} />

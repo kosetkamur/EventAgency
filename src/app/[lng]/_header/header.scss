@@ -144,7 +144,13 @@
     .header {
         padding: 20px 15px 0 15px;
     }
-    .header-desk-scroll__burger_text {
-        display: none;
+    .header-desk-scroll {
+        padding: 20px 15px 0 15px;
+        z-index: 103;
+
+        &__burger_text {
+            display: none;
+
+        }
     }
 }

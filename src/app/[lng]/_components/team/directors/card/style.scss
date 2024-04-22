@@ -39,14 +39,21 @@
 }
 
 @media screen and (max-width: 600px) {
-  .gotg-page {
-    max-height: 378px;
-    min-height: 378px;
-    margin: 100px 0 70px 0;
+  .card-component {
+    height: auto;
+    min-height: min-content;
+    max-height: min-content;
+    margin: 50px 0 70px 0;
 
     &__container {
       &_text {
-        font-size: 1rem;
+        &__post {
+          font-size: 0.625rem;
+        }
+
+        &__name {
+          font-size: 1rem;
+        }
       }
 
       &_button {
