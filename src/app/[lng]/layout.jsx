@@ -9,7 +9,7 @@ import BurgerComponent from "@/app/[lng]/_components/burgerMenu/page";
 const manrope = Manrope({ subsets: ["latin"] });
 
 import { dir } from 'i18next'
-import { languages } from '../i18n/settings'
+import {fallbackLng, languages} from '../i18n/settings'
 import NextTopLoader from 'nextjs-toploader';
 
 export async function generateStaticParams() {
@@ -22,6 +22,7 @@ export default function RootLayout({
      lng
    }
  }) {
+    if ([...languages].indexOf(lng) < 0) lng = fallbackLng
   return (
     <html lang={lng} dir={dir(lng)}>
       <body className={manrope.className}>

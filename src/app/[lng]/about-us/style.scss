@@ -17,7 +17,7 @@
     align-items: center;
 
     &_container {
-      background-image: url("../../../media/images/aboutAbout.svg");
+      background-image: url("../../../public/images/aboutAbout.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 211px auto;
@@ -48,7 +48,7 @@
     align-items: center;
 
     &_container {
-      background-image: url("../../../media/images/aboutTeam.svg");
+      background-image: url("../../../public/images/aboutTeam.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 279px auto;
@@ -72,7 +72,7 @@
   }
 
   &__tagline {
-    background-image: url("../../../media/images/aboutBg.png");
+    background-image: url("../../../public/images/aboutBg.png");
     background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: left;
@@ -145,7 +145,7 @@
 }
 
 .parallax-components {
-  background-image: url("../../../media/images/background2Main.png");
+  background-image: url("../../../public/images/background2Main.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: left center;

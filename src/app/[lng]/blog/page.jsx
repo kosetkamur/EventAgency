@@ -15,6 +15,7 @@ async function getData(lng) {
         `${backendHost}/api/blog.article_list?lang=${lng}`,
         {
             method: 'GET',
+            cache: 'force-cache'
         }
     )
 

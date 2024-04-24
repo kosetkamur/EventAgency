@@ -10,6 +10,12 @@
       border-radius: 10px;
     }
 
+    &_video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
     &_title {
       font-size: 4rem;
       color: #FFFFFF;
@@ -49,7 +55,7 @@
     align-items: center;
 
     &_photoTitle {
-      background-image: url("../../../../media/images/caseIdPhoto.svg");
+      background-image: url("../../../../public/images/caseIdPhoto.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 233px auto;

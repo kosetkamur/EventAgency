@@ -1,7 +1,7 @@
 import "./header.scss";
 import * as React from 'react';
 import Link from "next/link";
-import logo from "../../../media/images/logo.svg";
+import logo from "../../../public/images/logo.svg";
 import Image from "next/image";
 import Nav from "@/app/[lng]/_header/_nav/nav.jsx";
 import ButtonHeader from "@/app/[lng]/_header/button";

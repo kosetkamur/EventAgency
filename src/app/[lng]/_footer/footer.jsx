@@ -1,10 +1,10 @@
 'use client';
 import "./footer.scss";
 import * as React from "react";
-import arrow from "@/media/images/arrow.svg";
-import vk from "@/media/images/footerIcon1.svg";
-import ok from "@/media/images/footerIcon2.svg";
-import tg from "@/media/images/footerIcon3.svg";
+import arrow from "@/public/images/arrow.svg";
+import vk from "@/public/images/footerIcon1.svg";
+import ok from "@/public/images/footerIcon2.svg";
+import tg from "@/public/images/footerIcon3.svg";
 import Image from "next/image";
 import {useTranslation} from "@/app/i18n/client";
 import {backendHost} from "@/lib/consts/consts";
@@ -66,13 +66,13 @@ export default function Footer({emails, files, lng}) {
                     <p className="footer__navigation_column__text">
                         {t('forClients')}
                     </p>
-                    {
-                        emails.data.email_for_clients.map(item =>
-                            <a key={item} href={`mailto:${item}`} className="footer__navigation_column__a">
-                                {item}
-                            </a>
-                        )
-                    }
+                    {/*{*/}
+                    {/*    emails.data.email_for_clients.map(item =>*/}
+                    {/*        <a key={item} href={`mailto:${item}`} className="footer__navigation_column__a">*/}
+                    {/*            {item}*/}
+                    {/*        </a>*/}
+                    {/*    )*/}
+                    {/*}*/}
                     <p className="footer__navigation_column__text">
                         {t('forMedia')}
                     </p>

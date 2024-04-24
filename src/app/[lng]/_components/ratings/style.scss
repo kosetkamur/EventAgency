@@ -13,7 +13,7 @@
     align-items: center;
 
     &_photoTitle {
-      background-image: url("../../../../media/images/awardsRating.svg");
+      background-image: url("../../../../public/images/awardsRating.svg");
       background-repeat: no-repeat;
       background-position: center;
       background-size: 431px auto;
@@ -118,6 +118,16 @@
       margin-top: 0;
       margin-bottom: 70px;
       max-width: 251px;
+
+      &_photoTitle {
+        width: 215px;
+        height: 59px;
+        background-size: 215px auto;
+
+        &__text {
+          font-size: 1rem;
+        }
+      }
     }
 
     &__logos {

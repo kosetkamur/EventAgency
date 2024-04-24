@@ -1,7 +1,7 @@
 import "./style.scss";
 import Image from "next/image";
-import icon2 from '@/media/images/icon2.svg';
-import mainArrow from "@/media/images/mainArrow.svg";
+import icon2 from '@/public/images/icon2.svg';
+import mainArrow from "@/public/images/mainArrow.svg";
 import Link from "next/link";
 import {backendHost} from "@/lib/consts/consts";
 import {useTranslation} from "@/app/i18n";
@@ -11,6 +11,7 @@ async function getData(lng) {
         `${backendHost}/api/blog.case_list?lang=${lng}&case_type=&show_on_main_page=true`,
         {
             method: 'GET',
+            cache: 'force-cache'
         }
     )
 

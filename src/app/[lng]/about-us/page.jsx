@@ -9,10 +9,11 @@ import Form from "@/app/[lng]/_components/form/page";
 import GroupComponents from "@/app/[lng]/_components/team/group/page";
 
 import Image from "next/image";
-import titleTeam from "@/media/images/aboutTeam.svg";
-import aboutTeam from "@/media/images/aboutTeam.png";
+import aboutTeam from "@/public/images/aboutTeam.png";
 import Link from "next/link";
 import {useTranslation} from "@/app/i18n";
+import {backendHost} from "@/lib/consts/consts";
+import ErrorServer from "@/app/[lng]/_components/error/error";
 
 export const metadata = {
     title: "О компании",
@@ -20,8 +21,25 @@ export const metadata = {
     keywords: "услуги организатора мероприятий, организовать мероприятие, мероприятие для бизнеса, ивент, event, b2b, мероприятие в москве, площадки для мероприятий, корпоратив, фестиваль, форум, конференция, выставка, конгресс, пленарное заседание, тренинги, обучение персонала, семинары, онбординг, мотивация, выездные мероприятия, тимбилдинг, гендерные мероприятия, family day, клиентские мероприятия, презентация продукта/лонч, активности и мероприятия, направленные на позиционирование бренда, фестивали, выставки, интеграции бренда в события, деловые завтраки, деловой туризм, лучшие event-агентства Москвы, топ-агентств по организации мероприятий, кейсы организации мероприятий, топ-лучших мероприятий 2023, Событие Года, лучшие агентства по организации мероприятий, организовать событие под ключ, организовать мероприятие под ключ"
 };
 
+async function getData(lng) {
+    const res = await fetch(
+        `${backendHost}/api/core.about?lang=${lng}`,
+        {
+            method: 'GET',
+            cache: 'force-cache'
+        }
+    )
+
+    if (!res.ok) {
+        <ErrorServer res={res} />
+    }
+
+    return res.json()
+}
+
 export default async function CasePage({ params: { lng } }) {
     const { t } = await useTranslation(lng,'translation');
+    const data = await getData();
     return (
         <div className="about-us-page">
             <div className="containerAll">
@@ -45,7 +63,7 @@ export default async function CasePage({ params: { lng } }) {
             <div className="about-us-page__about-title">
                 <div className="about-us-page__about-title_container">
                     <p className="about-us-page__about-title_container__text">
-                        [ {t('about')} ]
+                        [ {t('navAboutUs').toLowerCase()} ]
                     </p>
                 </div>
             </div>
@@ -71,7 +89,7 @@ export default async function CasePage({ params: { lng } }) {
                                 </p>
                                 <div className="parallax-components__numbers_num__container">
                                     <p className="parallax-components__numbers_num__title">
-                                        5000
+                                        {data.data.implemented_projects}
                                     </p>
                                     <p className="parallax-components__numbers_num__text">
                                         {t("completedProjects")}
@@ -95,7 +113,7 @@ export default async function CasePage({ params: { lng } }) {
                             </p>
                             <div className="parallax-components__numbers_num__container">
                                 <p className="parallax-components__numbers_num__title">
-                                    28000
+                                    {data.data.unique_scenarios}
                                 </p>
                                 <p className="parallax-components__numbers_num__text">
                                     {t("uniqueEventScenarios")}
@@ -118,7 +136,7 @@ export default async function CasePage({ params: { lng } }) {
                             </p>
                             <div className="parallax-components__numbers_num__container">
                                 <p className="parallax-components__numbers_num__title">
-                                    15 <span className="parallax-components__numbers_num__title_year">{t("year")}</span>
+                                    {data.data.years_of_experience} <span className="parallax-components__numbers_num__title_year">{t("year")}</span>
                                 </p>
                                 <p className="parallax-components__numbers_num__text">
                                     {t("yearsInTheIndustry")}
@@ -149,7 +167,7 @@ export default async function CasePage({ params: { lng } }) {
                         </p>
                     </div>
                 </div>
-                <TeamComponent lng={lng} />
+                <TeamComponent lng={lng} video={data.data.welcome_video} />
                 <div className="team-component__team">
                     <GroupComponents lng={lng} />
                 </div>

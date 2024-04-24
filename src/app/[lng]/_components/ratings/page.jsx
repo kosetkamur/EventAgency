@@ -9,6 +9,7 @@ async function getData(lng) {
         `${backendHost}/api/cooperation.ratings.list?lang=${lng}`,
         {
             method: 'GET',
+            cache: 'force-cache'
         }
     )
 

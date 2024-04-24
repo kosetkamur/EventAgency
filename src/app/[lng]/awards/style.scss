@@ -19,6 +19,7 @@
 
       &__black{
         animation: 0.5s goText forwards ease-in-out;
+        text-transform: uppercase;
       }
 
       &__green {
@@ -173,6 +174,9 @@
 }
 
 @media screen and (max-width: 1600px) {
+  .awards-page__semicircle {
+    margin-bottom: -6px;
+  }
   .awards-page__title_description {
     max-width: 200px;
   }

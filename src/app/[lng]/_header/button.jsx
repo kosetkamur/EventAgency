@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import burger from "@/media/images/burger.svg";
+import burger from "@/public/images/burger.svg";
 import {useState} from "react";
 import BurgerComponent from "@/app/[lng]/_components/burgerMenu/page";
 

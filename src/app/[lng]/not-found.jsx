@@ -1,6 +1,6 @@
 import "./not-found.scss";
 import Image from 'next/image'
-import img404 from '../../media/images/404.svg'
+import img404 from '@/public/images/404.svg'
 
 export default function Custom404() {
     return (

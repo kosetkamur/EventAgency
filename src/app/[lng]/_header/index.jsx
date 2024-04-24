@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/media/images/logo.svg";
-import burger from "@/media/images/burger.svg";
+import logo from "@/public/images/logo.svg";
+import burger from "@/public/images/burger.svg";
 import * as React from "react";
 import {backendHost} from "@/lib/consts/consts";
 import {useTranslation} from "@/app/i18n";
@@ -12,6 +12,7 @@ async function getFiles(lng) {
         `${backendHost}/api/core.files?lang=${lng}`,
         {
             method: 'GET',
+            cache: 'force-cache'
         }
     )
 

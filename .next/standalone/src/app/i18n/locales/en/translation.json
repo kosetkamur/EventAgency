@@ -18,6 +18,18 @@
   "WE": "WE",
   "HONOURYOURTRUST": "HONOUR YOUR TRUST",
 
+  "YOUMAYNOT": "YOU MAY NOT",
+  "KNOWUS": "KNOW US,",
+  "BUTYOUDEFINITELY": "BUT YOU DEFINITELY",
+  "KNOWOURPROJECTS": "KNOW OUR PROJECTS",
+
+  "EVERYMIND": "EVERYMIND",
+  "COUNTS": "COUNTS",
+
+  "photo": "photo",
+  "success": "Data sent successfully!",
+  "error": "An error has occurred. Try again.",
+
   "forCandidates": "FOR CANDIDATES AND PARTNERS",
   "startCooperation": "start cooperation",
   "sendYourCV": "send your CV / presentation",
@@ -100,7 +112,7 @@
   "PHONENUMBER": "phone",
   "EMAIL": "email",
 
-  "goTg": "gotg",
+  "goTg": "You can follow our progress on Telegram. Subscribe: we share useful content and honestly show how an event agency works",
   "weAreInRatings": "we are in ratings",
 
   "bug": "Oops... Page not found",
@@ -130,6 +142,8 @@
   "USONTELEGRAM": "US ON TELEGRAM",
   "joinTelegram": "join our chat in Telegram",
   "join": "join",
+
+  "otherCases": "other cases",
 
   "PLANNINGANEVENT": "PLANNING AN EVENT?",
   "PLANNINGANEVENTPopup": "We'll break down your event brief and estimate the project"

@@ -8,6 +8,7 @@ async function getData() {
         `${backendHost}/api/core.gallery`,
         {
             method: 'GET',
+            cache: 'force-cache'
         }
     )
 

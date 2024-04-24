@@ -2,7 +2,7 @@
 import "./style.scss";
 import Link from "next/link";
 import Image from "next/image";
-import icon2 from "@/media/images/icon2.svg";
+import icon2 from "@/public/images/icon2.svg";
 import {backendHost} from "@/lib/consts/consts";
 
 export default function CardCaseComponent({item,lng}) {

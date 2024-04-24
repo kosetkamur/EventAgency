@@ -8,7 +8,7 @@ import "./style.scss";
 import ServicesComponent from "@/app/[lng]/_components/services/page";
 import CardsComponent from "@/app/[lng]/_components/cards/page";
 import Form from "@/app/[lng]/_components/form/page";
-import icon4 from "@/media/images/icon4.svg";
+import icon4 from "@/public/images/icon4.svg";
 
 export const metadata = {
     title: "Услуги",

@@ -13,6 +13,7 @@ async function getData() {
         `${backendHost}/api/wiki.get`,
         {
             method: 'GET',
+            cache: 'force-cache'
         }
     )
 

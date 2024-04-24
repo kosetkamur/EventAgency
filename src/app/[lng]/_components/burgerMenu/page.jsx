@@ -1,10 +1,10 @@
 import "./style.scss";
 import * as React from "react";
 import Image from "next/image";
-import vk from "@/media/images/footerIcon1.svg";
-import ok from "@/media/images/footerIcon2.svg";
-import tg from "@/media/images/footerIcon3.svg";
-import close from "@/media/images/close.svg";
+import vk from "@/public/images/footerIcon1.svg";
+import ok from "@/public/images/footerIcon2.svg";
+import tg from "@/public/images/footerIcon3.svg";
+import close from "@/public/images/close.svg";
 import {backendHost} from "@/lib/consts/consts";
 import {useTranslation} from "@/app/i18n/client";
 import Link from "next/link";
@@ -28,6 +28,9 @@ export default function BurgerComponent({lng, files, closeBurger}) {
                     <div className="burger-component__container_menu__href">
                          <a href={`/${lng}`} className="burger-component__container_menu__href_a">
                              {t('home')}
+                         </a>
+                         <a href={`/${lng}/services`} className="burger-component__container_menu__href_a">
+                             {t('navServices')}
                          </a>
                          <a href={`/${lng}/blog`} className="burger-component__container_menu__href_a">
                              {t('navBlog')}

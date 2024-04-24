@@ -1,7 +1,7 @@
 import "./style.scss";
 import Image from "next/image";
-import arrow from "@/media/images/arrowAwards.svg";
-import halfCircle from "@/media/images/half-circle-awards.svg"
+import arrow from "@/public/images/arrowAwards.svg";
+import halfCircle from "@/public/images/half-circle-awards.svg"
 import RatingsComponent from "@/app/[lng]/_components/ratings/page";
 import {backendHost} from "@/lib/consts/consts";
 import {useTranslation} from "@/app/i18n";
@@ -17,6 +17,7 @@ async function getData(lng) {
         `${backendHost}/api/core.awards_list?lang=${lng}`,
         {
             method: 'GET',
+            cache: 'force-cache'
         }
     )
 
@@ -37,7 +38,7 @@ export default async function AwardsPage({ params: { lng } }) {
                 <div className="awards-page__title">
                     <div className="awards-page__title_text">
                         <h1 className="awards-page__title_text__black">
-                            {t('awards')}
+                            {t('navAwards')}
                         </h1>
                         <h1 className="awards-page__title_text__green">
                             AVANTAGE<br  className="awards-page__title_text__green_br" /> PROJECT

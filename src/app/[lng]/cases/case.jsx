@@ -1,11 +1,9 @@
 "use client";
 import "./style.scss";
-import {useState} from "react";
 import CardCaseComponent from "@/app/[lng]/cases/card";
 import {useTranslation} from "@/app/i18n/client";
 
 export default function Cases({cases, lng}) {
-    const [type, setType] = useState("no");
     const { t } = useTranslation(lng,'translation');
 
     return (

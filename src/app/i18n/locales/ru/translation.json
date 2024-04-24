@@ -19,11 +19,24 @@
   "WE": "МЫ",
   "HONOURYOURTRUST": "ОПРАВДЫВАЕМ ДОВЕРИЕ",
 
+
+  "YOUMAYNOT": "ВЫ ЕЩЁ МОЖЕТЕ НАС",
+  "KNOWUS": "НЕ ЗНАТЬ,",
+  "BUTYOUDEFINITELY": "НО УЖЕ ТОЧНО",
+  "KNOWOURPROJECTS": "СЛЫШАЛИ О НАШИХ ПРОЕКТАХ",
+
+  "EVERYMIND": "нам важно",
+  "COUNTS": "слово каждого",
+
   "forCandidates": "ДЛЯ КАНДИДАТОВ И ПАРТНЕРОВ",
   "startCooperation": "начать сотрудничество",
   "sendYourCV": "отправить резюме / презентацию",
   "whyYouShouldWork": "почему стоит  работать с намиу нас",
   "freelancerQuestionnaire": "анкета для фрилансеров",
+
+  "photo": "фото",
+  "success": "Данные успешно отправлены!",
+  "error": "Произошла ошибка. Попробуйте снова.",
 
   "COMPANYPROFILE": "ОФИЦИАЛЬНАЯ ИНФОРМАЦИЯ",
   "requisites": "реквизиты",
@@ -43,7 +56,7 @@
 
 
   "media": "медиа",
-  "cases ": "кейсы ",
+  "cases": "кейсы",
 
   "VIEWALLPROJECTS": "СМОТРЕТЬ ВСЕ ПРОЕКТЫ",
   "otherAwards": "к другим наградам",
@@ -129,6 +142,8 @@
   "USONTELEGRAM": "МЫ В TELEGRAM",
   "joinTelegram": "Присоединяйся к нашему чату в Telegram",
   "join": "Присоединиться",
+
+  "otherCases": "другие проекты",
 
   "PLANNINGANEVENT": "ПЛАНИРУЕТЕ МЕРОПРИЯТИЕ?",
   "PLANNINGANEVENTPopup": "Мы разберём бриф по вашему событию и оценим проект"

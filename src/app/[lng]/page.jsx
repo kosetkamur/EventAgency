@@ -16,10 +16,10 @@ import ErrorServer from "@/app/[lng]/_components/error/error";
 import PopupTg from "@/app/[lng]/_components/popup/popupTg";
 import PopupEvent from "@/app/[lng]/_components/popup/popupEvent";
 
-import icon1 from '@/media/images/icon1.svg';
-import button from "@/media/images/button.png";
-import bg from "@/media/images/background2Main.png";
-import mainArrow from "@/media/images/mainArrow2.svg";
+import icon1 from '@/public/images/icon1.svg';
+import mainArrow from "@/public/images/mainArrow2.svg";
+import ButtonPopupProject from "@/app/[lng]/_components/popupProject/buttonPopupProject";
+import ButtonPopupVideo from "@/app/[lng]/_components/popupVideo/buttonPopupVideo";
 
 export const metadata = {
     title: "Организация мероприятий в Москве | Мероприятия для бизнеса b2b",
@@ -32,6 +32,7 @@ async function getData(lng) {
         `${backendHost}/api/core.about?lang=${lng}`,
         {
             method: 'GET',
+            cache: 'force-cache'
         }
     )
 
@@ -57,7 +58,7 @@ export default async function Home({ params: { lng } }) {
             </section>
             <section className="main-page__container">
                 <div className="main-page__tagline">
-                    <div className="main-page__tagline_container">
+                    <div className="main-page__tagline_container main-page__tagline_container1">
                         <p className="main-page__tagline_container__text main-page__tagline_container__align1">
                             {t('YOUTRUST')}
                         </p><br />
@@ -68,19 +69,38 @@ export default async function Home({ params: { lng } }) {
                             {t('HONOURYOURTRUST')}
                         </p>
                     </div>
+                    <div className="main-page__tagline_container main-page__tagline_container2">
+                        <p className="main-page__tagline_container__text main-page__tagline_container__align1">
+                            {t('YOUMAYNOT')}
+                        </p><br />
+                        <p className="main-page__tagline_container__text main-page__tagline_container__align2">
+                            {t('KNOWUS')} <Image src={icon1} alt="солнышко" className="main-page__tagline_container__text_image" />  {t('BUTYOUDEFINITELY')}
+                        </p><br />
+                        <p className="main-page__tagline_container__text main-page__tagline_container__align3">
+                            {t('KNOWOURPROJECTS')}
+                        </p>
+                    </div>
+                    <div className="main-page__tagline_container main-page__tagline_container3">
+                        <p className="main-page__tagline_container__text main-page__tagline_container__align2">
+                            {t('EVERYMIND')}
+                        </p><br />
+                        <p className="main-page__tagline_container__text main-page__tagline_container__align3">
+                            <Image src={icon1} alt="солнышко" className="main-page__tagline_container__text_image" /> {t('COUNTS')}
+                        </p>
+                    </div>
                 </div>
                 <ServicesComponent lng={lng} id="ServicesComponent" />
             </section>
             <PopupEvent lng={lng} targetBlockId="ServicesComponent"/>
             <div className="main-page__parallax">
-                <div className="main-page__parallax_image">
-                    <Image src={bg} alt="полоски" className="main-page__parallax_image__img" />
-                </div>
+                {/*<div className="main-page__parallax_image">*/}
+                {/*    <Image src={bg} alt="полоски" className="main-page__parallax_image__img" />*/}
+                {/*</div>*/}
                 <div className="containerAll main-page__parallax_container">
                     <div className="main-page__parallax_text">
                         <div className="parallax-components__blur_container">
                             <div className="parallax-components__blur_container__button">
-                                <Image src={button} alt="Кнопка"  className="parallax-components__blur_container__button_img" />
+                                <ButtonPopupVideo video={data.data.welcome_video} />
                             </div>
                             <div className="parallax-components__blur_container__text">
                                 <p className="parallax-components__blur_container__text_p">
@@ -224,9 +244,7 @@ export default async function Home({ params: { lng } }) {
                             <p className="main-page__application_tagline__container_text">
                                 {t("PLANNINGANEVENTText")}
                             </p>
-                            <button className="main-page__application_tagline__container_btn">
-                                {t("leavearequest")}
-                            </button>
+                            <ButtonPopupProject lng={lng} />
                         </div>
                     </div>
                 </section>
