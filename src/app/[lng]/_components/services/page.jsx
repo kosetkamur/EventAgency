@@ -4,6 +4,7 @@ import {backendHost} from "@/lib/consts/consts";
 import {fallbackLng, languages} from "@/app/i18n/settings";
 import {useTranslation} from "@/app/i18n";
 import SentDocs from "@/app/[lng]/_components/services/sentDocs";
+import ServicePopupVideo from "@/app/[lng]/_components/popupProject/servicePopupProject";
 
 async function getData(lng) {
     const res = await fetch(
@@ -63,9 +64,7 @@ export default async function ServicesComponent({lng, id}) {
                         <p> {t('forCandidates')}</p>
                     </div>
                     <div className="services-component_item__ul">
-                        <a href="#">
-                            {t('startCooperation')}
-                        </a>
+                        <ServicePopupVideo lng={lng} />
                         <a href={`mailto:${refs.data.form_for_freelancers}`}>
                             {t('sendYourCV')}
                         </a>
