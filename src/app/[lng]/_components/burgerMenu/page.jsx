@@ -22,7 +22,7 @@ export default function BurgerComponent({lng, files, closeBurger}) {
                 <div className="burger-component__container_menu">
                     <div className="burger-component__container_menu__close">
                         <button onClick={handleClose} className="burger-component__container_menu__close_btn">
-                            <Image src={close} alt="кнопка закрыть" />
+                            <Image src={close} alt="кнопка закрыть" className="burger-component__container_menu__close_btn__img" />
                         </button>
                     </div>
                     <div className="burger-component__container_menu__href">

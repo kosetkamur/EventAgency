@@ -18,8 +18,10 @@ import PopupEvent from "@/app/[lng]/_components/popup/popupEvent";
 
 import icon1 from '@/public/images/icon1.svg';
 import mainArrow from "@/public/images/mainArrow2.svg";
+import bg from "@/public/images/mainParallax.svg";
 import ButtonPopupProject from "@/app/[lng]/_components/popupProject/buttonPopupProject";
 import ButtonPopupVideo from "@/app/[lng]/_components/popupVideo/buttonPopupVideo";
+import {Parallax} from "@/app/[lng]/_components/parallax/parallax";
 
 export const metadata = {
     title: "Организация мероприятий в Москве | Мероприятия для бизнеса b2b",
@@ -51,9 +53,9 @@ export default async function Home({ params: { lng } }) {
     return (
         <main className="main-page">
             <section className="main-page__video">
-                <video width="100%" controls autoPlay loop preload="auto" playsInline>
-                    <source src={data.data.intro_video} type="video/mp4" />
-                     Ваш браузер не поддерживает видео
+                <video width="auto" height="auto" controls muted playsInline autoPlay className="main-page__video_intro">
+                    <source src={`${backendHost}/${data.data.intro_video}`} type="video/mp4" />
+                    Your browser does not support the video tag.
                 </video>
             </section>
             <section className="main-page__container">
@@ -84,7 +86,7 @@ export default async function Home({ params: { lng } }) {
                         <p className="main-page__tagline_container__text main-page__tagline_container__align2">
                             {t('EVERYMIND')}
                         </p><br />
-                        <p className="main-page__tagline_container__text main-page__tagline_container__align3">
+                        <p className="main-page__tagline_container__text main-page__tagline_container__align1">
                             <Image src={icon1} alt="солнышко" className="main-page__tagline_container__text_image" /> {t('COUNTS')}
                         </p>
                     </div>
@@ -92,12 +94,16 @@ export default async function Home({ params: { lng } }) {
                 <ServicesComponent lng={lng} id="ServicesComponent" />
             </section>
             <PopupEvent lng={lng} targetBlockId="ServicesComponent"/>
+
             <div className="main-page__parallax">
-                {/*<div className="main-page__parallax_image">*/}
-                {/*    <Image src={bg} alt="полоски" className="main-page__parallax_image__img" />*/}
-                {/*</div>*/}
+                <Parallax speed={1} className="self-start">
+                    <div className="main-page__parallax_image">
+                        <Image src={bg} alt="полоски" className="main-page__parallax_image__img" />
+                    </div>
+                </Parallax>
+                <Parallax speed={-2} className="self-end overflow-hidden">
                 <div className="containerAll main-page__parallax_container">
-                    <div className="main-page__parallax_text">
+                    <div className="parallax-components__blur">
                         <div className="parallax-components__blur_container">
                             <div className="parallax-components__blur_container__button">
                                 <ButtonPopupVideo video={data.data.welcome_video} />
@@ -167,7 +173,7 @@ export default async function Home({ params: { lng } }) {
                             </p>
                             <div className="parallax-components__numbers_num__container">
                                 <p className="parallax-components__numbers_num__title">
-                                    {data.data.years_of_experience} <span className="parallax-components__numbers_num__title_year">{t("year")}</span>
+                                    {data.data.years_of_experience} <span className="parallax-components__numbers_num__title_year">{t("years")}</span>
                                 </p>
                                 <p className="parallax-components__numbers_num__text">
                                     {t("yearsInTheIndustry")}
@@ -192,13 +198,14 @@ export default async function Home({ params: { lng } }) {
                             </a>
                         </div>
                     </div>
-                    <div className="parallax-components__title">
-                        <div className="parallax-components__title_photoTitle">
-                            <p className="parallax-components__title_photoTitle__text">
-                                [ {t('cases')} ]
-                            </p>
-                        </div>
-                    </div>
+                </div>
+                </Parallax>
+            </div>
+            <div className="parallax-components__title">
+                <div className="parallax-components__title_photoTitle">
+                    <p className="parallax-components__title_photoTitle__text">
+                        [ {t('cases')} ]
+                    </p>
                 </div>
             </div>
             <div className="containerAll">

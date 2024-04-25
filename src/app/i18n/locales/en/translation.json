@@ -23,7 +23,7 @@
   "BUTYOUDEFINITELY": "BUT YOU DEFINITELY",
   "KNOWOURPROJECTS": "KNOW OUR PROJECTS",
 
-  "EVERYMIND": "EVERYMIND",
+  "EVERYMIND": "EVERY MIND",
   "COUNTS": "COUNTS",
 
   "photo": "photo",
@@ -146,8 +146,14 @@
   "otherCases": "other cases",
 
   "PLANNINGANEVENT": "PLANNING AN EVENT?",
-  "PLANNINGANEVENTPopup": "We'll break down your event brief and estimate the project"
-
+  "PLANNINGANEVENTPopup": "We'll break down your event brief and estimate the project",
+  "TELLUSABOUTYOURPROJECT": "TELL US ABOUT YOUR PROJECT",
+  "TELLUSABOUTYOURPROJECTText": "Just tell us about your project and we'll do the rest",
+  "whatisyourname": "what is your name",
+  "phonenumber": "phone number",
+  "businessfield": "business field",
+  "projectgoalsandobjectives": "project goals and objectives",
+  "SEND": "SEND"
 }
 
 

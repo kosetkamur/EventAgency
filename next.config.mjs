@@ -3,10 +3,11 @@
 const nextConfig = {
     output: 'standalone',
     images: {
+        unoptimized: true,
         remotePatterns: [
             {
                 protocol: 'http',
-                hostname: 'raigoreg.beget.tech',
+                hostname: '89.111.173.125',
                 pathname: '**',
             },
         ],

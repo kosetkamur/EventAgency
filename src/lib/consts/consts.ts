@@ -1,1 +1,1 @@
-export const backendHost = "http://raigoreg.beget.tech";
+export const backendHost = "http://89.111.173.125";

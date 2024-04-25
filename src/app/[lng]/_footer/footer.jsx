@@ -43,7 +43,7 @@ export default function Footer({emails, files, lng}) {
                                 {t('services').toLowerCase()}
                             </a>
                             <a href={`/${lng}/cases`} className="footer__navigation_column__a">
-                                {t('cases').toLowerCase()}
+                                {t('navCases').toLowerCase()}
                             </a>
                             <a href={`/${lng}/blog`} className="footer__navigation_column__a">
                                 {t('navBlog').toLowerCase()}
@@ -66,13 +66,13 @@ export default function Footer({emails, files, lng}) {
                     <p className="footer__navigation_column__text">
                         {t('forClients')}
                     </p>
-                    {/*{*/}
-                    {/*    emails.data.email_for_clients.map(item =>*/}
-                    {/*        <a key={item} href={`mailto:${item}`} className="footer__navigation_column__a">*/}
-                    {/*            {item}*/}
-                    {/*        </a>*/}
-                    {/*    )*/}
-                    {/*}*/}
+                    {
+                        emails.data.email_for_clients.map(item =>
+                            <a key={item} href={`mailto:${item}`} className="footer__navigation_column__a">
+                                {item}
+                            </a>
+                        )
+                    }
                     <p className="footer__navigation_column__text">
                         {t('forMedia')}
                     </p>

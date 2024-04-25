@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@reduxjs/toolkit": "^2.2.2",
+    "@studio-freight/hamo": "^0.6.33",
     "@studio-freight/react-lenis": "^0.0.47",
     "accept-language": "^3.0.18",
     "gsap": "^3.12.5",

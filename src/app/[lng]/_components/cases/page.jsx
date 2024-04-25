@@ -45,7 +45,8 @@ export default async function CaseMainComponent({lng, id}) {
                                         {item.year}
                                     </button>
                                     <button className="case-component__cases_item__buttons_button">
-                                        <Image src={icon2} alt="" className="case-component__cases_item__buttons_button__icon" />
+                                        <Image
+                                            src={icon2} alt="" className="case-component__cases_item__buttons_button__icon" />
                                         <p className="case-component__cases_item__buttons_button__event">
                                             {item.customer.type}
                                         </p>
@@ -66,7 +67,8 @@ export default async function CaseMainComponent({lng, id}) {
                 <p className="case-component__showAll_title">
                     {t('VIEWALLPROJECTS')}
                 </p>
-                <Image src={mainArrow} alt="стрелка" width="100" height="15" className="case-component__showAll_arrow" />
+                <Image
+                    src={mainArrow} alt="стрелка" width="100" height="15" className="case-component__showAll_arrow" />
             </a>
         </div>
     );

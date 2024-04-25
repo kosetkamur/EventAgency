@@ -34,7 +34,7 @@ export default function Form({lng}) {
         })
         const data = await response.json()
         setErrorMess(data);
-        console.log(data, data.field_problems, errorMess)
+
         if (response.ok) {
             setError(false);
         } else if (response.status === "400") {

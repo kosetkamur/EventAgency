@@ -14,6 +14,8 @@ import Link from "next/link";
 import {useTranslation} from "@/app/i18n";
 import {backendHost} from "@/lib/consts/consts";
 import ErrorServer from "@/app/[lng]/_components/error/error";
+import bg from "@/public/images/mainParallax.svg";
+import {Parallax} from "@/app/[lng]/_components/parallax/parallax";
 
 export const metadata = {
     title: "О компании",
@@ -68,96 +70,103 @@ export default async function CasePage({ params: { lng } }) {
                 </div>
             </div>
             <div className="parallax-components">
-                <div className="containerAll">
-                    <div className="parallax-components__blur">
-                        <div className="parallax-components__blur_container">
-                            <div className="parallax-components__blur_container__button">
-                                <Image src={aboutTeam} alt="Кнопка"  className="parallax-components__blur_container__button_img" />
+                <Parallax speed={1} className="self-start">
+                    <div className="parallax-components__parallax_image">
+                        <Image src={bg} alt="полоски" className="parallax-components__parallax_image__img" />
+                    </div>
+                </Parallax>
+                <Parallax speed={-3} className="self-end overflow-hidden">
+                    <div className="containerAll">
+                        <div className="parallax-components__blur">
+                            <div className="parallax-components__blur_container">
+                                <div className="parallax-components__blur_container__button">
+                                    <Image src={aboutTeam} alt="Кнопка"  className="parallax-components__blur_container__button_img" />
+                                </div>
+                                <div className="parallax-components__blur_container__text">
+                                    <p className="parallax-components__blur_container__text_p">
+                                        {t('text')}
+                                    </p>
+                                </div>
                             </div>
-                            <div className="parallax-components__blur_container__text">
-                                <p className="parallax-components__blur_container__text_p">
-                                    {t('text')}
+                        </div>
+                        <div className="parallax-components__numbers">
+                            <div className="parallax-components__numbers_num">
+                                <div className="parallax-components__numbers_num">
+                                    <p className="parallax-components__numbers_num__title">
+                                        &gt;
+                                    </p>
+                                    <div className="parallax-components__numbers_num__container">
+                                        <p className="parallax-components__numbers_num__title">
+                                            {data.data.implemented_projects}
+                                        </p>
+                                        <p className="parallax-components__numbers_num__text">
+                                            {t("completedProjects")}
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="parallax-components__numbers_description">
+                                <p className="parallax-components__numbers_description__text">
+                                    {t("completedProjectsText")}
                                 </p>
                             </div>
                         </div>
                     </div>
-                    <div className="parallax-components__numbers">
-                        <div className="parallax-components__numbers_num">
+                    <div className="parallax-components__line"></div>
+                    <div className="containerAll">
+                        <div className="parallax-components__numbers">
                             <div className="parallax-components__numbers_num">
                                 <p className="parallax-components__numbers_num__title">
                                     &gt;
                                 </p>
                                 <div className="parallax-components__numbers_num__container">
                                     <p className="parallax-components__numbers_num__title">
-                                        {data.data.implemented_projects}
+                                        {data.data.unique_scenarios}
                                     </p>
                                     <p className="parallax-components__numbers_num__text">
-                                        {t("completedProjects")}
+                                        {t("uniqueEventScenarios")}
                                     </p>
                                 </div>
                             </div>
-                        </div>
-                        <div className="parallax-components__numbers_description">
-                            <p className="parallax-components__numbers_description__text">
-                                {t("completedProjectsText")}
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div className="parallax-components__line"></div>
-                <div className="containerAll">
-                    <div className="parallax-components__numbers">
-                        <div className="parallax-components__numbers_num">
-                            <p className="parallax-components__numbers_num__title">
-                                &gt;
-                            </p>
-                            <div className="parallax-components__numbers_num__container">
-                                <p className="parallax-components__numbers_num__title">
-                                    {data.data.unique_scenarios}
-                                </p>
-                                <p className="parallax-components__numbers_num__text">
-                                    {t("uniqueEventScenarios")}
+                            <div className="parallax-components__numbers_description">
+                                <p className="parallax-components__numbers_description__text">
+                                    {t("uniqueEventScenariosText")}
                                 </p>
                             </div>
                         </div>
-                        <div className="parallax-components__numbers_description">
-                            <p className="parallax-components__numbers_description__text">
-                                {t("uniqueEventScenariosText")}
-                            </p>
-                        </div>
                     </div>
-                </div>
-                <div className="parallax-components__line"></div>
-                <div className="containerAll">
-                    <div className="parallax-components__numbers">
-                        <div className="parallax-components__numbers_num">
-                            <p className="parallax-components__numbers_num__title">
-                                <span className="parallax-components__numbers_num__title_none">&gt;</span>
-                            </p>
-                            <div className="parallax-components__numbers_num__container">
+                    <div className="parallax-components__line"></div>
+                    <div className="containerAll">
+                        <div className="parallax-components__numbers">
+                            <div className="parallax-components__numbers_num">
                                 <p className="parallax-components__numbers_num__title">
-                                    {data.data.years_of_experience} <span className="parallax-components__numbers_num__title_year">{t("year")}</span>
+                                    <span className="parallax-components__numbers_num__title_none">&gt;</span>
                                 </p>
-                                <p className="parallax-components__numbers_num__text">
-                                    {t("yearsInTheIndustry")}
+                                <div className="parallax-components__numbers_num__container">
+                                    <p className="parallax-components__numbers_num__title">
+                                        {data.data.years_of_experience} <span className="parallax-components__numbers_num__title_year">{t("years")}</span>
+                                    </p>
+                                    <p className="parallax-components__numbers_num__text">
+                                        {t("yearsInTheIndustry")}
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="parallax-components__numbers_description">
+                                <p className="parallax-components__numbers_description__text">
+                                    {t("yearsInTheIndustryText")}
                                 </p>
                             </div>
                         </div>
-                        <div className="parallax-components__numbers_description">
-                            <p className="parallax-components__numbers_description__text">
-                                {t("yearsInTheIndustryText")}
-                            </p>
+                    </div>
+                    <div className="parallax-components__buttons">
+                        <div className="parallax-components__buttons_item">
+                            <Link href={`/${lng}`} className="parallax-components__buttons_item__btn1">{t("portfolio")}</Link>
+                        </div>
+                        <div className="parallax-components__buttons_item">
+                            <Link href={`/${lng}/blog`} className="parallax-components__buttons_item__btn2">{t("media")}</Link>
                         </div>
                     </div>
-                </div>
-                <div className="parallax-components__buttons">
-                    <div className="parallax-components__buttons_item">
-                        <Link href={`/${lng}`} className="parallax-components__buttons_item__btn1">{t("portfolio")}</Link>
-                    </div>
-                    <div className="parallax-components__buttons_item">
-                        <Link href={`/${lng}/blog`} className="parallax-components__buttons_item__btn2">{t("media")}</Link>
-                    </div>
-                </div>
+                </Parallax>
             </div>
             <div className="containerAll">
                 <div className="about-us-page__team-title">

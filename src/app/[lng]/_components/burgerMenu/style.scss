@@ -41,6 +41,11 @@
           background: transparent;
           border: none;
           max-width: 40px;
+
+          &__img {
+            width: 100%;
+            height: auto;
+          }
         }
       }
 
@@ -113,14 +118,21 @@
   }
 }
 
-@media screen and (max-width: 1250px) {
-  .burger-component__container_menu__buttons_btn {
-    &__brief {
-      padding: 20px 30px;
-    }
+@media screen and (max-width: 1600px) {
+  .burger-component__container_menu {
+    height: 91%;
 
-    &__presentation {
-      padding: 20px 30px;
+    &__href_a {
+      font-size: 2.5rem;
+    }
+    &__buttons_btn__brief {
+      padding: 20px;
+    }
+    &__buttons_btn__presentation {
+      padding: 20px;
+    }
+    &__close_btn__img {
+      max-width: 30px;
     }
   }
 }
@@ -130,12 +142,10 @@
     display: flex;
     flex-direction: column;
     &__brief {
-      padding: 30px;
       text-align: center;
     }
 
     &__presentation {
-      padding: 30px;
       text-align: center;
     }
   }

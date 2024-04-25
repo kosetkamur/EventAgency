@@ -26,6 +26,7 @@
       width: 100%;
       height: auto;
       max-width: 63px;
+      animation: 2s sunRotate infinite 1s ease-in-out;
     }
   }
   &__form {
@@ -289,5 +290,23 @@
       right: -30px;
       top: -20px;
     }
+  }
+}
+
+@keyframes sunRotate  {
+  0%{
+    transform: rotate(0);
+  }
+  20%{
+    transform: rotate(90deg);
+  }
+  40%{
+    transform: rotate(-0);
+  }
+  60%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(0);
   }
 }

@@ -2,13 +2,10 @@
 import "../header.scss";
 import * as React from 'react';
 import Link from "next/link";
-import {useState} from "react";
 import {useTranslation} from "@/app/i18n/client";
-import {usePathname, useRouter} from "next/navigation";
+import {usePathname} from "next/navigation";
 
 export default function Nav({lng}) {
-    const [isActive, setIsActive] = useState("/");
-    //@ts-ignore
     const { t } = useTranslation(lng, 'common');
     const path = usePathname();
     return (

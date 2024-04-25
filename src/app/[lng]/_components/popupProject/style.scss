@@ -14,7 +14,7 @@
     min-width: 300px;
     width: 100%;
     max-width: 770px;
-    height: 97vh;
+    height: auto;
     margin: 0 50px;
     background-size: cover;
     background-position: left center;
@@ -160,18 +160,27 @@
   }
 }
 
-@media screen and (max-width: 650px) {
-  .popup-project__bg_container__text_checkbox__label .checkbox__body {
-    font-size: 1rem;
+@media screen and (max-width: 1500px) {
+  .popup-project__bg_container__text_checkbox {
+    align-items: center;
+    margin: 10px 0;
+
+    &__label .checkbox__body {
+      font-size: 1rem;
+    }
+
+    &__label .checkbox__checkmark {
+      width: 30px;
+      height: 30px;
+      top: -6px;
+    }
+
+    &__label .checkbox__checkmark:after {
+      left: 4px;
+      top: 3px;
+    }
   }
-  .popup-project__bg_container__text_checkbox__label .checkbox__checkmark {
-    width: 30px;
-    height: 30px;
-  }
-  .popup-project__bg_container__text_checkbox__label .checkbox__checkmark:after {
-    left: 4px;
-    top: 3px;
-  }
+
   .popup-project {
     &__bg {
       margin: 0;
@@ -215,5 +224,11 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .popup-project__bg_container__text_checkbox__label .checkbox__checkmark {
+    top: 2px;
   }
 }

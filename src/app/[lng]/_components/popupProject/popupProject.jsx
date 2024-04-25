@@ -31,7 +31,6 @@ export default function PopupProject({lng, closePopup}) {
         })
         const data = await response.json()
         setErrorMess(data);
-        console.log(data, data.field_problems, errorMess)
         if (response.ok) {
             setError(false);
         } else if (response.status === "400") {
@@ -65,10 +64,10 @@ export default function PopupProject({lng, closePopup}) {
                      </div>
                      <div className="popup-project__bg_container__text">
                          <p className="popup-project__bg_container__text_title">
-                             расскажите о проекте
+                             {t('TELLUSABOUTYOURPROJECT')}
                          </p>
                          <p className="popup-project__bg_container__text_subtitle">
-                             Просто расскажите нам о вашем проекте, а мы сделаем всё остальное
+                             {t('TELLUSABOUTYOURPROJECTText')}
                          </p>
                          <form className="popup-project__bg_container__text_form" ref={ref} action={submitHandler}>
                              <input
@@ -76,35 +75,35 @@ export default function PopupProject({lng, closePopup}) {
                                  type="text"
                                  name="full_name"
                                  className="popup-project__bg_container__text_input"
-                                 placeholder="как к вам обращаться?"
+                                 placeholder={t('whatisyourname').toUpperCase()}
                              />
                              <input
                                  required
                                  type="text"
                                  name="email"
                                  className="popup-project__bg_container__text_input"
-                                 placeholder="email"
+                                 placeholder="EMAIL"
                              />
                              <input
                                  required
                                  type="tel"
                                  name="contact_phone"
                                  className="popup-project__bg_container__text_input"
-                                 placeholder="Телефон"
+                                 placeholder={t('phonenumber').toUpperCase()}
                              />
                              <input
                                  required
                                  type="text"
                                  name="project_scope"
                                  className="popup-project__bg_container__text_input"
-                                 placeholder="cфера деятельности проекта"
+                                 placeholder={t('businessfield').toUpperCase()}
                              />
                              <input
                                  required
                                  type="text"
                                  name="project_goals"
                                  className="popup-project__bg_container__text_input"
-                                 placeholder="цели и задачи проекта"
+                                 placeholder={t('projectgoalsandobjectives').toUpperCase()}
                              />
                              <div className="popup-project__bg_container__text_checkbox">
                                  <label className="popup-project__bg_container__text_checkbox__label">
@@ -118,7 +117,7 @@ export default function PopupProject({lng, closePopup}) {
                              <input
                                  type="submit"
                                  className="popup-project__bg_container__text_submit"
-                                 placeholder="цели и задачи проекта"
+                                 value={t('SEND')}
                              />
                          </form>
                          {

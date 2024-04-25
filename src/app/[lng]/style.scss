@@ -3,6 +3,11 @@
 
   &__video {
     width: 100%;
+
+    &_intro {
+      width: 100%;
+      height: auto;
+    }
   }
 
   &__container {
@@ -170,27 +175,14 @@
   }
 
   &__parallax {
-    //perspective: 1px;
-    //height: 100%;
-    //overflow-y: auto;
-    //overflow-x: hidden;
-    //z-index: 0;
+    position: relative;
+    margin-top: 30px;
 
     &_image {
       position: absolute;
       inset: 0;
       z-index: 0;
-
-      //&__img {
-      //  transform: translateZ(0);
-      //}
     }
-
-    //&_container {
-    //  position: relative;
-    //  transform: scale(1);
-    //  z-index: 1;
-    //}
   }
 }
 

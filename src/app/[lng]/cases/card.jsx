@@ -13,8 +13,7 @@ export default function CardCaseComponent({item,lng}) {
                     <Image src={`${backendHost}${item.cover_image}`}
                            width="100"
                            height="100"
-                           alt="кейс"
-                           className="case-page__cases_item__images" />
+                           alt="кейс"                           className="case-page__cases_item__images" />
                     <div className="case-page__cases_item__buttons">
                         <button className="case-page__cases_item__buttons_button">
                             {item.year}

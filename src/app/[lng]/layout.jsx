@@ -11,6 +11,7 @@ const manrope = Manrope({ subsets: ["latin"] });
 import { dir } from 'i18next'
 import {fallbackLng, languages} from '../i18n/settings'
 import NextTopLoader from 'nextjs-toploader';
+import SmoothScrolling from "@/app/[lng]/_components/smoothScrolling/smoothScrolling";
 
 export async function generateStaticParams() {
     return [...languages].map((lng) => ({ lng }))
@@ -30,7 +31,7 @@ export default function RootLayout({
           <NextTopLoader color="#00BBB6" showSpinner={false} shadow="0" />
           <HeaderScroll lng={lng} />
           <Header lng={lng} />
-            {children}
+            <SmoothScrolling>{children}</SmoothScrolling>
           <Emails lng={lng} />
         </div>
       </body>

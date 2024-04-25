@@ -146,8 +146,14 @@
   "otherCases": "другие проекты",
 
   "PLANNINGANEVENT": "ПЛАНИРУЕТЕ МЕРОПРИЯТИЕ?",
-  "PLANNINGANEVENTPopup": "Мы разберём бриф по вашему событию и оценим проект"
-
+  "PLANNINGANEVENTPopup": "Мы разберём бриф по вашему событию и оценим проект",
+  "TELLUSABOUTYOURPROJECT": "РАССКАЖИТЕ О ПРОЕКТЕ",
+  "TELLUSABOUTYOURPROJECTText": "Просто расскажите нам о вашем проекте, а мы сделаем всё остальное",
+  "whatisyourname": "как к вам обращаться?",
+  "phonenumber": "телефон",
+  "businessfield": "cфера деятельности проекта",
+  "projectgoalsandobjectives": "цели и задачи проекта",
+  "SEND": "ОТПРАВИТЬ"
 }
 
 
