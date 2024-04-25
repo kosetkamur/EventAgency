@@ -19,11 +19,11 @@ async function getData() {
     return res.json()
 }
 
-export default async function PhotosComponent() {
+export default async function PhotosComponent({id}) {
     const photos = await getData();
 
      return (
-         <div className="photos-component">
+         <div className="photos-component" id={id}>
              <div className="photos-component__container">
                  {
                      photos.data.map((photo, index) => (

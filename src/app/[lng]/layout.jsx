@@ -12,6 +12,7 @@ import { dir } from 'i18next'
 import {fallbackLng, languages} from '../i18n/settings'
 import NextTopLoader from 'nextjs-toploader';
 import SmoothScrolling from "@/app/[lng]/_components/smoothScrolling/smoothScrolling";
+import Head from "next/head";
 
 export async function generateStaticParams() {
     return [...languages].map((lng) => ({ lng }))

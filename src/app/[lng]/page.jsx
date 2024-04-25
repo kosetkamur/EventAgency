@@ -53,7 +53,7 @@ export default async function Home({ params: { lng } }) {
     return (
         <main className="main-page">
             <section className="main-page__video">
-                <video width="auto" height="auto" controls muted playsInline autoPlay className="main-page__video_intro">
+                <video width="auto" height="auto" loop muted playsInline autoPlay className="main-page__video_intro">
                     <source src={`${backendHost}/${data.data.intro_video}`} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
@@ -96,12 +96,12 @@ export default async function Home({ params: { lng } }) {
             <PopupEvent lng={lng} targetBlockId="ServicesComponent"/>
 
             <div className="main-page__parallax">
-                <Parallax speed={1} className="self-start">
+                <Parallax speed={-3} className="self-start">
                     <div className="main-page__parallax_image">
                         <Image src={bg} alt="полоски" className="main-page__parallax_image__img" />
                     </div>
                 </Parallax>
-                <Parallax speed={-2} className="self-end overflow-hidden">
+                <Parallax speed={1} className="self-end overflow-hidden">
                 <div className="containerAll main-page__parallax_container">
                     <div className="parallax-components__blur">
                         <div className="parallax-components__blur_container">
@@ -198,15 +198,15 @@ export default async function Home({ params: { lng } }) {
                             </a>
                         </div>
                     </div>
+                    <div className="parallax-components__title">
+                        <div className="parallax-components__title_photoTitle">
+                            <p className="parallax-components__title_photoTitle__text">
+                                [ {t('cases')} ]
+                            </p>
+                        </div>
+                    </div>
                 </div>
                 </Parallax>
-            </div>
-            <div className="parallax-components__title">
-                <div className="parallax-components__title_photoTitle">
-                    <p className="parallax-components__title_photoTitle__text">
-                        [ {t('cases')} ]
-                    </p>
-                </div>
             </div>
             <div className="containerAll">
                 <CaseMainComponent id="CaseMainComponent" lng={lng} />
@@ -214,7 +214,7 @@ export default async function Home({ params: { lng } }) {
             <PopupTg lng={lng} targetBlockId="CaseMainComponent"/>
             <AwardComponent lng={lng} />
             <div className="containerAll">
-                <div className="video-component">
+                <div className="video-component" id="rating">
                     <div className="video-component__container">
                         <div className="video-component__container_title">
                             <div className="video-component__container_title__text">

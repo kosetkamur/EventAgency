@@ -74,19 +74,11 @@
             color: #000000;
             font-size: 1.25rem;
             font-weight: 600;
+            text-transform: uppercase;
           }
         }
       }
     }
-
-    &_container2 {
-      //display: grid;
-      //grid-template-columns: repeat(2, 50%);
-      //grid-auto-rows: auto;
-      //gap: 150px 0;
-    }
-
-
   }
 }
 

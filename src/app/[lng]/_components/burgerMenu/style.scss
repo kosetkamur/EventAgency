@@ -125,6 +125,10 @@
     &__href_a {
       font-size: 2.5rem;
     }
+
+    &__href_a:hover {
+      color: #00BBB6;
+    }
     &__buttons_btn__brief {
       padding: 20px;
     }

@@ -8,7 +8,7 @@ import {useTranslation} from "@/app/i18n/client";
 import {createRef, useState} from "react";
 import {backendHost} from "@/lib/consts/consts";
 
-export default function Form({lng}) {
+export default function Form({lng, id}) {
     const { t } = useTranslation(lng);
     const [error, setError] = useState(null);
     const [errorMess, setErrorMess] = useState(null);
@@ -56,7 +56,7 @@ export default function Form({lng}) {
     }
 
     return (
-        <div className="form-component">
+        <div className="form-component" id={id}>
             <div className="form-component__title">
                 <p className="form-component__title_p">
                     <Image src={icon3} alt="солнышко" className="form-component__title_sun" />{t('TOGET')} <span>{t('INTOUCH')}</span>,

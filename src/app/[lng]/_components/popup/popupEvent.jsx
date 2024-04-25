@@ -14,7 +14,7 @@ export default function PopupEvent({lng, targetBlockId}) {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !isVisible) {
                     setIsVisible(true);
-                    popupRef.current.style.display = 'flex'
+                    popupRef.current.style.display = 'flex';
                 }
             })
         })
@@ -32,7 +32,7 @@ export default function PopupEvent({lng, targetBlockId}) {
              <div className="popup__bg popup__event">
                  <div className="popup__bg_container">
                      <div className="popup__bg_container__close">
-                         <button className="popup__bg_container__close_btn" onClick={() => popupRef.current.style.display = 'none'}></button>
+                         <button className="popup__bg_container__close_btn" onClick={() => { popupRef.current.style.display = 'none'; }}></button>
                      </div>
                      <div className="popup__bg_container__text">
                          <p className="popup__bg_container__text_title">

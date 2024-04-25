@@ -1,15 +1,13 @@
 import "./style.scss";
 import * as React from "react";
 import DirectorsComponents from "@/app/[lng]/_components/team/directors/page";
-import Image from "next/image";
-import play from "@/public/images/aboutPlay.svg";
 import {useTranslation} from "@/app/i18n";
 import ButtonPopupVideoAbout from "@/app/[lng]/_components/popupVideo/buttonPopupVideoAbout";
 
-export default async function TeamComponent({lng, video}) {
+export default async function TeamComponent({lng, video, id}) {
     const { t } = await useTranslation(lng,'translation');
      return (
-         <div className="team-component" id="team">
+         <div className="team-component" id={id}>
              <div className="team-component__container">
                  <DirectorsComponents lng={lng} />
                  <div className="team-component__container_item">

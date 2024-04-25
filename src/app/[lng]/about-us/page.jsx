@@ -41,7 +41,7 @@ async function getData(lng) {
 
 export default async function CasePage({ params: { lng } }) {
     const { t } = await useTranslation(lng,'translation');
-    const data = await getData();
+    const data = await getData(lng);
     return (
         <div className="about-us-page">
             <div className="containerAll">
@@ -70,20 +70,20 @@ export default async function CasePage({ params: { lng } }) {
                 </div>
             </div>
             <div className="parallax-components">
-                <Parallax speed={1} className="self-start">
+                <Parallax speed={-3} className="self-start">
                     <div className="parallax-components__parallax_image">
                         <Image src={bg} alt="полоски" className="parallax-components__parallax_image__img" />
                     </div>
                 </Parallax>
-                <Parallax speed={-3} className="self-end overflow-hidden">
+                <Parallax speed={1} className="self-end overflow-hidden">
                     <div className="containerAll">
-                        <div className="parallax-components__blur">
-                            <div className="parallax-components__blur_container">
-                                <div className="parallax-components__blur_container__button">
-                                    <Image src={aboutTeam} alt="Кнопка"  className="parallax-components__blur_container__button_img" />
+                        <div className="parallax-components__blur2">
+                            <div className="parallax-components__blur2_container">
+                                <div className="parallax-components__blur2_container__button">
+                                    <Image src={aboutTeam} alt="команда"  className="parallax-components__blur2_container__button_img" />
                                 </div>
-                                <div className="parallax-components__blur_container__text">
-                                    <p className="parallax-components__blur_container__text_p">
+                                <div className="parallax-components__blur2_container__text">
+                                    <p className="parallax-components__blur2_container__text_p">
                                         {t('text')}
                                     </p>
                                 </div>
@@ -176,7 +176,7 @@ export default async function CasePage({ params: { lng } }) {
                         </p>
                     </div>
                 </div>
-                <TeamComponent lng={lng} video={data.data.welcome_video} />
+                <TeamComponent lng={lng} id="team" video={data.data.welcome_video} />
                 <div className="team-component__team">
                     <GroupComponents lng={lng} />
                 </div>
@@ -189,7 +189,7 @@ export default async function CasePage({ params: { lng } }) {
                 <h2 className="about-us-page__title">
                     {t('PEOPLEANDEVENTSAVANTAGEPROJECT')}
                 </h2>
-                <PhotosComponent />
+                <PhotosComponent id="photo" />
             </div>
             <div id="marqeeDesktop">
                 <MarqeeComponent color={"#8751FF"} />

@@ -45,7 +45,7 @@ export default async function ServicesPage({ params: { lng } }) {
                     </Link>
                 </div>
                 <CardsComponent lng={lng} />
-                <Form lng={lng} />
+                <Form lng={lng} id="form" />
             </div>
         </div>
     );

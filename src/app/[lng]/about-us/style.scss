@@ -149,14 +149,61 @@
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  padding: 0 0 100px 0;
+  padding: 0 0 150px 0;
   position: relative;
 
+  &__blur2 {
+    width: 100%;
+    background-color: rgba(255, 255, 255, .2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+
+    &_container {
+      width: 88%;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      padding: 70px 0;
+      gap: 100px;
+
+      &__button {
+        max-width: 721px;
+        width: 40%;
+
+        &_img {
+          width: 100%;
+          height: auto;
+        }
+      }
+
+      &__text {
+        width: 60%;
+        position: relative;
+        box-sizing: border-box;
+        max-width: 673px;
+
+        &_p {
+          color: #000000;
+          font-size: 1.25rem;
+          font-weight: 500;
+          line-height: 1.3;
+        }
+      }
+    }
+  }
   &__parallax {
     &_image {
       position: absolute;
       inset: 0;
       z-index: -1;
+      width: 100%;
+
+      &__img {
+        width: 100%;
+      }
     }
   }
 
