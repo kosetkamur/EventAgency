@@ -9,7 +9,7 @@ import ButtonPopupVideoAbout from "@/app/[lng]/_components/popupVideo/buttonPopu
 export default async function TeamComponent({lng, video}) {
     const { t } = await useTranslation(lng,'translation');
      return (
-         <div className="team-component">
+         <div className="team-component" id="team">
              <div className="team-component__container">
                  <DirectorsComponents lng={lng} />
                  <div className="team-component__container_item">
