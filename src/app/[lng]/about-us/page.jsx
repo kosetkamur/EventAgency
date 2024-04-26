@@ -6,7 +6,7 @@ import GoTgComponent from "@/app/[lng]/_components/tg/page";
 import PhotosComponent from "@/app/[lng]/_components/photos/page";
 import MarqeeComponent from "@/app/[lng]/_components/marqee/page";
 import Form from "@/app/[lng]/_components/form/page";
-import GroupComponents from "@/app/[lng]/_components/team/group/page";
+import GroupComponents from "@/app/[lng]/_components/team/group";
 
 import Image from "next/image";
 import aboutTeam from "@/public/images/aboutTeam.png";
@@ -16,6 +16,7 @@ import {backendHost} from "@/lib/consts/consts";
 import ErrorServer from "@/app/[lng]/_components/error/error";
 import bg from "@/public/images/mainParallax.svg";
 import {Parallax} from "@/app/[lng]/_components/parallax/parallax";
+import CardsComponent from "@/app/[lng]/_components/cards/page";
 
 export const metadata = {
     title: "О компании",
@@ -180,6 +181,7 @@ export default async function CasePage({ params: { lng } }) {
                 <div className="team-component__team">
                     <GroupComponents lng={lng} />
                 </div>
+                <CardsComponent lng={lng} />
             </div>
             <div id="marqeeMobile">
                 <MarqeeComponent color={"#8751FF"} />

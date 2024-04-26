@@ -1,6 +1,6 @@
 import "./style.scss";
 import * as React from "react";
-import DirectorsComponents from "@/app/[lng]/_components/team/directors/page";
+import DirectorsComponents from "@/app/[lng]/_components/team/directors";
 import {useTranslation} from "@/app/i18n";
 import ButtonPopupVideoAbout from "@/app/[lng]/_components/popupVideo/buttonPopupVideoAbout";
 

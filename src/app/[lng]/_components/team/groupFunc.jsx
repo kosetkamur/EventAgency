@@ -1,7 +1,7 @@
 "use client";
-import "../style.scss";
+import "./style.scss";
 import * as React from "react";
-import CardComponent from "@/app/[lng]/_components/team/directors/card/page";
+import CardComponent from "@/app/[lng]/_components/team/card/page";
 import {useState} from "react";
 import {useTranslation} from "@/app/i18n/client";
 

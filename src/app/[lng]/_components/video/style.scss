@@ -54,6 +54,7 @@
     &_video {
       width: 80%;
       height: auto;
+      border-radius: 10px;
     }
   }
 }
@@ -112,7 +113,7 @@
 @media screen and (max-width: 600px) {
   .video-component {
     width: 100%;
-    margin: 120px 0 150px 0;
+    margin: 0 0 28px 0;
 
     &__container {
       width: 100%;
@@ -121,12 +122,19 @@
       align-items: center;
 
       &_title {
+
+        &__right {
+          text-align: right;
+        }
+
         &__text {
           grid-column: 1 / 2;
-          font-size: 2rem;
+          font-size: 1.5rem;
+          line-height: 1;
 
           &_num {
             font-size: 4rem;
+            line-height: 1;
           }
         }
 

@@ -1,6 +1,6 @@
-import "../style.scss";
+import "./style.scss";
 import * as React from "react";
-import CardComponent from "@/app/[lng]/_components/team/directors/card/page";
+import CardComponent from "@/app/[lng]/_components/team/card/page";
 import {backendHost} from "@/lib/consts/consts";
 
 async function getData(lng) {

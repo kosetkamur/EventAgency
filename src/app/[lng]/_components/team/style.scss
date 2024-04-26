@@ -27,9 +27,7 @@
 
     &_item {
       width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      height: 100%;
 
       &__title {
         font-size: 4rem;
@@ -46,16 +44,14 @@
 
         &_button {
           &__btn {
-            width: 100%;
-            max-width: 120px;
-            height: auto;
             background-color: transparent;
             border: none;
+            &_img {
+              width: 100%;
+              max-width: 120px;
+              height: auto;
+            }
           }
-        }
-
-        &_text {
-          max-width: 300px;
           &__p {
             font-size: 1.25rem;
             max-width: 320px;
@@ -141,12 +137,14 @@
 @media screen and (max-width: 1024px) {
   .team-component__container {
     width: 100%;
-  }
-  .team-component__container_item__bottom_button__btn_img {
-    max-width: 80px;
-  }
-  .team-component__container_item__bottom {
-    gap: 20px;
+
+    &_item__bottom_button__btn_img {
+      max-width: 80px;
+    }
+
+    &_item__bottom {
+      gap: 20px;
+    }
   }
 }
 
@@ -164,9 +162,7 @@
 
       &_item {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        height: 100%;
 
         &__title {
           font-size: 2rem;
@@ -177,14 +173,17 @@
         &__bottom {
           display: flex;
           flex-direction: row;
-          gap: 40px;
+          gap: 30px;
 
-          &_text {
-            max-width: 300px;
+          &_button {
+            &__btn_img {
+              max-width: 51px;
+              min-width: 51px;
+            }
 
             &__p {
-              font-size: 1.25rem;
-              max-width: 320px;
+              font-size: 1rem;
+              max-width: 300px;
             }
           }
         }
@@ -214,7 +213,7 @@
 
     &__team {
       &_people {
-        padding: 70px 0;
+        padding-top: 70px;
 
         &__item {
           width: 48%;
@@ -230,5 +229,11 @@
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .team-component__container_item__bottom_button__p {
+    font-size: 0.7rem;
   }
 }

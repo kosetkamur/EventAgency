@@ -297,8 +297,10 @@
     height: 418px;
     max-height: 418px;
     min-height: 418px;
+
     &_tagline__text {
       font-size: 2rem;
+      line-height: 0.3;
     }
     &_tagline__container_text {
       font-size: 1rem;
@@ -327,7 +329,8 @@
 
 @media screen and (max-width: 520px) {
   .main-page__tagline {
-    min-height: 200px;
+    min-height: 181px;
+
     &_container__text {
       font-size: 1.5rem;
       &_image {

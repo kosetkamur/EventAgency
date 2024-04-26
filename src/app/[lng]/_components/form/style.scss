@@ -1,6 +1,7 @@
 .form-component {
   width: 100%;
-  margin-top: 130px;
+  margin-top: 150px;
+
   &__title {
     max-width: 100%;
     z-index: 5;
@@ -139,6 +140,7 @@
         border-radius: 100px;
         text-transform: uppercase;
         background-color: #FFFFFF;
+        color: #000000;
       }
 
       &__button:hover {

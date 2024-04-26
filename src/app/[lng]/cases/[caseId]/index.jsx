@@ -52,7 +52,8 @@ export default function Artical({caseInfo, anotherCases, lng}) {
                                    height="100"
                                    alt="Фотография кейса"
                                    className="article-page__header_image" /> :
-                            <video width="auto" height="auto" controls muted playsInline autoPlay  className="article-page__header_video">
+
+                            <video width="auto" height="auto" loop muted playsInline autoPlay className="main-page__video_intro">
                                 <source src={`${backendHost}${caseInfo.data.cover_image}`} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
@@ -115,7 +116,10 @@ export default function Artical({caseInfo, anotherCases, lng}) {
                     {
                         caseInfo.data.photos.map(photo=>
                             <div key={photo.id}>
-                                <Image src={`${backendHost}${photo.file}`} alt="Фотография кейса" width="100" height="100" className="article-page__description_image" />
+                                {
+                                    photo.type === "image" &&
+                                    <Image src={`${backendHost}${photo.file}`} alt="Фотография кейса" width="100" height="100" className="article-page__description_image" />
+                                }
                             </div>
                         )
                     }

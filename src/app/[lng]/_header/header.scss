@@ -148,9 +148,13 @@
         padding: 20px 15px 0 15px;
         z-index: 103;
 
+        &__logo_img {
+            width: 60px;
+            height: 60px;
+        }
+
         &__burger_text {
             display: none;
-
         }
     }
 }

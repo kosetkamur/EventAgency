@@ -6,7 +6,7 @@ const nextConfig = {
         remotePatterns: [
             {
                 protocol: 'http',
-                hostname: '89.111.173.125',
+                hostname: 'avantage-event.com',
                 pathname: '**',
             },
         ],

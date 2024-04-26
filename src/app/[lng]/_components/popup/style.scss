@@ -111,7 +111,8 @@
       &__close {
         margin-bottom: 65px;
 
-        img {
+        &_btn {
+          background-size: 25px auto;
           max-width: 25px;
           max-height: 25px;
         }

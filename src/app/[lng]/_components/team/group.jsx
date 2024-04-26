@@ -1,6 +1,6 @@
-import "../style.scss";
+import "./style.scss";
 import * as React from "react";
-import GroupFunc from "@/app/[lng]/_components/team/group/groupFunc";
+import GroupFunc from "@/app/[lng]/_components/team/groupFunc";
 import {backendHost} from "@/lib/consts/consts";
 
 async function getData(lng) {
