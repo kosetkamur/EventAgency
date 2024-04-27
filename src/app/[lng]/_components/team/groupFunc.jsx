@@ -9,20 +9,25 @@ export default function GroupFunc({directors, lng}) {
     const [show, setShow] = useState(false);
     const { t } = useTranslation(lng,'translation');
 
+    const handleShow = () => {
+        setShow(!show)
+    }
+
     return (
         <>
             <div className="team-component__team_button">
-                <button
-                    onClick={() => setShow(!show)}
+                <a
+                    onClick={handleShow}
+                    href={`/${lng}/about-us#allTeam`}
                     className="team-component__team_button__btn"
                 >
                     {t('viewAll')}
-                </button>
+                </a>
             </div>
             <div className="team-component__team_people">
             {
                 show && directors.data.map(director =>
-                    <div key={director.name} className="team-component__team_people__item">
+                    <div key={director.name} className="team-component__team_people__item" id="allTeam">
                         <CardComponent  name={director.name} position={director.position} photo={director.photo} />
                     </div>
                 )

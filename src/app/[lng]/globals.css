@@ -51,7 +51,22 @@ button {
     padding: 0 30px;
 }
 
+.isDesktop {
+    display: block;
+}
+.isMobile {
+    display: none;
+}
+
 @media screen and (max-width: 600px) {
+    .isDesktop {
+        display: none;
+    }
+
+    .isMobile {
+        display: block;
+    }
+
     .containerAll {
         padding: 0 15px;
     }

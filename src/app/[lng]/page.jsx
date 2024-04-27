@@ -19,6 +19,7 @@ import PopupEvent from "@/app/[lng]/_components/popup/popupEvent";
 import icon1 from '@/public/images/icon1.svg';
 import mainArrow from "@/public/images/mainArrow2.svg";
 import bg from "@/public/images/mainParallax.svg";
+import bgMobile from "@/public/images/mainParallaxMobile.svg";
 import ButtonPopupProject from "@/app/[lng]/_components/popupProject/buttonPopupProject";
 import ButtonPopupVideo from "@/app/[lng]/_components/popupVideo/buttonPopupVideo";
 import {Parallax} from "@/app/[lng]/_components/parallax/parallax";
@@ -96,9 +97,10 @@ export default async function Home({ params: { lng } }) {
             <PopupEvent lng={lng} targetBlockId="ServicesComponent"/>
 
             <div className="main-page__parallax">
-                <Parallax speed={-3} className="self-start">
+                <Parallax speed={-4} className="self-start">
                     <div className="main-page__parallax_image">
-                        <Image src={bg} alt="полоски" className="main-page__parallax_image__img" />
+                        <Image src={bg} alt="полоски" className="main-page__parallax_image__img isDesktop" />
+                        <Image src={bgMobile} alt="полоски" className="main-page__parallax_image__img isMobile" />
                     </div>
                 </Parallax>
                 <Parallax speed={1} className="self-end overflow-hidden">
@@ -188,7 +190,7 @@ export default async function Home({ params: { lng } }) {
                     </div>
                     <div className="parallax-components__buttons">
                         <div className="parallax-components__buttons_item">
-                            <a href={`${backendHost}${data.data.presentation}`} className="parallax-components__buttons_item__btn1">
+                            <a href={`${backendHost}${data.data.presentation}`} download className="parallax-components__buttons_item__btn1">
                                 {t("portfolio")}
                             </a>
                         </div>

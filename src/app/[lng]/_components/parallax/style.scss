@@ -75,9 +75,34 @@
         max-width: 387px;
 
         &_img {
+          position: relative;
           min-width: 387px;
           width: 100%;
           height: auto;
+          z-index: 1;
+        }
+
+        &_btn {
+          position: relative;
+
+          &__video {
+            width: 351px;
+            height: 352px;
+            border-radius: 200px;
+            position: absolute;
+            left: 1.5px;
+            top: 1.5px;
+
+
+            &_welcome {
+              object-fit: cover;
+              width: 100%;
+              height: 100%;
+              border-radius: 200px;
+              position: relative;
+              z-index: 0;
+            }
+          }
         }
       }
     }
@@ -125,7 +150,7 @@
       &__text {
         font-size: 1rem;
         font-weight: 600;
-        line-height: 1;
+        line-height: 1.5;
       }
     }
   }
@@ -146,6 +171,7 @@
         font-weight: 500;
         border-radius: 50px;
         padding: 30px 80px;
+        display: inline-block;
       }
 
       &__btn1:hover {
@@ -162,6 +188,7 @@
         font-weight: 500;
         border-radius: 50px;
         padding: 30px 80px;
+        display: inline-block;
       }
 
       &__btn2:hover {
@@ -174,7 +201,6 @@
   }
 
   &__title {
-    margin: 0 0 30px 0;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -192,7 +218,8 @@
       flex-direction: row;
       justify-content: center;
       align-items: center;
-      margin-top: 100px;
+      margin-top: 150px;
+
       &__text {
         text-align: center;
         font-size: 1.25rem;
@@ -216,6 +243,14 @@
         min-width: 300px;
         width: 100%;
         height: auto;
+      }
+      &_btn {
+        &__video {
+          width: 272.4px;
+          height: 273px;
+          left: 1px;
+          top: 0.5px;
+        }
       }
     }
 
@@ -327,6 +362,14 @@
             min-width: 214px;
             width: 100%;
             height: auto;
+          }
+          &_btn {
+            &__video {
+              width: 195px;
+              height: 195px;
+              left: 0;
+              top: 0;
+            }
           }
         }
       }

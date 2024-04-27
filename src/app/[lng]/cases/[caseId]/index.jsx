@@ -16,6 +16,7 @@ import * as React from "react";
 export default function Artical({caseInfo, anotherCases, lng}) {
     const { t } = useTranslation(lng,'translation');
 
+    let casesTwo = anotherCases.filter(item => item.id !== caseInfo.data.id).slice(0,2);
     const arrowStyles = {
         position: 'absolute',
         zIndex: 2,
@@ -64,9 +65,7 @@ export default function Artical({caseInfo, anotherCases, lng}) {
                     </h2>
                 </div>
                 <div className="article-page__description">
-                    <p>
-                        {caseInfo.data.body}
-                    </p>
+                    <div className="article-page__description_p" dangerouslySetInnerHTML={{ __html: caseInfo.data.body}} />
                 </div>
                 <div className="article-page__align">
                     <div className="article-page__align_photoTitle">
@@ -117,7 +116,7 @@ export default function Artical({caseInfo, anotherCases, lng}) {
                         caseInfo.data.photos.map(photo=>
                             <div key={photo.id}>
                                 {
-                                    photo.type === "image" &&
+                                    photo.content_type === "image" &&
                                     <Image src={`${backendHost}${photo.file}`} alt="Фотография кейса" width="100" height="100" className="article-page__description_image" />
                                 }
                             </div>
@@ -132,7 +131,7 @@ export default function Artical({caseInfo, anotherCases, lng}) {
                 </div>
                 <div className="article-page__anotherCases">
                     {
-                        anotherCases.map(item =>
+                        casesTwo.map(item =>
                         <CardCaseComponent key={item.id} lng={lng} item={item} />
                         )
                     }

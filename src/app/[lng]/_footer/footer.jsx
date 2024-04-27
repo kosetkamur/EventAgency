@@ -24,7 +24,7 @@ export default function Footer({emails, files, lng}) {
                 <div className="footer__mail">
                     <p className="footer__mail_p">{t('CONTACTUS')}</p>
                     <a href={`mailto:${emails.data.contact_email}`} className="footer__mail_text">
-                        avantage@avantage-event.com
+                        {emails.data.contact_email}
                     </a>
                 </div>
             </div>
@@ -96,7 +96,7 @@ export default function Footer({emails, files, lng}) {
                     <a href={`${emails.data.telegram}`} className="footer__navigation_column__a">
                         telegram@avantage.project
                     </a>
-                    <a href={`${backendHost}${files.data.presentation}`} className="footer__navigation_column__a">
+                    <a href={`${backendHost}${files.data.presentation}`} className="footer__navigation_column__a" download>
                         {t('downloadPresentation')}
                     </a>
                     <a href={`${backendHost}${files.data.brief}`} className="footer__navigation_column__a">

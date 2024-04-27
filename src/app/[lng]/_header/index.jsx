@@ -1,7 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import logo from "@/public/images/logo.svg";
-import burger from "@/public/images/burger.svg";
+import logo from "@/public/images/logoScroll.svg";
 import * as React from "react";
 import {backendHost} from "@/lib/consts/consts";
 import {useTranslation} from "@/app/i18n";
@@ -34,7 +33,7 @@ export default async function HeaderScroll({lng}) {
                 </Link>
             </div>
             <div className="header-desk-scroll__burger">
-                <Link href={`${backendHost}/${files.data.presentation}`} className="header-desk-scroll__burger_text">
+                <Link href={`${backendHost}${files.data.presentation}`} download className="header-desk-scroll__burger_text">
                     {t('downloadPresentation')}
                 </Link>
                 <ButtonHeader files={files} lng={lng} />

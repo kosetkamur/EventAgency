@@ -37,9 +37,7 @@ async function getCase(params) {
 export default async function ArticleComponent({ params }: { params: { id, lng } }) {
     const caseInfo = await getData(params);
     const data = await getCase(params);
-
-    const anotherCases = data.data.filter(item => item.id !== params.id).slice(0,2);
     return (
-       <Artical caseInfo={caseInfo} key={caseInfo.data.id} anotherCases={anotherCases} />
+       <Artical lng={params.lng} caseInfo={caseInfo} key={caseInfo.data.id} anotherCases={data.data} />
     );
 }

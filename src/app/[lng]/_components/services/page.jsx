@@ -45,16 +45,16 @@ export default async function ServicesComponent({lng, id}) {
                         <a href={`/${lng}/services`}>
                             {t('services')}
                         </a>
-                        <a href="#">
+                        <a href={`/${lng}/services#form`}>
                             {t('howWeWork')}
                         </a>
                         <a href={`/${lng}/about-us`}>
                             {t('whyUs')}
                         </a>
-                        <a href={`${backendHost}${refs.data.brief}`}>
+                        <a href={`${backendHost}/media/${refs.data.brief}`} download>
                             {t('brief')}
                         </a>
-                        <a href={`${backendHost}${refs.data.brief}`}>
+                        <a href={`${backendHost}/media/${refs.data.brief}`} download>
                             {t('portfolio')}
                         </a>
                     </div>
@@ -71,7 +71,7 @@ export default async function ServicesComponent({lng, id}) {
                         <a href={`/${lng}/about-us`}>
                             {t('whyYouShouldWork')}
                         </a>
-                        <a href={`${backendHost}${refs.data.form_for_freelancers}`}>
+                        <a href={`${backendHost}/media/${refs.data.form_for_freelancers}`} download>
                             {t('freelancerQuestionnaire')}
                         </a>
                     </div>
@@ -81,7 +81,7 @@ export default async function ServicesComponent({lng, id}) {
                         <p>{t('COMPANYPROFILE')}</p>
                     </div>
                     <div className="services-component_item__ul">
-                        <a href={refs.data.requisites}>
+                        <a href={`${backendHost}/media/${refs.data.requisites}`} download>
                             {t('requisites')}
                         </a>
                         <SentDocs lng={lng} />

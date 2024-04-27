@@ -1,5 +1,7 @@
 import "./style.scss";
 import * as React from "react";
+import Link from "next/link";
+import {useTranslation} from "@/app/i18n";
 
 import TeamComponent from "@/app/[lng]/_components/team/page";
 import GoTgComponent from "@/app/[lng]/_components/tg/page";
@@ -7,16 +9,16 @@ import PhotosComponent from "@/app/[lng]/_components/photos/page";
 import MarqeeComponent from "@/app/[lng]/_components/marqee/page";
 import Form from "@/app/[lng]/_components/form/page";
 import GroupComponents from "@/app/[lng]/_components/team/group";
-
-import Image from "next/image";
-import aboutTeam from "@/public/images/aboutTeam.png";
-import Link from "next/link";
-import {useTranslation} from "@/app/i18n";
-import {backendHost} from "@/lib/consts/consts";
-import ErrorServer from "@/app/[lng]/_components/error/error";
-import bg from "@/public/images/mainParallax.svg";
 import {Parallax} from "@/app/[lng]/_components/parallax/parallax";
 import CardsComponent from "@/app/[lng]/_components/cards/page";
+import ErrorServer from "@/app/[lng]/_components/error/error";
+
+import Image from "next/image";
+import {backendHost} from "@/lib/consts/consts";
+import aboutTeam from "@/public/images/aboutTeam.png";
+import bg from "@/public/images/mainParallax.svg";
+import bgMobile from "@/public/images/mainParallaxMobile.svg";
+
 
 export const metadata = {
     title: "О компании",
@@ -71,9 +73,10 @@ export default async function CasePage({ params: { lng } }) {
                 </div>
             </div>
             <div className="parallax-components">
-                <Parallax speed={-3} className="self-start">
+                <Parallax speed={-4} className="self-start">
                     <div className="parallax-components__parallax_image">
-                        <Image src={bg} alt="полоски" className="parallax-components__parallax_image__img" />
+                        <Image src={bg} alt="полоски" className="parallax-components__parallax_image__img isDesktop" />
+                        <Image src={bgMobile} alt="полоски" className="parallax-components__parallax_image__img isMobile" />
                     </div>
                 </Parallax>
                 <Parallax speed={1} className="self-end overflow-hidden">

@@ -32,7 +32,7 @@
 
   &__description {
     margin: 100px 150px 50px 150px;
-    p {
+    &_p {
       font-size: 2rem;
     }
     &_image {
@@ -109,6 +109,10 @@
   overflow: visible;
 }
 
+.carousel .slide img {
+  object-fit: contain;
+}
+
 .control-dots {
   bottom: -54px;
 }
@@ -135,9 +139,10 @@
     &__description{
       margin: 50px 0 100px 0;
 
-      p {
+      &_p {
         font-size: 1rem;
       }
+
       &_button {
         width: 45px!important;
         height: 45px!important;

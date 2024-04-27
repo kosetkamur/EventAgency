@@ -34,8 +34,14 @@ export default async function WikiPage({ params: { lng } }) {
                 <div className="wiki-page__title">
                     <div className="wiki-page__title_text">
                         <h1 className="wiki-page__title_text__green">EVENT</h1>
-                        <h1  className="wiki-page__title_text__black">
+                        <h1  className="wiki-page__title_text__black isDesktop">
                             {t('ENCYCLOPAEDIA')}
+                        </h1>
+                        <h1  className="wiki-page__title_text__black isMobile">
+                            {t('ENCYCLO')}
+                        </h1>
+                        <h1  className="wiki-page__title_text__black isMobile">
+                            {t('PAEDIA')}
                         </h1>
                     </div>
                     <div className="wiki-page__title_description">

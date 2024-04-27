@@ -47,11 +47,12 @@
   .gotg-page {
     max-height: 378px;
     min-height: 378px;
-    margin: 100px 0 70px 0;
+    margin: 70px 0;
 
     &__container {
       &_text {
         font-size: 1rem;
+        line-height: 1.4;
       }
 
       &_button {

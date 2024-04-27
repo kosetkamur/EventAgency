@@ -1,7 +1,6 @@
 import Cases from "@/app/[lng]/cases/case";
 import ErrorServer from "@/app/[lng]/_components/error/error";
 import {backendHost} from "@/lib/consts/consts";
-import {useSearchParams} from "next/navigation";
 
 export const metadata = {
     title: "Кейсы",

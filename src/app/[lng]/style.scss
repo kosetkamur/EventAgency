@@ -28,6 +28,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
+    margin-top: 15px;
 
     &_container {
       max-width: 1533px;
@@ -151,7 +152,9 @@
   &__parallax {
     position: relative;
     margin-top: 30px;
-    margin-bottom: 250px;
+    margin-bottom: 200px;
+    display: inline-block;
+    width: 100%;
 
     &_image {
       position: absolute;
@@ -293,6 +296,10 @@
 }
 
 @media screen and (max-width: 630px) {
+  .main-page__parallax {
+    margin-bottom: 80px;
+  }
+
   .main-page__application {
     height: 418px;
     max-height: 418px;

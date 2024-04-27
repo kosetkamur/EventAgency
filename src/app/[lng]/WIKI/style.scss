@@ -82,6 +82,13 @@
   }
 }
 
+.isDesktop {
+  display: block;
+}
+.isMobile {
+  display: none;
+}
+
 @media screen and (max-width: 1600px) {
   .wiki-page__title_description {
     max-width: 200px;
@@ -120,6 +127,12 @@
 }
 
 @media screen and (max-width: 600px) {
+  .isDesktop {
+    display: none;
+  }
+  .isMobile {
+    display: block;
+  }
   .wiki-page {
     &__title {
       margin: 36px 0 70px 0;
@@ -127,9 +140,8 @@
         h1 {
           font-size: 3.375rem;
         }
-        &__wbr {
-          display: block;
-          hyphens:auto;
+        &__black {
+          margin-left: 0;
         }
       }
 
@@ -144,22 +156,25 @@
     }
 
     &__alphabet {
-      display: grid;
-      grid-template-columns: repeat(1, 100%);
       gap: 70px 0;
+      &_container {
+        display: grid;
+        grid-template-columns: repeat(1, 100%);
+        gap: 70px 0;
 
-      &_item {
-        &__bigLetter {
-          font-size: 3.375rem;
-          margin-bottom: 10px;
-          margin-left: -2px;
-        }
+        &__item {
+          &_bigLetter {
+            font-size: 3.375rem;
+            margin-bottom: 10px;
+            margin-left: -2px;
+          }
 
-        &__links {
-          gap: 20px;
+          &_links {
+            gap: 20px;
 
-          &_item{
-            font-size: 1rem;
+            &__item{
+              font-size: 1rem;
+            }
           }
         }
       }

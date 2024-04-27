@@ -37,10 +37,13 @@ export default function Form({lng, id}) {
 
         if (response.ok) {
             setError(false);
+            ref.current.reset();
         } else if (response.status === "400") {
             setError(true);
+            ref.current.reset();
         }else {
             setError(true);
+            ref.current.reset();
         }
     }
 
@@ -106,7 +109,7 @@ export default function Form({lng, id}) {
                         <span>
                             <input
                                 required
-                                type="tel"
+                                type="number"
                                 name="contact_phone"
                                 className="form-component__form_main__input"
                                 placeholder="+7 (999) 999-99-99"
