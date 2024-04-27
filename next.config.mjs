@@ -5,7 +5,7 @@ const nextConfig = {
         unoptimized: true,
         remotePatterns: [
             {
-                protocol: 'http',
+                protocol: 'https',
                 hostname: 'avantage-event.com',
                 pathname: '**',
             },
