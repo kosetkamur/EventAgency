@@ -122,7 +122,7 @@ export default function PopupProject({lng, closePopup}) {
                          </form>
                          {
                              error === true &&
-                             <div style={{color: 'red', paddingTop: '10px'}}>
+                             <div style={{color: 'red', paddingTop: '10px'}} className="popup-project__bg_container__text_bug">
                                  {t('error')}
                                  <div>{ errorMess.field_problems.contact_phone ? errorMess.field_problems.contact_phone[0] : null }</div>
                                  <div>{ errorMess.field_problems.email ? errorMess.field_problems.email[0] : null }</div>

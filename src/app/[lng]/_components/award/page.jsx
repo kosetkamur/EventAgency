@@ -21,7 +21,7 @@ async function getData(lng) {
 
 export default async function AwardComponent({lng}) {
     const award = await getData(lng);
-    const { t } = await useTranslation(lng,'translation');
+    const { t } = await useTranslation(lng);
 
     return (
         <div className="award-component">

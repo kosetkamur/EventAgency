@@ -205,7 +205,10 @@
   }
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1280px) {
+  .awards-page__title_text h1 {
+    font-size: 7.5vw;
+  }
   .awards-page__awards_container__item_text {
       max-width: 400px;
       &__year {
@@ -213,11 +216,11 @@
       }
 
       &__title {
-        font-size: 3rem;
+        font-size: 2rem;
       }
 
       &__place {
-        font-size: 2rem;
+        font-size: 0.875rem;
       }
 
       &__nomination {

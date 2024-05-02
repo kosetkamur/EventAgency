@@ -3,7 +3,7 @@ import "./style.scss";
 import * as React from "react";
 import {useTranslation} from "@/app/i18n/client";
 
-export default function ErrorServer({ params: { lng, res } }) {
+export default function ErrorServer({lng, res}) {
     const { t } = useTranslation(lng,'translation');
 
      return (

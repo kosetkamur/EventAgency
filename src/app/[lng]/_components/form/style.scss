@@ -179,9 +179,24 @@
 }
 
 
-@media screen and (max-width: 1200px) {
-  .form-component__form_main {
-    gap: 20px;
+@media screen and (max-width: 1280px) {
+  .form-component__form {
+    &_footer__button {
+      padding: 16px 45px;
+      font-size: 1.25rem;
+    }
+
+    &_footer__checkbox_label .checkbox__body {
+      font-size: 1rem;
+    }
+
+    &_main {
+      gap: 20px;
+
+      span {
+        font-size: 1.5rem;
+      }
+    }
   }
   .form-component__title_arrow {
     max-width: 40px;

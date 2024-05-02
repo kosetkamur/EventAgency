@@ -1,7 +1,5 @@
 .team-component {
   width: 100%;
-  position: relative;
-  z-index: 0;
 
   &__team-title {
     display: flex;
@@ -139,6 +137,13 @@
     &__container_item__title {
       font-size: 3vw;
     }
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .team-component__team_button__btn {
+    padding: 16px 45px;
+    font-size: 1.25rem;
   }
 }
 

@@ -80,7 +80,7 @@ export default function Footer({emails, files, lng}) {
                         {emails.data.email_for_mass_media}
                     </a>
                     <p className="footer__navigation_column__text">
-                        {t('forMedia')}
+                        {t('forPartners')}
                     </p>
                     <a href={`mailto:${emails.data.email_for_partners}`} className="footer__navigation_column__a">
                         {emails.data.email_for_partners}

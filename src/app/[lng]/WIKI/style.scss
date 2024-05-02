@@ -112,7 +112,7 @@
       &_text {
 
         h1 {
-          font-size: 10vw;
+          font-size: 7.5vw;
         }
       }
 
@@ -122,6 +122,13 @@
         position: relative;
         margin-top: 42px;
       }
+    }
+
+    &__alphabet_container__item_bigLetter {
+      font-size: 7.5vw;
+    }
+    &__alphabet_container__item_links__item {
+      font-size: 1rem;
     }
   }
 }

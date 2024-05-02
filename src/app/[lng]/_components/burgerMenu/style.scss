@@ -141,6 +141,13 @@
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .burger-component__container_menu__buttons_btn__brief, .burger-component__container_menu__buttons_btn__presentation {
+    font-size: 1.25rem;
+    padding: 16px 45px;
+  }
+}
+
 @media screen and (max-width: 1150px) {
   .burger-component__container_menu__buttons_btn {
     display: flex;

@@ -35,6 +35,8 @@
   flex-direction: row;
   gap: 0.875rem;
   position: relative;
+  z-index: 10;
+
   &_item {
     width: 33%;
     position: relative;
@@ -131,6 +133,36 @@
 
   &_item:hover .services-component_item__title {
     border-radius: 10px 10px 0 0;
+  }
+}
+
+@media screen and (max-width: 1280px) {
+  .services-component_item {
+    &__title {
+      height: 72px;
+
+      p {
+        font-size: 1rem;
+      }
+    }
+
+    &__circle1::after {
+      font-size: 6rem;
+      right: -28px;
+      top: -24px;
+    }
+
+    &__circle2::after {
+      font-size: 6rem;
+      right: -28px;
+      top: -24px;
+    }
+
+    &__circle3::after {
+      font-size: 6rem;
+      right: -28px;
+      top: -24px;
+    }
   }
 }
 

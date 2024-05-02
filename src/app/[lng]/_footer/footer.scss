@@ -132,6 +132,30 @@
   }
 }
 
+@media screen and (max-width: 1280px) {
+  .footer__navigation_column {
+    &__text {
+      font-size: 1rem;
+    }
+
+    &__a {
+      font-size: 1rem;
+    }
+
+    &__wiki {
+      font-size: 2rem;
+    }
+
+    &__button {
+      font-size: 1rem;
+    }
+
+    &__down {
+      font-size: 1rem;
+    }
+  }
+}
+
 @media screen and (max-width: 1024px) {
   .footer {
     &__navigation {
@@ -148,31 +172,26 @@
         }
 
         &__text {
-          font-size: 1rem;
           padding-bottom: 5px;
         }
 
         &__a {
-          font-size: 1rem;
           padding-bottom: 5px;
-        }
-
-        &__wiki {
-          font-size: 2rem;
+          font-size: 0.9rem;
         }
 
         &__button {
-          font-size: 1rem;
           border: none;
           background: transparent;
           display: flex;
           align-items: center;
           gap: 5px;
+          position: relative;
+          z-index: 2;
         }
 
         &__down {
           padding-top: 70px;
-          font-size: 1rem;
         }
       }
       &_column:nth-child(5) {

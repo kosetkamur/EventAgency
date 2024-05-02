@@ -235,6 +235,14 @@
   .parallax-components {
     &__blur_container__text {
       margin-right: 0;
+
+      &_p {
+        font-size: 1rem;
+      }
+
+      &_btn {
+        font-size: 1rem;
+      }
     }
 
     &__blur_container__button {
@@ -259,19 +267,19 @@
 
       &_num {
         &__title {
-          font-size: 5.5rem;
+          font-size: 6rem;
 
           &_none {
-            font-size: 5.5rem;
+            font-size: 6rem;
           }
 
           &_year {
-            font-size: 2rem;
+            font-size: 1.25rem;
           }
         }
 
         &__text {
-          font-size: 1.5rem;
+          font-size: 1.25rem;
         }
       }
 
@@ -286,10 +294,10 @@
         background-color: #00BBB6;
         text-transform: uppercase;
         color: #FFFFFF;
-        font-size: 2rem;
+        font-size: 1.25rem;
         font-weight: 500;
         border-radius: 50px;
-        padding: 20px 60px;
+        padding: 16px 45px;
       }
 
       &__btn2 {
@@ -297,10 +305,10 @@
         background-color: transparent;
         text-transform: uppercase;
         color: #000000;
-        font-size: 2rem;
+        font-size: 1.25rem;
         font-weight: 500;
         border-radius: 50px;
-        padding: 20px 60px;
+        padding: 16px 45px;
       }
     }
   }
