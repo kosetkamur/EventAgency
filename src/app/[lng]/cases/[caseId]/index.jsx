@@ -42,20 +42,23 @@ export default function Artical({caseInfo, anotherCases, lng}) {
         borderRadius: '50px',
     };
 
+    let mainPhoto = caseInfo.data.photos.filter(photo => photo.is_main===true);
+    let galleryPhoto = caseInfo.data.photos.filter(photo => photo.content_type==="image");
+    console.log(galleryPhoto)
     return (
         <div className="article-page">
             <div className="containerAll">
                 <div className="article-page__header">
                     {
-                        caseInfo.data.main_attachment_type === "image" ?
-                            <Image src={`${backendHost}${caseInfo.data.cover_image}`}
+                        mainPhoto[0].content_type === "image" ?
+                            <Image src={`${backendHost}${mainPhoto[0].file}`}
                                    width="100"
                                    height="100"
                                    alt="Фотография кейса"
                                    className="article-page__header_image" /> :
 
-                            <video width="auto" height="auto" loop muted playsInline autoPlay className="main-page__video_intro">
-                                <source src={`${backendHost}${caseInfo.data.cover_image}`} type="video/mp4" />
+                            <video width="auto" height="auto" loop muted playsInline autoPlay className="article-page__header_video">
+                                <source src={`${backendHost}${mainPhoto[0].file}`} type="video/mp4" />
                                 Your browser does not support the video tag.
                             </video>
                     }
@@ -113,12 +116,9 @@ export default function Artical({caseInfo, anotherCases, lng}) {
                     }}
                 >
                     {
-                        caseInfo.data.photos.map(photo=>
+                        galleryPhoto.map(photo =>
                             <div key={photo.id}>
-                                {
-                                    photo.content_type === "image" &&
-                                    <Image src={`${backendHost}${photo.file}`} alt="Фотография кейса" width="100" height="100" className="article-page__description_image" />
-                                }
+                                <Image src={`${backendHost}${photo.file}`} alt="Фотография кейса" width="100" height="100" className="article-page__description_image" />
                             </div>
                         )
                     }

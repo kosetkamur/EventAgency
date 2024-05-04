@@ -164,8 +164,15 @@
     &_item {
       width: 100%;
 
+      &__buttons {
+        top: 10px;
+        left: 15px;
+      }
+
       &__title {
         font-size: 2.5rem;
+        bottom: 10px;
+        left: 15px;
       }
     }
   }

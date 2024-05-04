@@ -11,25 +11,20 @@ export default function ButtonPopupVideo({video}) {
     const [show, setShow] = useState(false);
 
     const showPopup = () => {
-        setShow(true);
-    }
-
-    const closePopup = () => {
-        setShow(false);
+        console.log(show)
     }
 
     return (
         <>
             <button onClick={showPopup} className="parallax-components__blur_container__button_btn">
                 <div className="parallax-components__blur_container__button_btn__video">
-                    <video width="100" height="100" controls muted playsInline autoPlay  className="parallax-components__blur_container__button_btn__video_welcome">
+                    <video width="100" height="100" loop muted playsInline autoPlay className="parallax-components__blur_container__button_btn__video_welcome">
                         <source src={`${backendHost}/${video}`} type="video/mp4" />
                         Your browser does not support the video tag.
                     </video>
                 </div>
                 <Image src={button} alt="Кнопка"  className="parallax-components__blur_container__button_img" />
             </button>
-            {show && <PopupVideo video={video} closePopup={closePopup} />}
         </>
     )
 }

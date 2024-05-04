@@ -18,13 +18,13 @@ export default function PopupDocument({lng, closePopup}) {
                             <button className="popup__bg_container__close_btn" onClick={handleClose}></button>
                         </div>
                         <div className="popup__bg_container__text">
-                            <p className="popup__bg_container__text_subtitle">
+                            <p className="popup__bg_container__text_subtitle popup__bg_container__text_subtitleMobile">
                                 {t("sendarequestto")}
                             </p>
                             <p className="popup__bg_container__text_mail">
                                 payment@avantage-event.com
                             </p>
-                            <p className="popup__bg_container__text_subtitle">
+                            <p className="popup__bg_container__text_subtitle popup__bg_container__text_subtitleMobile">
                                 {t("sendarequesttoText")}
                             </p>
                             <a

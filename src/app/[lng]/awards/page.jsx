@@ -77,7 +77,7 @@ export default async function AwardsPage({ params: { lng } }) {
             </div>
             <Image src={halfCircle} alt="denf"  className="awards-page__semicircle1" />
             <div className="containerAll">
-                <RatingsComponent lng={lng} />
+                <RatingsComponent id="ratings" lng={lng} />
             </div>
         </div>
     );

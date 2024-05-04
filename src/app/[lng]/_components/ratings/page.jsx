@@ -20,12 +20,12 @@ async function getData(lng) {
     return res.json()
 }
 
-export default async function RatingsComponent({lng}) {
+export default async function RatingsComponent({lng, id}) {
     const ratings = await getData(lng);
     const { t } = await useTranslation(lng,'translation');
 
      return (
-         <div className="rating-component">
+         <div className="rating-component" id={id}>
              <div className="rating-component__title">
                  <div className="rating-component__title_photoTitle">
                      <p className="rating-component__title_photoTitle__text">

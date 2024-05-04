@@ -46,27 +46,27 @@ async function getData(lng) {
     return res.json()
 }
 
-async function getFiles(lng) {
-    const res = await fetch(
-        `${backendHost}/api/core.files?lang=${lng}`,
-        {
-            method: 'GET',
-            cache: 'force-cache'
-        }
-    )
-
-    if (!res.ok) {
-        return <ErrorServer res={res} lng={lng} />
-    }
-
-    return res.json()
-}
+// async function getFiles(lng) {
+//     const res = await fetch(
+//         `${backendHost}/api/core.files?lang=${lng}`,
+//         {
+//             method: 'GET',
+//             cache: 'force-cache'
+//         }
+//     )
+//
+//     if (!res.ok) {
+//         return <ErrorServer res={res} lng={lng} />
+//     }
+//
+//     return res.json()
+// }
 
 export default async function Home({ params: { lng } }) {
     if ([...languages].indexOf(lng) < 0) lng = fallbackLng
     const { t } = await useTranslation(lng,'translation');
     const data = await getData(lng);
-    const files = await getFiles(lng);
+    // const files = await getFiles(lng);
 
     return (
         <main className="main-page">

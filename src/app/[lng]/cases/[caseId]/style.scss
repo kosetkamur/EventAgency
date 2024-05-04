@@ -16,6 +16,13 @@
       width: 100%;
       height: auto;
       border-radius: 10px;
+      max-height: 793px;
+    }
+
+    &_video {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
     }
 
     &_title {
@@ -113,6 +120,10 @@
   object-fit: contain;
 }
 
+.carousel .control-dots {
+  bottom: -54px;
+}
+
 .control-dots {
   bottom: -54px;
 }
@@ -131,6 +142,11 @@
         max-height: 618px;
       }
 
+      &_video {
+        max-height: 618px;
+      }
+
+
       &_title {
         font-size: 2rem;
       }
@@ -138,12 +154,6 @@
     &__anotherCasesTitle_text {
       font-size: 7.5vw;
     }
-  }
-}
-
-@media (min-width: 960px) {
-  .carousel .control-dots {
-    bottom: -54px;
   }
 }
 
@@ -190,7 +200,7 @@
     }
   }
   .carousel .control-dots {
-    margin-bottom: -30px;
+    margin-bottom: 0;
     li {
       width: 25px!important;
       height: 5px!important;
