@@ -1,7 +1,7 @@
 import "./header.scss";
 import * as React from 'react';
 import Link from "next/link";
-import logo from "../../../public/images/logo.svg";
+import logo from "@/public/images/logo.svg";
 import Image from "next/image";
 import Nav from "@/app/[lng]/_header/_nav/nav.jsx";
 import ButtonHeader from "@/app/[lng]/_header/button";
@@ -12,7 +12,7 @@ export default function HeaderComponent({lng, files}) {
             <div className="header-desk">
                 <div className="header__logo">
                     <Link href={`/${lng}`}>
-                        <Image src={logo} alt="логотип Авантаж" />
+                        <Image src={logo} alt="логотип Авантаж"  className="header__logo_img" />
                     </Link>
                 </div>
                 <Nav lng={lng} />

@@ -4,29 +4,31 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   position: relative;
-  overflow: hidden;
   height: 80px;
   gap: 200px;
+  animation: scroll 50s linear infinite;
 
     &__item {
-      animation: scroll 10s linear infinite;
+      width: 100%;
 
         &_image {
         width: 100%;
         max-width: 193px;
         height: auto;
         min-width: 193px;
+        object-fit: scale-down;
       }
     }
 }
 
 @keyframes scroll {
   0% {
-    transform: translate(0, 0);
+    transform: translate(32%, 0);
   }
   100% {
-    transform: translate(-50%, 0)
+    transform: translate(-400%, 0)
   }
 }
 
@@ -35,10 +37,9 @@
     margin: 30px 0 100px 0;
     height: 50px;
     gap: 20px;
+    animation: scroll 10s linear infinite;
 
     &__item {
-      animation: scroll 10s linear infinite;
-
       &_image {
         width: 100%;
         max-width: 100px;

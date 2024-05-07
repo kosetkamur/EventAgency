@@ -3,9 +3,16 @@
     background-color: #FFFFFF;
     position: relative;
     z-index: 101;
+    height: 100px;
 
     &__logo {
-        max-width: 100px;
+        max-width: 136px;
+        max-height: 42px;
+
+        &_img {
+            width: 100%;
+            height: auto;
+        }
     }
 
     &__nav {
@@ -25,6 +32,9 @@
             flex-direction: column;
             align-items: center;
             line-height: 1;
+        }
+        &_item:hover {
+            color: #00BBB6;
         }
         &_item::after {
             content: "•";
@@ -70,8 +80,8 @@
 
 .header-desk-scroll {
     position: fixed;
-    height: 117px;
-    padding: 20px 30px 0 30px;
+    height: 100px;
+    padding: 10px 30px 0 30px;
     background-color: #FFFFFF;
     width: 100%;
     z-index: 100;
@@ -81,7 +91,8 @@
     align-items: center;
 
     &__logo {
-        max-width: 100px;
+        max-width: 136px;
+        max-height: 42px;
     }
 
     &__burger {
@@ -102,9 +113,20 @@
     }
 }
 
-@media screen and (max-width: 1100px) {
+@media screen and (max-width: 1180px) {
     .header__nav {
         gap: 25px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .header__logo {
+        max-width: 100px;
+        height: auto;
+    }
+
+    .header__nav_item {
+        font-size: 1rem;
     }
 }
 
@@ -116,14 +138,6 @@
             flex-direction: row;
             justify-content: space-between;
             align-items: center;
-
-            &__logo {
-                max-width: 60px;
-
-                &_img {
-                    max-width: 60px;
-                }
-            }
 
             &__burger {
                 &_item {
@@ -142,15 +156,17 @@
 
 @media screen and (max-width: 600px) {
     .header {
-        padding: 20px 15px 0 15px;
+        padding: 0;
+        height: 80px;
     }
     .header-desk-scroll {
-        padding: 20px 15px 0 15px;
+        padding: 10px 15px 0 15px;
         z-index: 103;
+        height: 80px;
 
         &__logo_img {
-            width: 60px;
-            height: 60px;
+            width: 91px;
+            height: 28px;
         }
 
         &__burger_text {

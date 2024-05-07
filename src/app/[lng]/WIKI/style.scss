@@ -99,6 +99,11 @@
   .wiki-page__title_description {
     max-width: 100px;
   }
+  .wiki-page__title_description::after {
+    left: -45px;
+    top: -32px;
+    font-size: 6rem;
+  }
 }
 
 @media screen and (max-width: 1280px) {

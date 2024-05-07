@@ -68,7 +68,7 @@ export default function BurgerComponent({lng, files, closeBurger}) {
                                 {t('fillBrief')}
                             </a>
                             <a
-                                href={`${backendHost}${files.data.presentation}`}
+                                href={`${backendHost}/media/${files.data.presentation}`}
                                 className="burger-component__container_menu__buttons_btn__presentation"
                             >
                                 {t('downloadPresentation')}

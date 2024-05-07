@@ -10,6 +10,8 @@
       height: auto;
       border-radius: 10px;
       max-height: 793px;
+      object-fit: cover;
+      object-position: center;
     }
 
     &_video {

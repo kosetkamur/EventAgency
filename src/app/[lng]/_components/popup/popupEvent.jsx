@@ -4,7 +4,7 @@ import * as React from "react";
 import {useTranslation} from "@/app/i18n/client";
 import {useEffect, useRef, useState} from "react";
 
-export default function PopupEvent({lng, targetBlockId}) {
+export default function PopupEvent({lng, targetBlockId, post}) {
     const { t } = useTranslation(lng, 'translation');
     const popupRef = useRef();
     const [isVisible, setIsVisible] = useState(false);
@@ -42,7 +42,7 @@ export default function PopupEvent({lng, targetBlockId}) {
                              {t("PLANNINGANEVENTPopup")}
                          </p>
                          <a
-                            href="/"
+                            href={`mailto:${post}`}
                             className="popup__bg_container__text_button"
                          >
                              {t("REACHOUT")}

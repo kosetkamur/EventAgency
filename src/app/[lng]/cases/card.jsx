@@ -9,11 +9,12 @@ export default function CardCaseComponent({item,lng}) {
 
     return (
             <div key={item.id} className="case-page__cases_item">
-                <Link href={`/${lng}/cases/${item.id}`}>
+                <Link href={`/${lng}/cases/${item.id}`} scroll={true}>
                     <Image src={`${backendHost}${item.cover_image}`}
                            width="100"
                            height="100"
-                           alt="кейс"                           className="case-page__cases_item__images" />
+                           alt="кейс"
+                           className="case-page__cases_item__images" />
                     <div className="case-page__cases_item__buttons">
                         <button className="case-page__cases_item__buttons_button">
                             {item.year}

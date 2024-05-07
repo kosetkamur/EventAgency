@@ -8,7 +8,6 @@ import "./style.scss";
 import "./_components/parallax/style.scss";
 import "./_components/video/style.scss";
 
-import ServicesComponent from "@/app/[lng]/_components/services/page";
 import CaseMainComponent from "@/app/[lng]/_components/cases/page";
 import AwardComponent from "@/app/[lng]/_components/award/page";
 import PartnersComponent from "@/app/[lng]/_components/partners/page";
@@ -23,6 +22,8 @@ import bgMobile from "@/public/images/mainParallaxMobile.svg";
 import ButtonPopupProject from "@/app/[lng]/_components/popupProject/buttonPopupProject";
 import ButtonPopupVideo from "@/app/[lng]/_components/popupVideo/buttonPopupVideo";
 import {Parallax} from "@/app/[lng]/_components/parallax/parallax";
+import PopupEventService from "@/app/[lng]/_components/popup/popupEventService";
+import ServicesComponent from "@/app/[lng]/_components/services/page";
 
 export const metadata = {
     title: "Организация мероприятий в Москве | Мероприятия для бизнеса b2b",
@@ -46,27 +47,27 @@ async function getData(lng) {
     return res.json()
 }
 
-// async function getFiles(lng) {
-//     const res = await fetch(
-//         `${backendHost}/api/core.files?lang=${lng}`,
-//         {
-//             method: 'GET',
-//             cache: 'force-cache'
-//         }
-//     )
-//
-//     if (!res.ok) {
-//         return <ErrorServer res={res} lng={lng} />
-//     }
-//
-//     return res.json()
-// }
+async function getFiles(lng) {
+    const res = await fetch(
+        `${backendHost}/api/core.files?lang=${lng}`,
+        {
+            method: 'GET',
+            cache: 'force-cache'
+        }
+    )
+
+    if (!res.ok) {
+        return <ErrorServer res={res} lng={lng} />
+    }
+
+    return res.json()
+}
 
 export default async function Home({ params: { lng } }) {
     if ([...languages].indexOf(lng) < 0) lng = fallbackLng
     const { t } = await useTranslation(lng,'translation');
     const data = await getData(lng);
-    // const files = await getFiles(lng);
+    const files = await getFiles(lng);
 
     return (
         <main className="main-page">
@@ -111,7 +112,7 @@ export default async function Home({ params: { lng } }) {
                 </div>
                 <ServicesComponent lng={lng} id="ServicesComponent" />
             </section>
-            <PopupEvent lng={lng} targetBlockId="ServicesComponent"/>
+            <PopupEvent lng={lng} post={files.data.contact_email} targetBlockId="ServicesComponent"/>
             <div className="main-page__parallax">
                 <Parallax speed={-4} className="self-start">
                     <div className="main-page__parallax_image">
@@ -153,9 +154,7 @@ export default async function Home({ params: { lng } }) {
                             </div>
                         </div>
                         <div className="parallax-components__numbers_description">
-                            <p className="parallax-components__numbers_description__text">
-                                {t("completedProjectsText")}
-                            </p>
+                            <div className="parallax-components__numbers_description__text" dangerouslySetInnerHTML={{ __html: t("completedProjectsText")}} />
                         </div>
                     </div>
                 </div>
@@ -176,9 +175,7 @@ export default async function Home({ params: { lng } }) {
                             </div>
                         </div>
                         <div className="parallax-components__numbers_description">
-                            <p className="parallax-components__numbers_description__text">
-                                {t("uniqueEventScenariosText")}
-                            </p>
+                            <div className="parallax-components__numbers_description__text" dangerouslySetInnerHTML={{ __html: t("uniqueEventScenariosText")}} />
                         </div>
                     </div>
                 </div>
@@ -199,9 +196,7 @@ export default async function Home({ params: { lng } }) {
                             </div>
                         </div>
                         <div className="parallax-components__numbers_description">
-                            <p className="parallax-components__numbers_description__text">
-                                {t("yearsInTheIndustryText")}
-                            </p>
+                            <div className="parallax-components__numbers_description__text" dangerouslySetInnerHTML={{ __html: t("yearsInTheIndustryText")}} />
                         </div>
                     </div>
                     <div className="parallax-components__buttons">
@@ -219,7 +214,7 @@ export default async function Home({ params: { lng } }) {
                     <div className="parallax-components__title">
                         <div className="parallax-components__title_photoTitle">
                             <p className="parallax-components__title_photoTitle__text">
-                                [ {t('cases')} ]
+                                [ {t('navCases').toLowerCase()} ]
                             </p>
                         </div>
                     </div>

@@ -96,7 +96,7 @@ export default function Footer({emails, files, lng}) {
                     <a href={`${emails.data.telegram}`} className="footer__navigation_column__a">
                         telegram@avantage.project
                     </a>
-                    <a href={`${backendHost}${files.data.presentation}`} className="footer__navigation_column__a" download>
+                    <a href={`${backendHost}/media/${files.data.presentation}`} className="footer__navigation_column__a" download>
                         {t('downloadPresentation')}
                     </a>
                     <a href={`${backendHost}${files.data.brief}`} className="footer__navigation_column__a">
