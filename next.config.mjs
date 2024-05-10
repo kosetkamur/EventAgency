@@ -24,6 +24,21 @@ const nextConfig = {
             },
         ];
     },
+    webpack: (config) => {
+        config.resolve.alias.canvas = false;
+        config.module.rules.push({
+            test: /\.pdf/,
+            type: 'asset/resource',
+            generator: {
+                filename: 'static/[hash][ext]',
+            },
+        })
+
+        return config;
+    },
+    experimental: {
+        serverComponentsExternalPackages: ['@react-pdf/renderer'],
+    }
 };
 
 export default nextConfig;

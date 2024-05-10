@@ -32,7 +32,7 @@ export default async function CaseMainComponent({lng, id}) {
                 {
                     cases.data.map(item => (
                         <div key={item.id} className="case-component__cases_item">
-                            <Link href={`/${lng}/cases/${item.id}`}>
+                            <Link href={`/${lng}/cases/${item.id}`} scroll={true}>
                                 <Image
                                     src={`${backendHost}/${item.cover_image}`}
                                     alt="кейс"

@@ -11,7 +11,6 @@ import "./_components/video/style.scss";
 import CaseMainComponent from "@/app/[lng]/_components/cases/page";
 import AwardComponent from "@/app/[lng]/_components/award/page";
 import PartnersComponent from "@/app/[lng]/_components/partners/page";
-import ErrorServer from "@/app/[lng]/_components/error/error";
 import PopupTg from "@/app/[lng]/_components/popup/popupTg";
 import PopupEvent from "@/app/[lng]/_components/popup/popupEvent";
 
@@ -22,7 +21,6 @@ import bgMobile from "@/public/images/mainParallaxMobile.svg";
 import ButtonPopupProject from "@/app/[lng]/_components/popupProject/buttonPopupProject";
 import ButtonPopupVideo from "@/app/[lng]/_components/popupVideo/buttonPopupVideo";
 import {Parallax} from "@/app/[lng]/_components/parallax/parallax";
-import PopupEventService from "@/app/[lng]/_components/popup/popupEventService";
 import ServicesComponent from "@/app/[lng]/_components/services/page";
 
 export const metadata = {
@@ -41,15 +39,15 @@ async function getData(lng) {
     )
 
     if (!res.ok) {
-        return <ErrorServer res={res} lng={lng} />
+        throw new Error('Failed to fetch data')
     }
 
     return res.json()
 }
 
-async function getFiles(lng) {
+async function getContacts(lng) {
     const res = await fetch(
-        `${backendHost}/api/core.files?lang=${lng}`,
+        `${backendHost}/api/core.contacts?lang=${lng}`,
         {
             method: 'GET',
             cache: 'force-cache'
@@ -57,7 +55,7 @@ async function getFiles(lng) {
     )
 
     if (!res.ok) {
-        return <ErrorServer res={res} lng={lng} />
+        throw new Error('Failed to fetch data')
     }
 
     return res.json()
@@ -67,11 +65,15 @@ export default async function Home({ params: { lng } }) {
     if ([...languages].indexOf(lng) < 0) lng = fallbackLng
     const { t } = await useTranslation(lng,'translation');
     const data = await getData(lng);
-    const files = await getFiles(lng);
+    const contacts = await getContacts(lng);
 
     return (
         <main className="main-page">
             <section className="main-page__video">
+
+                {/*<iframe id="ytplayer" className="main-page__video_intro" style={{"width": "100%", "height": "100%"}} allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen'*/}
+                {/*        src="http://www.youtube.com/embed/fQ8L4cFKhoY?si=Us8GPop4InVMzKpK&playlist=fQ8L4cFKhoY&rel=0&autoplay=1&mute=1&controls=0&loop=1&showinfo=0" />*/}
+
                 <video width="auto" height="auto" loop muted playsInline autoPlay className="main-page__video_intro">
                     <source src={`${backendHost}/${data.data.intro_video}`} type="video/mp4" />
                     Your browser does not support the video tag.
@@ -97,7 +99,7 @@ export default async function Home({ params: { lng } }) {
                         <p className="main-page__tagline_container__text main-page__tagline_container__align2">
                             {t('KNOWUS')} <Image src={icon1} alt="солнышко" className="main-page__tagline_container__text_image" />  {t('BUTYOUDEFINITELY')}
                         </p><br />
-                        <p className="main-page__tagline_container__text main-page__tagline_container__align3">
+                        <p className="main-page__tagline_container__text main-page__tagline_container__align1">
                             {t('KNOWOURPROJECTS')}
                         </p>
                     </div>
@@ -112,7 +114,7 @@ export default async function Home({ params: { lng } }) {
                 </div>
                 <ServicesComponent lng={lng} id="ServicesComponent" />
             </section>
-            <PopupEvent lng={lng} post={files.data.contact_email} targetBlockId="ServicesComponent"/>
+            <PopupEvent lng={lng} post={contacts.data.email_for_partners} targetBlockId="ServicesComponent"/>
             <div className="main-page__parallax">
                 <Parallax speed={-4} className="self-start">
                     <div className="main-page__parallax_image">

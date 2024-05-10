@@ -4,7 +4,6 @@ import Header from "@/app/[lng]/_header/header.jsx";
 import * as React from "react";
 import Emails from "@/app/[lng]/_footer/emails";
 import HeaderScroll from "@/app/[lng]/_header";
-import BurgerComponent from "@/app/[lng]/_components/burgerMenu/page";
 
 const manrope = Manrope({ subsets: ["latin"] });
 

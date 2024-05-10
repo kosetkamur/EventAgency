@@ -125,7 +125,7 @@ export default function Footer({emails, files, lng}) {
                     </p>
                 </div>
                 <div className="footer__navigation_column">
-                    <a href={`${backendHost}${emails.data.agreement}`} className="footer__navigation_column__down">
+                    <a href={`/${lng}/privacy-policy`} className="footer__navigation_column__down">
                         {t('dataCollectionPolicy')}
                     </a>
                 </div>

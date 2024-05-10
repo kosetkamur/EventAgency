@@ -1,6 +1,5 @@
 import Artical from "@/app/[lng]/cases/[caseId]/index";
 import {backendHost} from "@/lib/consts/consts";
-import ErrorServer from "@/app/[lng]/_components/error/error";
 
 async function getData(params) {
     const res = await fetch(
@@ -28,7 +27,7 @@ async function getCase(params) {
     )
 
     if (!res.ok) {
-        <ErrorServer res={res} />
+        throw new Error('Failed to fetch data')
     }
 
     return res.json()

@@ -65,7 +65,7 @@ export default async function ServicesComponent({lng, id}) {
                     </div>
                     <div className="services-component_item__ul">
                         <ServicePopupVideo lng={lng} />
-                        <a href={`mailto:${refs.data.form_for_freelancers}`}>
+                        <a href={`mailto:l.fedorova@avantage-event.com`}>
                             {t('sendYourCV')}
                         </a>
                         <a href={`/${lng}/about-us`}>

@@ -11,7 +11,6 @@ import Form from "@/app/[lng]/_components/form/page";
 import GroupComponents from "@/app/[lng]/_components/team/group";
 import {Parallax} from "@/app/[lng]/_components/parallax/parallax";
 import CardsComponent from "@/app/[lng]/_components/cards/page";
-import ErrorServer from "@/app/[lng]/_components/error/error";
 
 import Image from "next/image";
 import {backendHost} from "@/lib/consts/consts";
@@ -36,7 +35,7 @@ async function getData(lng) {
     )
 
     if (!res.ok) {
-        <ErrorServer res={res} />
+        throw new Error('Failed to fetch data')
     }
 
     return res.json()

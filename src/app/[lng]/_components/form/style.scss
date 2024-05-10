@@ -17,6 +17,18 @@
         padding-left: 20px;
       }
     }
+
+    &_pDesktop {
+      font-size: 8rem;
+      font-weight: 800;
+      line-height: 1;
+      display: block;
+    }
+
+    &_pMobile {
+      display: none;
+    }
+
     &_arrow {
       width: 100%;
       height: auto;
@@ -166,44 +178,59 @@
 }
 
 @media screen and (max-width: 1700px) {
-  .form-component__title_p {
-    font-size: 6vw;
-  }
-  .form-component__form_main {
-    gap: 20px;
-  }
-  .form-component__title_arrow {
-    width: 100%;
-    max-width: 60px;
+  .form-component {
+    &__title {
+      &_pDesktop {
+        font-size: 6vw;
+      }
+
+      &_p {
+        font-size: 6vw;
+      }
+
+      &_arrow {
+        width: 100%;
+        max-width: 60px;
+      }
+    }
+
+    &__form_main {
+      gap: 20px;
+    }
   }
 }
 
 
 @media screen and (max-width: 1280px) {
-  .form-component__form {
-    &_footer__button {
-      padding: 16px 45px;
-      font-size: 1.25rem;
-    }
-
-    &_footer__checkbox_label .checkbox__body {
-      font-size: 1rem;
-    }
-
-    &_main {
-      gap: 20px;
-
-      span {
-        font-size: 1.5rem;
+  .form-component {
+    &__title {
+      &_arrow {
+        max-width: 40px;
+      }
+      &_sun {
+        margin-right: 10px;
+        max-width: 40px;
       }
     }
-  }
-  .form-component__title_arrow {
-    max-width: 40px;
-  }
-  .form-component__title_sun {
-    margin-right: 10px;
-    max-width: 40px;
+
+    &__form {
+      &_footer__button {
+        padding: 16px 45px;
+        font-size: 1.25rem;
+      }
+
+      &_footer__checkbox_label .checkbox__body {
+        font-size: 1rem;
+      }
+
+      &_main {
+        gap: 20px;
+
+        span {
+          font-size: 1.5rem;
+        }
+      }
+    }
   }
 }
 
@@ -225,6 +252,17 @@
         span {
           padding-left: 10px;
         }
+      }
+
+      &_pDesktop {
+        display: none;
+      }
+
+      &_pMobile {
+        display: block;
+        font-weight: 800;
+        font-size: 2rem;
+        line-height: 1;
       }
 
       &_arrow {

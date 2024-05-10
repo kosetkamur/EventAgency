@@ -1,5 +1,4 @@
 import Cases from "@/app/[lng]/cases/case";
-import ErrorServer from "@/app/[lng]/_components/error/error";
 import {backendHost} from "@/lib/consts/consts";
 
 async function getData(lng) {
@@ -12,7 +11,7 @@ async function getData(lng) {
     )
 
     if (!res.ok) {
-        <ErrorServer res={res} />
+        throw new Error('Failed to fetch data')
     }
 
     return res.json()

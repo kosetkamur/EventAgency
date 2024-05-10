@@ -19,7 +19,6 @@ export default function Form({lng, id}) {
         const rawFormData = {
             full_name: formData.get('full_name'),
             project_goals: formData.get('project_goals'),
-            // project_scope: formData.get('project_scope') || '',
             email: formData.get('email'),
             contact_phone: formData.get('contact_phone'),
             agreement: formData.get('agreement') === "on" ? "true" : "false"
@@ -64,8 +63,14 @@ export default function Form({lng, id}) {
                 <p className="form-component__title_p">
                     <Image src={icon3} alt="солнышко" className="form-component__title_sun" />{t('TOGET')} <span>{t('INTOUCH')}</span>,
                 </p>
-                <p className="form-component__title_p">
+                <p className="form-component__title_pDesktop">
                     {t('SENDUSANEMAIL')} <Image src={arrowForm} alt="стрелка вниз" className="form-component__title_arrow" />
+                </p>
+                <p className="form-component__title_pMobile">
+                    {t('SENDUS')}
+                </p>
+                <p className="form-component__title_pMobile">
+                    {t('ANEMAIL')} <Image src={arrowForm} alt="стрелка вниз" className="form-component__title_arrow" />
                 </p>
             </div>
             <div className="form-component__form">

@@ -44,7 +44,7 @@ export default function Artical({caseInfo, anotherCases, lng}) {
 
     let mainPhoto = caseInfo.data.photos.filter(photo => photo.is_main===true);
     let galleryPhoto = caseInfo.data.photos.filter(photo => photo.content_type==="image");
-    console.log(galleryPhoto)
+
     return (
         <div className="article-page">
             <div className="containerAll">

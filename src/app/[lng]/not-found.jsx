@@ -1,26 +1,29 @@
-import "./not-found.scss";
+import "./[...not-found]/not-found.scss";
 import Image from 'next/image'
 import img404 from '@/public/images/404.svg'
+import {useTranslation} from "@/app/i18n";
 
-export default function Custom404() {
+export default async function Custom404({ params: { lng } }) {
+    const { t } = await useTranslation(lng);
+
     return (
         <div className="error-page">
             <div className="error-page__container">
                 <p className="error-page__container_number">
-                    <Image src={img404} alt="ошибка 404"  className="error-page__container_number__img" />
+                    <Image src={img404} alt="404"  className="error-page__container_number__img" />
                 </p>
                 <p className="error-page__container_text">
-                    Упс...страница не найдена
+                    {t('bug')}
                 </p>
                 <p className="error-page__container_description">
-                    К сожалению, запрашиваемая вами страница была перемещена или удалена, а возможно ее никогда не было
+                    {t('bugMessage')}
                 </p>
                 <a
                     type="button"
                     className="error-page__container_button"
-                    href="/"
+                    href={`/${lng}`}
                 >
-                    вернуться на главную
+                    {t("bugHref")}
                 </a>
             </div>
         </div>

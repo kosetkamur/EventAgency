@@ -62,7 +62,7 @@ export default function BurgerComponent({lng, files, closeBurger}) {
                         </div>
                         <div className="burger-component__container_menu__buttons_btn">
                             <a
-                                href={`${backendHost}${files.data.brief}`}
+                                href={`${backendHost}/media/${files.data.brief}`}
                                 className="burger-component__container_menu__buttons_btn__brief"
                             >
                                 {t('fillBrief')}

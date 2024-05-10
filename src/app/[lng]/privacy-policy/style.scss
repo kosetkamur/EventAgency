@@ -1,0 +1,11 @@
+.privacy-policy {
+  width: 98vw;
+  padding: 30px;
+  height: auto;
+}
+
+@media screen and (max-width: 600px) {
+  .privacy-policy {
+    padding: 15px;
+  }
+}
