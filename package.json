@@ -10,7 +10,6 @@
     "watch": "watch 'npm run build' ./.next"
   },
   "dependencies": {
-    "@react-pdf/renderer": "^3.4.4",
     "@studio-freight/hamo": "^0.6.33",
     "@studio-freight/react-lenis": "^0.0.47",
     "accept-language": "^3.0.18",
@@ -28,7 +27,6 @@
     "react-file-viewer": "^1.2.1",
     "react-i18next": "^14.1.0",
     "react-input-mask": "^2.0.4",
-    "react-pdf": "^8.0.2",
     "react-redux": "^9.1.0",
     "react-responsive-carousel": "^3.2.23",
     "react-top-loading-bar": "^2.3.1",
