@@ -2,7 +2,7 @@ import "./not-found.scss";
 import Image from 'next/image'
 import img404 from '@/public/images/404.svg'
 
-export default async function Custom404() {
+export default function Custom404() {
     return (
         <div className="error-page">
             <div className="error-page__container">
