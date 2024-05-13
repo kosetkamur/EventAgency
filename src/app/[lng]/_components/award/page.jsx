@@ -38,7 +38,7 @@ export default async function AwardComponent({lng}) {
                                     <p className="award-component__awards_item__text_event">{award.event}</p>
                                 </div>
                                 <div className="award-component__awards_item__images">
-                                    <Image src={`${backendHost}${award.attachment}`} alt={award} width="500" height="500"  className="award-component__awards_item__images_img"/>
+                                    <Image src={`${backendHost}${award.attachment}`} loading="lazy" alt={award} width="500" height="500"  className="award-component__awards_item__images_img"/>
                                 </div>
                             </div>
                         ))

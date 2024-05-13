@@ -118,7 +118,7 @@ export default function Artical({caseInfo, anotherCases, lng}) {
                     {
                         galleryPhoto.map(photo =>
                             <div key={photo.id}>
-                                <Image src={`${backendHost}${photo.file}`} alt="Фотография кейса" width="100" height="100" className="article-page__description_image" />
+                                <Image loading="lazy" src={`${backendHost}${photo.file}`} alt="Фотография кейса" width="100" height="100" className="article-page__description_image" />
                             </div>
                         )
                     }

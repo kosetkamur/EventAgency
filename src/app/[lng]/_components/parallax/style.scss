@@ -75,35 +75,65 @@
       &__button {
         max-width: 387px;
 
-        &_img {
-          position: relative;
-          min-width: 387px;
+        &_muted {
+          position: absolute;
+          right: 14px;
+          bottom: 57px;
+          max-width: 27px;
           width: 100%;
           height: auto;
           z-index: 1;
         }
 
+        &_img {
+          position: absolute;
+          left: 80px;
+          top: 85px;
+          max-width: 178px;
+          width: 100%;
+          height: auto;
+          z-index: 1;
+          opacity: 1;
+          animation: 5s tenYear forwards linear;
+        }
+
         &_btn {
           position: relative;
+          transition: .3s;
 
           &__video {
             width: 351px;
-            height: 352px;
+            height: 351px;
+            border: 2px solid #000000;
             border-radius: 200px;
-            position: absolute;
-            left: 1.5px;
-            top: 1.5px;
-
+            transition: .3s;
 
             &_welcome {
               object-fit: cover;
               width: 100%;
               height: 100%;
               border-radius: 200px;
-              position: relative;
-              z-index: 0;
+              transform: scale(1.0001);
+              background-color: #ffffff;
+              transition: .3s;
             }
           }
+
+          &__muted {
+            transform: scale(1.1);
+            transition: .3s;
+          }
+        }
+        &_btn::after {
+          content: "";
+          position: absolute;
+          right: -20px;
+          bottom: 25px;
+          width: 92px;
+          height: 92px;
+          border-radius: 50px;
+          border: 1px solid #000000;
+          background-color: #ffffff;
         }
       }
     }
@@ -466,5 +496,14 @@
   }
   .parallax-components__buttons_item__btn1, .parallax-components__buttons_item__btn2 {
     padding: 14px 35px;
+  }
+}
+
+@keyframes tenYear {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
   }
 }

@@ -28,7 +28,7 @@ export default async function PhotosComponent({id}) {
                  {
                      photos.data.map((photo, index) => (
                          <div key={photo.id} className={`photos-component__container_item${index+1} photos-component__container_item`}>
-                             <Image src={`${backendHost}${photo.photo}`} width="100" height="100" alt="фото" className="photos-component__container_item" />
+                             <Image src={`${backendHost}${photo.photo}`} loading="lazy" width="100" height="100" alt="фото" className="photos-component__container_item" />
                          </div>
                      ))
                  }

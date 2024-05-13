@@ -28,6 +28,7 @@ export default async function PartnersComponent({lng}) {
                  partners.data.map(partner =>
                      <div key={partner.logo} className="partners-component__item">
                      <Image src={`${backendHost}${partner.logo}`}
+                            loading="lazy"
                             width="100"
                             height="100"
                             alt="партнер"

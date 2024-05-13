@@ -20,7 +20,7 @@ export default function CardCaseComponent({item,lng}) {
                             {item.year}
                         </button>
                         <button className="case-page__cases_item__buttons_button">
-                            <Image src={icon2} alt="" className="case-page__cases_item__buttons_button__icon" />
+                            <Image src={icon2} alt="кейс" loading="lazy" className="case-page__cases_item__buttons_button__icon" />
                             <p className="case-page__cases_item__buttons_button__event">
                                 {item.customer.type}
                             </p>

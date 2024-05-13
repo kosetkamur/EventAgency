@@ -35,6 +35,7 @@
         }
         &_item:hover {
             color: #00BBB6;
+            transition: 0.3s;
         }
         &_item::after {
             content: "•";

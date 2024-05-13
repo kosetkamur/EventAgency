@@ -74,8 +74,8 @@ export default async function CasePage({ params: { lng } }) {
             <div className="parallax-components">
                 <Parallax speed={-4} className="self-start">
                     <div className="parallax-components__parallax_image">
-                        <Image src={bg} alt="полоски" className="parallax-components__parallax_image__img isDesktop" />
-                        <Image src={bgMobile} alt="полоски" className="parallax-components__parallax_image__img isMobile" />
+                        <Image src={bg} loading="lazy" alt="полоски" className="parallax-components__parallax_image__img isDesktop" />
+                        <Image src={bgMobile} loading="lazy" alt="полоски" className="parallax-components__parallax_image__img isMobile" />
                     </div>
                 </Parallax>
                 <Parallax speed={1} className="self-end overflow-hidden">
@@ -109,9 +109,7 @@ export default async function CasePage({ params: { lng } }) {
                                 </div>
                             </div>
                             <div className="parallax-components__numbers_description">
-                                <p className="parallax-components__numbers_description__text">
-                                    {t("completedProjectsText")}
-                                </p>
+                                <div className="parallax-components__numbers_description__text" dangerouslySetInnerHTML={{ __html: t("completedProjectsText")}} />
                             </div>
                         </div>
                     </div>
@@ -132,9 +130,7 @@ export default async function CasePage({ params: { lng } }) {
                                 </div>
                             </div>
                             <div className="parallax-components__numbers_description">
-                                <p className="parallax-components__numbers_description__text">
-                                    {t("uniqueEventScenariosText")}
-                                </p>
+                                <div className="parallax-components__numbers_description__text" dangerouslySetInnerHTML={{ __html: t("uniqueEventScenariosText")}} />
                             </div>
                         </div>
                     </div>
@@ -155,9 +151,7 @@ export default async function CasePage({ params: { lng } }) {
                                 </div>
                             </div>
                             <div className="parallax-components__numbers_description">
-                                <p className="parallax-components__numbers_description__text">
-                                    {t("yearsInTheIndustryText")}
-                                </p>
+                                <div className="parallax-components__numbers_description__text" dangerouslySetInnerHTML={{ __html: t("yearsInTheIndustryText")}} />
                             </div>
                         </div>
                     </div>

@@ -40,7 +40,7 @@ export default async function BlogPage({ params: { lng } }) {
                     articles.data.map(article =>
                         <div key={article.id} className="blog-page__media_item">
                             <a href={article.external_link}>
-                                <Image src={`${backendHost}${article.photo}`} alt={article.title} width={500} height={500} className="blog-page__media_item__images" />
+                                <Image src={`${backendHost}${article.photo}`} loading="lazy" alt={article.title} width={500} height={500} className="blog-page__media_item__images" />
                                 <p className="blog-page__media_item__text">
                                     {article.title}
                                 </p>

@@ -70,10 +70,6 @@ export default async function Home({ params: { lng } }) {
     return (
         <main className="main-page">
             <section className="main-page__video">
-
-                {/*<iframe id="ytplayer" className="main-page__video_intro" style={{"width": "100%", "height": "100%"}} allow='accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; fullscreen'*/}
-                {/*        src="http://www.youtube.com/embed/fQ8L4cFKhoY?si=Us8GPop4InVMzKpK&playlist=fQ8L4cFKhoY&rel=0&autoplay=1&mute=1&controls=0&loop=1&showinfo=0" />*/}
-
                 <video width="auto" height="auto" loop muted playsInline autoPlay className="main-page__video_intro">
                     <source src={`${backendHost}/${data.data.intro_video}`} type="video/mp4" />
                     Your browser does not support the video tag.
@@ -86,7 +82,7 @@ export default async function Home({ params: { lng } }) {
                             {t('YOUTRUST')}
                         </p><br />
                         <p className="main-page__tagline_container__text main-page__tagline_container__align2">
-                            {t('USWITHEVENTS')} <Image src={icon1} alt="солнышко" className="main-page__tagline_container__text_image" />  {t('WE')}
+                            {t('USWITHEVENTS')} <Image loading="lazy" src={icon1} alt="солнышко" className="main-page__tagline_container__text_image" />  {t('WE')}
                         </p><br />
                         <p className="main-page__tagline_container__text main-page__tagline_container__align3">
                             {t('HONOURYOURTRUST')}
@@ -97,7 +93,7 @@ export default async function Home({ params: { lng } }) {
                             {t('YOUMAYNOT')}
                         </p><br />
                         <p className="main-page__tagline_container__text main-page__tagline_container__align2">
-                            {t('KNOWUS')} <Image src={icon1} alt="солнышко" className="main-page__tagline_container__text_image" />  {t('BUTYOUDEFINITELY')}
+                            {t('KNOWUS')} <Image loading="lazy" src={icon1} alt="солнышко" className="main-page__tagline_container__text_image" />  {t('BUTYOUDEFINITELY')}
                         </p><br />
                         <p className="main-page__tagline_container__text main-page__tagline_container__align1">
                             {t('KNOWOURPROJECTS')}
@@ -108,7 +104,7 @@ export default async function Home({ params: { lng } }) {
                             {t('EVERYMIND')}
                         </p><br />
                         <p className="main-page__tagline_container__text main-page__tagline_container__align1">
-                            <Image src={icon1} alt="солнышко" className="main-page__tagline_container__text_image" /> {t('COUNTS')}
+                            <Image loading="lazy" src={icon1} alt="солнышко" className="main-page__tagline_container__text_image" /> {t('COUNTS')}
                         </p>
                     </div>
                 </div>
@@ -118,8 +114,8 @@ export default async function Home({ params: { lng } }) {
             <div className="main-page__parallax">
                 <Parallax speed={-4} className="self-start">
                     <div className="main-page__parallax_image">
-                        <Image src={bg} alt="полоски" className="main-page__parallax_image__img isDesktop" />
-                        <Image src={bgMobile} alt="полоски" className="main-page__parallax_image__img isMobile" />
+                        <Image loading="lazy" src={bg} alt="полоски" className="main-page__parallax_image__img isDesktop" />
+                        <Image loading="lazy" src={bgMobile} alt="полоски" className="main-page__parallax_image__img isMobile" />
                     </div>
                 </Parallax>
                 <Parallax speed={1} className="self-end overflow-hidden">
@@ -245,7 +241,7 @@ export default async function Home({ params: { lng } }) {
                                 <Image src={mainArrow} alt="стрелка" className="video-component__container_title__arrow_img" />
                             </div>
                         </div>
-                        <video width="1859" height="775" controls muted playsInline autoPlay  className="video-component__container_video">
+                        <video width="1859" height="775" controls muted playsInline  className="video-component__container_video">
                             <source src={`${backendHost}/${data.data.interview}`} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
@@ -254,7 +250,7 @@ export default async function Home({ params: { lng } }) {
             </div>
             <PartnersComponent lng={lng} />
             <div className="containerAll">
-                <section className="main-page__application">
+                <section className="main-page__application" id="contactUs">
                     <div className="main-page__application_tagline">
                         <p className="main-page__application_tagline__text main-page__application_tagline__text1">
                             {t("PLANNING")}

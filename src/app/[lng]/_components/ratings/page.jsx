@@ -37,7 +37,7 @@ export default async function RatingsComponent({lng, id}) {
                  {
                      ratings.data.map(rating => (
                          <div key={rating.logo} className="rating-component__logos_item">
-                            <Image src={`${backendHost}${rating.logo}`} alt="рейтинг" width="300" height="300" className="rating-component__logos_item__image" />
+                            <Image loading="lazy" src={`${backendHost}${rating.logo}`} alt="рейтинг" width="300" height="300" className="rating-component__logos_item__image" />
                          </div>
                      ))
                  }

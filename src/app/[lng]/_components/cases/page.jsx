@@ -34,6 +34,7 @@ export default async function CaseMainComponent({lng, id}) {
                         <div key={item.id} className="case-component__cases_item">
                             <Link href={`/${lng}/cases/${item.id}`} scroll={true}>
                                 <Image
+                                    loading="lazy"
                                     src={`${backendHost}/${item.cover_image}`}
                                     alt="кейс"
                                     width="100"
