@@ -2,7 +2,6 @@
 import "./style.scss";
 import * as React from "react";
 import {useTranslation} from "@/app/i18n/client";
-import button from "@/public/images/button.png";
 import PopupProject from "@/app/[lng]/_components/popupProject/popupProject";
 import {useState} from "react";
 
@@ -13,7 +12,6 @@ export default function ButtonPopupVideo({lng}) {
     const showPopup = () => {
         setShow(true);
         document.body.style.overflowY = 'hidden';
-        document.body.style.cssText = "overflow: hidden; position:fixed;";
     }
 
     const closePopup = () => {

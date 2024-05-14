@@ -1,7 +1,6 @@
 "use client";
 import "./style.scss";
 import * as React from "react";
-import button from "@/public/images/button.png";
 import {useState} from "react";
 import Image from "next/image";
 import PopupVideo from "@/app/[lng]/_components/popupVideo/popupVideo";
