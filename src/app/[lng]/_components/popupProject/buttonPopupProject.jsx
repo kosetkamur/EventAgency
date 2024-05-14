@@ -12,12 +12,13 @@ export default function ButtonPopupVideo({lng}) {
 
     const showPopup = () => {
         setShow(true);
-        document.body.style.overflow = 'hidden';
+        document.body.style.overflowY = 'hidden';
+        document.body.style.cssText = "overflow: hidden; position:fixed;";
     }
 
     const closePopup = () => {
         setShow(false);
-        document.body.style.overflow = 'auto';
+        document.body.style.overflowY = 'auto';
     }
 
     return (

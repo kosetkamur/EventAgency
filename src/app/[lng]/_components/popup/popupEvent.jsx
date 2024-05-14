@@ -8,13 +8,17 @@ export default function PopupEvent({lng, targetBlockId, post}) {
     const { t } = useTranslation(lng, 'translation');
     const popupRef = useRef();
     const [isVisible, setIsVisible] = useState(false);
-
+    const marginTop =  window.pageYOffset || document.documentElement.scrollTop;
     useEffect(() => {
         const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
                 if (entry.isIntersecting && !isVisible) {
                     setIsVisible(true);
+
                     popupRef.current.style.display = 'flex';
+                    document.body.width = '100vw';
+                    document.body.style.height = '100vh';
+                    document.body.style.marginTop = `-${marginTop}`
                 }
             })
         })
@@ -32,7 +36,7 @@ export default function PopupEvent({lng, targetBlockId, post}) {
              <div className="popup__bg popup__event">
                  <div className="popup__bg_container">
                      <div className="popup__bg_container__close">
-                         <button className="popup__bg_container__close_btn" onClick={() => { popupRef.current.style.display = 'none'; }}></button>
+                         <button className="popup__bg_container__close_btn" onClick={() => { popupRef.current.style.display = 'none'; popupRef.current.style.width = '100vw'; popupRef.current.style.height = '100vh'; }}></button>
                      </div>
                      <div className="popup__bg_container__text">
                          <p className="popup__bg_container__text_title">

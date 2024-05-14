@@ -275,13 +275,20 @@
         font-size: 1rem;
       }
     }
+    &__blur_container__button_btn::after {
+      right: -10px;
+      bottom: 33px;
+      width: 72px;
+      height: 72px;
+    }
 
     &__blur_container__button {
       max-width: 300px;
       &_img {
-        min-width: 300px;
-        width: 100%;
-        height: auto;
+        max-width: 150px;
+        position: absolute;
+        left: 60px;
+        top: 65px;
       }
       &_btn {
         &__video {
@@ -390,17 +397,29 @@
           }
         }
 
+        &__button_btn::after {
+          right: 0;
+          bottom: 13px;
+          width: 52px;
+          height: 52px;
+        }
+
         &__button {
           max-width: 214px;
           display: flex;
           flex-direction: row;
           justify-content: center;
 
+          &_muted {
+            right: 18px;
+            bottom: 30px;
+            max-width: 20px;
+          }
+
           &_img {
-            max-width: 214px;
-            min-width: 214px;
-            width: 100%;
-            height: auto;
+            max-width: 120px;
+            left: 35px;
+            top: 35px;
           }
           &_btn {
             &__video {

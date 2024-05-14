@@ -52,15 +52,17 @@
   }
 
   &__semicircle {
-    width: 100%;
+    width: 101%;
     height: min-content;
-    margin-bottom: -5px;
+    margin-bottom: -10px;
+    margin-left: -10px;
   }
 
   &__semicircle1 {
-    width: 100%;
+    width: 101%;
     height: min-content;
-    margin-top: -3px;
+    margin-top: -10px;
+    margin-left: -3px;
     transform: rotate(180deg);
   }
 
@@ -175,9 +177,6 @@
 }
 
 @media screen and (max-width: 1600px) {
-  .awards-page__semicircle {
-    margin-bottom: -6px;
-  }
   .awards-page__title_description {
     max-width: 200px;
   }
@@ -261,16 +260,6 @@
         left: -33px;
         top: -24px;
       }
-    }
-
-    &__semicircle {
-      width: 101%;
-      margin: 0 -1px -5px -1px;
-    }
-
-    &__semicircle1 {
-      width: 100%;
-      margin: 0 -1px -5px -1px;
     }
 
     &__awards {

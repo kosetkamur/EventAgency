@@ -70,7 +70,7 @@ export default async function Home({ params: { lng } }) {
     return (
         <main className="main-page">
             <section className="main-page__video">
-                <video width="auto" height="auto" loop muted playsInline autoPlay className="main-page__video_intro">
+                <video width="1920" height="800" loop muted preload="metadata" playsInline autoPlay className="main-page__video_intro">
                     <source src={`${backendHost}${data.data.intro_video}`} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
@@ -241,7 +241,7 @@ export default async function Home({ params: { lng } }) {
                                 <Image src={mainArrow} alt="стрелка" className="video-component__container_title__arrow_img" />
                             </div>
                         </div>
-                        <video width="1859" height="775" controls muted playsInline className="video-component__container_video">
+                        <video width="1859" height="775" controls muted playsInline autoPlay className="video-component__container_video">
                             <source src={`${backendHost}${data.data.interview}`} type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
