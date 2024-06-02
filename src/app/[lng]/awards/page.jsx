@@ -65,7 +65,7 @@ export default async function AwardsPage({ params: { lng } }) {
                                     <h2 className="awards-page__awards_container__item_text__title">{award.title}</h2>
                                     <p className="awards-page__awards_container__item_text__place">{award.place}</p>
                                     <p className="awards-page__awards_container__item_text__nomination">{award.nomination}</p>
-                                    <p className="awards-page__awards_container__item_text__event">{award.event}</p>
+                                    <a href={award.case_link} className="awards-page__awards_container__item_text__event">{award.event}</a>
                                 </div>
                                 <div className="awards-page__awards_container__item_images">
                                     <Image loading="lazy" src={`${backendHost}${award.attachment}`} alt={award} width="500" height="500"  className="awards-page__awards_container__item_images_img"/>

@@ -45,9 +45,9 @@ export default async function ServicesComponent({lng, id}) {
                         <a href={`/${lng}/services`}>
                             {t('services')}
                         </a>
-                        <a href={`/${lng}/services#form`}>
-                            {t('howWeWork')}
-                        </a>
+                        {/*<a href={`/${lng}/services#form`}>*/}
+                        {/*    {t('howWeWork')}*/}
+                        {/*</a>*/}
                         <a href={`/${lng}/about-us`}>
                             {t('whyUs')}
                         </a>
@@ -64,15 +64,15 @@ export default async function ServicesComponent({lng, id}) {
                         <p> {t('forCandidates')}</p>
                     </div>
                     <div className="services-component_item__ul">
-                        <a href="#contactUs">
-                            {t('startCooperation')}
-                        </a>
-                        <a href={`mailto:l.fedorova@avantage-event.com`}>
+                        {/*<a href={`/${lng}/#contactUs`}>*/}
+                        {/*    {t('startCooperation')}*/}
+                        {/*</a>*/}
+                        <a href={`mailto:m.rudakova@avantage-event.com`}>
                             {t('sendYourCV')}
                         </a>
-                        <a href={`/${lng}/about-us`}>
-                            {t('whyYouShouldWork')}
-                        </a>
+                        {/*<a href={`/${lng}/about-us`}>*/}
+                        {/*    {t('whyYouShouldWork')}*/}
+                        {/*</a>*/}
                         <a href={`${backendHost}/media/${refs.data.form_for_freelancers}`} download>
                             {t('freelancerQuestionnaire')}
                         </a>

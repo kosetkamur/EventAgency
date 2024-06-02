@@ -22,6 +22,7 @@ export default async function ServicesPage({ params: { lng } }) {
     return (
         <div className="services-page">
             <div className="containerAll">
+                <CardsComponent lng={lng} />
                 <div className="services-page__tagline">
                     <div className="services-page__tagline_container">
                         <p className="services-page__tagline_container__text services-page__tagline_container__align1">
@@ -44,7 +45,6 @@ export default async function ServicesPage({ params: { lng } }) {
                         {t('whyUsBtn')}
                     </Link>
                 </div>
-                <CardsComponent lng={lng} />
                 <Form lng={lng} id="form" />
             </div>
         </div>

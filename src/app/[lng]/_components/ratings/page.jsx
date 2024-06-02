@@ -35,10 +35,11 @@ export default async function RatingsComponent({lng, id}) {
              </div>
              <div className="rating-component__logos">
                  {
-                     ratings.data.map(rating => (
-                         <div key={rating.logo} className="rating-component__logos_item">
-                            <Image loading="lazy" src={`${backendHost}${rating.logo}`} alt="рейтинг" width="300" height="300" className="rating-component__logos_item__image" />
-                         </div>
+                     ratings.data.map((rating, index) => (
+                         <a href={rating.link} key={rating.logo} className={`rating-component__logos_item rating-component__logos_item${index+1}`}>
+                            <Image loading="lazy" src={`${backendHost}${rating.logo}`} alt="рейтинг" width="300" height="300"
+                                   className={`rating-component__logos_item__image rating-component__logos_item${index+1}__image`} />
+                         </a>
                      ))
                  }
              </div>

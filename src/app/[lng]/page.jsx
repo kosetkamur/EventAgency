@@ -110,7 +110,7 @@ export default async function Home({ params: { lng } }) {
                 </div>
                 <ServicesComponent lng={lng} id="ServicesComponent" />
             </section>
-            <PopupEvent lng={lng} post={contacts.data.email_for_partners} targetBlockId="ServicesComponent"/>
+            <PopupEvent lng={lng} post={contacts.data.contact_email} targetBlockId="ServicesComponent"/>
             <div className="main-page__parallax">
                 <Parallax speed={-4} className="self-start">
                     <div className="main-page__parallax_image">

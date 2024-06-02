@@ -4,7 +4,7 @@
   grid-template-rows: repeat(2, auto);
   box-sizing: border-box;
   gap: 1%;
-  margin-top: 150px;
+  margin: 50px 0 150px 0;
 
   &_item {
     border-radius: 10px;
@@ -214,7 +214,7 @@
     grid-template-columns: 100%;
     grid-template-rows: auto;
     gap: 1%;
-    margin: 100px 0;
+    margin: 50px 0 100px 0;
 
     &_item1, &_item2, &_item3, &_item4 {
       grid-column: auto;

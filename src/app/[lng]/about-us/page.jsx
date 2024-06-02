@@ -157,7 +157,7 @@ export default async function CasePage({ params: { lng } }) {
                     </div>
                     <div className="parallax-components__buttons">
                         <div className="parallax-components__buttons_item">
-                            <Link href={`/${lng}`} className="parallax-components__buttons_item__btn1">{t("portfolio")}</Link>
+                            <Link href={`${backendHost}${data.data.presentation}`} className="parallax-components__buttons_item__btn1">{t("portfolio")}</Link>
                         </div>
                         <div className="parallax-components__buttons_item">
                             <Link href={`/${lng}/blog`} className="parallax-components__buttons_item__btn2">{t("media")}</Link>
