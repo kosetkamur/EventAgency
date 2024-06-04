@@ -6,7 +6,7 @@ async function getData(lng) {
         `${backendHost}/api/blog.case_list?lang=${lng}&case_type=MICE`,
         {
             method: 'GET',
-            cache: "force-cache"
+            next: { revalidate: 3600 },
         }
     )
 

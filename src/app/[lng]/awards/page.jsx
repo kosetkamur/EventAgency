@@ -17,7 +17,7 @@ async function getData(lng) {
         `${backendHost}/api/core.awards_list?lang=${lng}`,
         {
             method: 'GET',
-            cache: "force-cache"
+            next: { revalidate: 3600 },
         }
     )
 

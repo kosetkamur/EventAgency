@@ -7,7 +7,7 @@ async function getData(lng) {
         `${backendHost}/api/core.contacts?lang=${lng}`,
         {
             method: 'GET',
-            cache: "force-cache"
+            next: { revalidate: 3600 },
         }
     )
 
@@ -23,7 +23,7 @@ async function getFiles(lng) {
         `${backendHost}/api/core.files?lang=${lng}`,
         {
             method: 'GET',
-            cache: "force-cache"
+            next: { revalidate: 3600 },
         }
     )
 
