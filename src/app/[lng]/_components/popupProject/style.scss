@@ -168,6 +168,10 @@
     height: 30px;
     width: 30px;
   }
+  .popup-project__bg_container__text_checkbox__label .checkbox__checkmark:after {
+    left: 4px;
+    top: 4px;
+  }
 }
 
 @media screen and (max-width: 1500px) {

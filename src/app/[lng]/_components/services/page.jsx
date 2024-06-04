@@ -55,7 +55,7 @@ export default async function ServicesComponent({lng, id}) {
                         <a href={`${backendHost}/media/${refs.data.brief}`} download>
                             {t('brief')}
                         </a>
-                        <a href={`${backendHost}/media/${refs.data.brief}`} download>
+                        <a href={`${backendHost}/media/${refs.data.portfolio}`} download>
                             {t('portfolio')}
                         </a>
                     </div>
