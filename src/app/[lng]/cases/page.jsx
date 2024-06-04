@@ -12,7 +12,6 @@ async function getData(lng) {
         `${backendHost}/api/blog.case_list?lang=${lng}&case_type=&show_on_main_page=`,
         {
             method: 'GET',
-            
             cache: "force-cache"
         }
     )

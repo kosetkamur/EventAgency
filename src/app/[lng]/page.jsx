@@ -50,7 +50,6 @@ async function getContacts(lng) {
         `${backendHost}/api/core.contacts?lang=${lng}`,
         {
             method: 'GET',
-            
             cache: "force-cache"
         }
     )

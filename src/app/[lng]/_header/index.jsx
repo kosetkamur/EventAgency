@@ -12,7 +12,6 @@ async function getFiles(lng) {
         {
             method: 'GET',
             cache: "force-cache"
-            // cache: "force-cache"
         }
     )
 

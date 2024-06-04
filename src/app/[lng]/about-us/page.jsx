@@ -30,7 +30,6 @@ async function getData(lng) {
         `${backendHost}/api/core.about?lang=${lng}`,
         {
             method: 'GET',
-            
             cache: "force-cache"
         }
     )
