@@ -12,8 +12,8 @@ async function getData(params) {
         `${backendHost}/api/blog.case?lang=${params.lng}&id=${params.caseId}`,
         {
             method: 'GET',
-            cache: 'force-cache',
-            next: { revalidate: 3600 }
+            
+            cache: "force-cache"
         }
     )
 
@@ -29,8 +29,8 @@ async function getCase(params) {
         `${backendHost}/api/blog.case_list?lang=${params.lng}&case_type=&show_on_main_page=`,
         {
             method: 'GET',
-            cache: 'force-cache',
-            next: { revalidate: 3600 }
+            
+            cache: "force-cache"
         }
     )
 
