@@ -8,7 +8,8 @@ async function getData(lng) {
         `${backendHost}/api/core.awards_list?lang=${lng}&show_on_main_page=true`,
         {
             method: 'GET',
-            cache: 'force-cache'
+            cache: 'force-cache',
+            next: { revalidate: 3600 }
         }
     )
 

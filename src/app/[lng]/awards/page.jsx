@@ -17,7 +17,8 @@ async function getData(lng) {
         `${backendHost}/api/core.awards_list?lang=${lng}`,
         {
             method: 'GET',
-            cache: 'force-cache'
+            cache: 'force-cache',
+            next: { revalidate: 3600 }
         }
     )
 
@@ -45,9 +46,9 @@ export default async function AwardsPage({ params: { lng } }) {
                         </h1>
                     </div>
                     <div className="awards-page__title_description">
-                        <p>
+                        <a href="https://www.nr2c.ru/" target="_blank">
                             {t('top50')}
-                        </p>
+                        </a>
                     </div>
                 </div>
                 <div className="awards-page__arrow">

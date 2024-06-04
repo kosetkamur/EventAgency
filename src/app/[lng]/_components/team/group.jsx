@@ -8,7 +8,8 @@ async function getData(lng) {
         `${backendHost}/api/core.team?lang=${lng}&is_chief=false`,
         {
             method: 'GET',
-            cache: 'force-cache'
+            cache: 'force-cache',
+            next: { revalidate: 3600 }
         }
     )
 

@@ -11,7 +11,8 @@ async function getFiles(lng) {
         `${backendHost}/api/core.files?lang=${lng}`,
         {
             method: 'GET',
-            cache: 'force-cache'
+            cache: 'force-cache',
+            next: { revalidate: 3600 }
         }
     )
 

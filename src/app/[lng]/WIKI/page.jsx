@@ -13,7 +13,8 @@ async function getData(lng) {
         `${backendHost}/api/wiki.get?lang=${lng}`,
         {
             method: 'GET',
-            cache: 'force-cache'
+            cache: 'force-cache',
+            next: { revalidate: 3600 }
         }
     )
 

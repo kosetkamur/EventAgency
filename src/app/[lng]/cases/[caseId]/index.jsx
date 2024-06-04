@@ -12,7 +12,6 @@ import CardCaseComponent from "@/app/[lng]/cases/card";
 import {useTranslation} from "@/app/i18n/client";
 import * as React from "react";
 
-
 export default function Artical({caseInfo, anotherCases, lng}) {
     const { t } = useTranslation(lng,'translation');
 

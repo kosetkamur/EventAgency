@@ -125,9 +125,9 @@ export default function Form({lng, id}) {
                             <label className="form-component__form_footer__checkbox_label">
                                 <input type="checkbox" name="agreement" required />
                                 <div className="checkbox__checkmark"></div>
-                                <p className="checkbox__body">
+                                <a href={`/${lng}/privacy-policy`} className="checkbox__body">
                                     { t('persData') }
-                                </p>
+                                </a>
                             </label>
                         </div>
                         <button type="submit" className="form-component__form_footer__button">

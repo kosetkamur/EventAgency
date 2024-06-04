@@ -109,9 +109,9 @@ export default function PopupProject({lng, closePopup}) {
                                  <label className="popup-project__bg_container__text_checkbox__label">
                                      <input type="checkbox" name="agreement" required />
                                      <div className="checkbox__checkmark"></div>
-                                     <p className="checkbox__body">
+                                     <a href={`/${lng}/privacy-policy`} className="checkbox__body">
                                          {t('persData')}
-                                     </p>
+                                     </a>
                                  </label>
                              </div>
                              <input

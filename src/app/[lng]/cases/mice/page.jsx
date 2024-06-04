@@ -6,7 +6,8 @@ async function getData(lng) {
         `${backendHost}/api/blog.case_list?lang=${lng}&case_type=MICE`,
         {
             method: 'GET',
-            cache: 'force-cache'
+            cache: 'force-cache',
+            next: { revalidate: 3600 }
         }
     )
 
@@ -21,6 +22,6 @@ export default async function CasePage({ params: { lng, profile } }) {
     const cases = await getData(lng, profile);
 
     return (
-        <Cases cases={cases} lng={lng} />
+        <Cases cases={cases} lng={lng} mice={true} />
     );
 }
