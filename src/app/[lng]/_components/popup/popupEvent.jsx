@@ -5,7 +5,7 @@ import {useTranslation} from "@/app/i18n/client";
 import {useEffect, useRef, useState} from "react";
 
 export default function PopupEvent({lng, targetBlockId, post}) {
-    const { t } = useTranslation(lng, 'translation');
+    const { t } = useTranslation(lng);
     const popupRef = useRef();
     const [isVisible, setIsVisible] = useState(false);
     useEffect(() => {

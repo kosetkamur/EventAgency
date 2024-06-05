@@ -77,8 +77,8 @@
 
         &_muted {
           position: absolute;
-          right: 14px;
-          bottom: 57px;
+          right: 10px;
+          bottom: 55px;
           max-width: 27px;
           width: 100%;
           height: auto;
@@ -110,6 +110,7 @@
 
             &_welcome {
               object-fit: cover;
+              object-position: 70%;
               width: 100%;
               height: 100%;
               border-radius: 200px;
@@ -275,6 +276,7 @@
         font-size: 1rem;
       }
     }
+
     &__blur_container__button_btn::after {
       right: -10px;
       bottom: 33px;
@@ -284,6 +286,11 @@
 
     &__blur_container__button {
       max-width: 300px;
+      &_muted {
+        right: 14px;
+        bottom: 58px;
+        max-width: 20px;
+      }
       &_img {
         max-width: 150px;
         position: absolute;
@@ -411,9 +418,9 @@
           justify-content: center;
 
           &_muted {
-            right: 18px;
-            bottom: 30px;
-            max-width: 20px;
+            right: 17px;
+            bottom: 31px;
+            max-width: 15px;
           }
 
           &_img {

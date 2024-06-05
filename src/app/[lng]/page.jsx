@@ -22,6 +22,7 @@ import ButtonPopupProject from "@/app/[lng]/_components/popupProject/buttonPopup
 import ButtonPopupVideo from "@/app/[lng]/_components/popupVideo/buttonPopupVideo";
 import {Parallax} from "@/app/[lng]/_components/parallax/parallax";
 import ServicesComponent from "@/app/[lng]/_components/services/page";
+import PopupVideo from "@/app/[lng]/_components/popupVideo/popupVideo";
 
 export const metadata = {
     title: "Организация мероприятий в Москве | Мероприятия для бизнеса b2b",
@@ -111,6 +112,7 @@ export default async function Home({ params: { lng } }) {
                 <ServicesComponent lng={lng} id="ServicesComponent" />
             </section>
             <PopupEvent lng={lng} post={contacts.data.contact_email} targetBlockId="ServicesComponent"/>
+            <PopupVideo video={data.data.welcome_video} />
             <div className="main-page__parallax">
                 <Parallax speed={-4} className="self-start">
                     <div className="main-page__parallax_image">

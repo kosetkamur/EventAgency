@@ -7,14 +7,9 @@ import PopupVideo from "@/app/[lng]/_components/popupVideo/popupVideo";
 import play from "@/public/images/aboutPlay.svg";
 
 export default function ButtonPopupVideoAbout({video}) {
-    const [show, setShow] = useState(false);
 
     const showPopup = () => {
-        setShow(true);
-    }
-
-    const closePopup = () => {
-        setShow(false);
+        document.getElementById('popup-video').style.display = 'block'
     }
 
     return (
@@ -27,7 +22,7 @@ export default function ButtonPopupVideoAbout({video}) {
                     className="team-component__container_item__bottom_button__btn_img"
                     height="100" />
             </button>
-            {show && <PopupVideo video={video} closePopup={closePopup} />}
+            <PopupVideo video={video} />
         </>
     )
 }

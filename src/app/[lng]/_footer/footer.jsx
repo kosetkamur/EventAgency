@@ -99,7 +99,7 @@ export default function Footer({emails, files, lng}) {
                     <a href={`${backendHost}/media/${files.data.presentation}`} className="footer__navigation_column__a" download>
                         {t('downloadPresentation')}
                     </a>
-                    <a href={`${backendHost}${files.data.brief}`} className="footer__navigation_column__a">
+                    <a href={`${backendHost}/media/${files.data.brief}`} className="footer__navigation_column__a">
                         {t('fillInTheBrief')}
                     </a>
                     <div className="footer__navigation_column__socialNetwork">
