@@ -42,19 +42,17 @@ export default async function CaseMainComponent({lng, id}) {
                                     className="case-component__cases_item__images"
                                 />
                                 <div className="case-component__cases_item__buttons">
-                                    <button className="case-component__cases_item__buttons_button">
-                                        {item.year}
-                                    </button>
-                                    <button className="case-component__cases_item__buttons_button">
+                                    {item.customer  ?  
+<button className="case-component__cases_item__buttons_button">
                                         <Image
                                             src={icon2} alt="" className="case-component__cases_item__buttons_button__icon" />
-                                        {item.customer.type  ?  <p className="case-component__cases_item__buttons_button__event">
+                                        <p className="case-component__cases_item__buttons_button__event">
                                 {item.customer.type}
-                            </p>  : null}
-                                        {item.customer.name  ?  <p className="case-component__cases_item__buttons_button__company">
+                            </p> 
+                                        <p className="case-component__cases_item__buttons_button__company">
                                 {item.customer.name}
-                            </p>  : null}
-                                    </button>
+                            </p> 
+                                    </button> : null}
                                 </div>
                                 <p className="case-component__cases_item__title">
                                     {item.title}
