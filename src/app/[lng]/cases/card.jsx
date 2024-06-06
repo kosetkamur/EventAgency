@@ -21,12 +21,12 @@ export default function CardCaseComponent({item,lng}) {
                         </button>
                         <button className="case-page__cases_item__buttons_button">
                             <Image src={icon2} alt="кейс" loading="lazy" className="case-page__cases_item__buttons_button__icon" />
-                            <p className="case-page__cases_item__buttons_button__event">
+                            {item.customer.type  ?  <p className="case-page__cases_item__buttons_button__event">
                                 {item.customer.type}
-                            </p>
-                            <p className="case-page__cases_item__buttons_button__company">
+                            </p>  : null}
+                            {item.customer.name  ?  <p className="case-page__cases_item__buttons_button__company">
                                 {item.customer.name}
-                            </p>
+                            </p>  : null}
                         </button>
                     </div>
                     <p className="case-page__cases_item__title">
